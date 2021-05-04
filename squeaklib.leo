@@ -15,11 +15,13 @@
 <v t="karstenw.20210301114724.5"><vh>makePoint</vh></v>
 <v t="karstenw.20210401150717.1"><vh>sign</vh></v>
 </v>
-<v t="karstenw.20210301114724.6" a="E"><vh>Point</vh>
+<v t="karstenw.20210301114724.6"><vh>Point</vh>
+<v t="karstenw.20210504100313.1"><vh>__python__</vh>
 <v t="karstenw.20210301114724.7"><vh>__init__</vh></v>
 <v t="karstenw.20210401150733.1"><vh>__repr__</vh></v>
 <v t="karstenw.20210301114724.8"><vh>__lt|le|gt|ge|eq|ne|add|sub|mul__</vh></v>
-<v t="karstenw.20210403131024.1" a="E"><vh>instance methods</vh>
+</v>
+<v t="karstenw.20210403131024.1"><vh>instance methods</vh>
 <v t="karstenw.20210301114724.10"><vh>converting</vh>
 <v t="karstenw.20210401163629.1"><vh>asFloatPoint</vh></v>
 <v t="karstenw.20210401163648.1"><vh>asIntegerPoint</vh></v>
@@ -31,7 +33,7 @@
 </v>
 <v t="karstenw.20210301114724.11"><vh>copying</vh></v>
 <v t="karstenw.20210301114724.12"><vh>geometry</vh></v>
-<v t="karstenw.20210301114724.13" a="E"><vh>point functions</vh>
+<v t="karstenw.20210301114724.13"><vh>point functions</vh>
 <v t="karstenw.20210401164244.1"><vh>interpolateToAt</vh></v>
 <v t="karstenw.20210401164258.1"><vh>bearingToPoint</vh></v>
 <v t="karstenw.20210401164304.1"><vh>crossProduct</vh></v>
@@ -88,11 +90,13 @@
 </v>
 </v>
 </v>
-<v t="karstenw.20210301114724.19" a="E"><vh>Rectangle</vh>
+<v t="karstenw.20210301114724.19"><vh>Rectangle</vh>
+<v t="karstenw.20210504100438.1"><vh>__python__</vh>
 <v t="karstenw.20210301114724.20"><vh>__init__</vh></v>
 <v t="karstenw.20210401150836.1"><vh>__repr__</vh></v>
 <v t="karstenw.20210301114724.21"><vh>__eq|ne|add|sub|mul__</vh></v>
-<v t="karstenw.20210301114724.22" a="E"><vh>properties</vh>
+</v>
+<v t="karstenw.20210301114724.22"><vh>properties</vh>
 <v t="karstenw.20210301114724.23"><vh>origin corner</vh></v>
 <v t="karstenw.20210301114724.24"><vh>height width area</vh></v>
 <v t="karstenw.20210301114724.25"><vh>top left bottom right</vh></v>
@@ -101,8 +105,8 @@
 <v t="karstenw.20210301114724.28"><vh>bottomcenter topcenter leftcenter rightcenter</vh></v>
 <v t="karstenw.20210301114724.29"><vh>corners extent</vh></v>
 </v>
-<v t="karstenw.20210301114724.37" a="E"><vh>instance methods</vh>
-<v t="karstenw.20210301114724.38" a="E"><vh>rectangle methods</vh>
+<v t="karstenw.20210301114724.37"><vh>instance methods</vh>
+<v t="karstenw.20210301114724.38"><vh>rectangle methods</vh>
 <v t="karstenw.20210401151132.1"><vh>withRight</vh></v>
 <v t="karstenw.20210401151145.1"><vh>withLeft</vh></v>
 <v t="karstenw.20210401151154.1"><vh>withBottom</vh></v>
@@ -131,7 +135,7 @@
 <v t="karstenw.20210401165419.2"><vh>withSideOrCornerSetToPointMinExtent</vh></v>
 <v t="karstenw.20210401165419.3"><vh>withSideOrCornerSetToPointMinExtentLimit</vh></v>
 </v>
-<v t="karstenw.20210301114724.39" a="E"><vh>testing</vh>
+<v t="karstenw.20210301114724.39"><vh>testing</vh>
 <v t="karstenw.20210403125159.1"><vh>containsPoint</vh></v>
 <v t="karstenw.20210403125200.1"><vh>containsRect</vh></v>
 <v t="karstenw.20210403125201.1"><vh>fullIntersects</vh></v>
@@ -141,12 +145,12 @@
 <v t="karstenw.20210403125201.5"><vh>isWide</vh></v>
 <v t="karstenw.20210403125201.6"><vh>isZero</vh></v>
 </v>
-<v t="karstenw.20210403163241.1" a="E"><vh>truncation and round off</vh>
+<v t="karstenw.20210403163241.1"><vh>truncation and round off</vh>
 <v t="karstenw.20210403125202.1"><vh>rounded</vh></v>
 <v t="karstenw.20210403125202.2"><vh>truncateTo</vh></v>
 <v t="karstenw.20210403125202.3"><vh>truncated</vh></v>
 </v>
-<v t="karstenw.20210301114724.40" a="E"><vh>transforming</vh>
+<v t="karstenw.20210301114724.40"><vh>transforming</vh>
 <v t="karstenw.20210403113650.1"><vh>alignWith</vh></v>
 <v t="karstenw.20210403113653.1"><vh>centeredBeneath</vh></v>
 <v t="karstenw.20210403113653.2"><vh>flipByCenterAt</vh></v>
@@ -159,8 +163,8 @@
 </v>
 <v t="karstenw.20210301114724.41"><vh>inRect</vh></v>
 </v>
-<v t="karstenw.20210301114724.34" a="E"><vh>class methods</vh>
-<v t="karstenw.20210403114922.1" a="E"><vh>instance creation</vh>
+<v t="karstenw.20210301114724.34"><vh>class methods</vh>
+<v t="karstenw.20210403114922.1"><vh>instance creation</vh>
 <v t="karstenw.20210301114724.35"><vh>centerExtent</vh></v>
 <v t="karstenw.20210403114944.1"><vh>encompassing</vh></v>
 <v t="karstenw.20210301114724.36"><vh>leftRightTopBottom</vh></v>
@@ -1547,5 +1551,7 @@ def rhoDegrees( cls, rho, degrees ):
             self.corner.y]
 
 </t>
+<t tx="karstenw.20210504100313.1"></t>
+<t tx="karstenw.20210504100438.1"></t>
 </tnodes>
 </leo_file>
