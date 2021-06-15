@@ -9,7 +9,7 @@
 <preferences/>
 <find_panel_settings/>
 <vnodes>
-<v t="karstenw.20210301114724.1" a="E"><vh>@clean squeaklib.py</vh>
+<v t="karstenw.20210301114724.1"><vh>@clean squeaklib.py</vh>
 <v t="karstenw.20210301114724.2"><vh>declarations</vh></v>
 <v t="karstenw.20210301114724.4"><vh>tools</vh>
 <v t="karstenw.20210301114724.5"><vh>makePoint</vh></v>
@@ -106,7 +106,7 @@
 <v t="karstenw.20210301114724.29"><vh>corners extent</vh></v>
 </v>
 <v t="karstenw.20210301114724.37"><vh>instance methods</vh>
-<v t="karstenw.20210301114724.38"><vh>rectangle methods</vh>
+<v t="karstenw.20210301114724.38" a="E"><vh>rectangle methods</vh>
 <v t="karstenw.20210401151132.1"><vh>withRight</vh></v>
 <v t="karstenw.20210401151145.1"><vh>withLeft</vh></v>
 <v t="karstenw.20210401151154.1"><vh>withBottom</vh></v>
@@ -117,6 +117,7 @@
 <v t="karstenw.20210401151219.1"><vh>amountToTranslateWithin</vh></v>
 <v t="karstenw.20210401151226.1"><vh>areasOutside</vh></v>
 <v t="karstenw.20210405143028.1"><vh>asArray</vh></v>
+<v t="karstenw.20210603123950.1"><vh>asPointList</vh></v>
 <v t="karstenw.20210401151234.1"><vh>bordersOnAlong</vh></v>
 <v t="karstenw.20210401151242.1"><vh>encompass</vh></v>
 <v t="karstenw.20210401151248.1"><vh>expandBy</vh></v>
@@ -150,7 +151,7 @@
 <v t="karstenw.20210403125202.2"><vh>truncateTo</vh></v>
 <v t="karstenw.20210403125202.3"><vh>truncated</vh></v>
 </v>
-<v t="karstenw.20210301114724.40"><vh>transforming</vh>
+<v t="karstenw.20210301114724.40" a="E"><vh>transforming</vh>
 <v t="karstenw.20210403113650.1"><vh>alignWith</vh></v>
 <v t="karstenw.20210403113653.1"><vh>centeredBeneath</vh></v>
 <v t="karstenw.20210403113653.2"><vh>flipByCenterAt</vh></v>
@@ -164,7 +165,7 @@
 <v t="karstenw.20210301114724.41"><vh>inRect</vh></v>
 </v>
 <v t="karstenw.20210301114724.34"><vh>class methods</vh>
-<v t="karstenw.20210403114922.1"><vh>instance creation</vh>
+<v t="karstenw.20210403114922.1" a="E"><vh>instance creation</vh>
 <v t="karstenw.20210301114724.35"><vh>centerExtent</vh></v>
 <v t="karstenw.20210403114944.1"><vh>encompassing</vh></v>
 <v t="karstenw.20210301114724.36"><vh>leftRightTopBottom</vh></v>
@@ -173,6 +174,31 @@
 </v>
 </v>
 </v>
+</v>
+<v t="karstenw.20210615170955.1"><vh>@clean Form.py</vh>
+<v t="karstenw.20210615171004.1"><vh>Declarations</vh></v>
+<v t="karstenw.20210615171004.2"><vh>class Form</vh>
+<v t="karstenw.20210615171004.3"><vh>__init__</vh></v>
+<v t="karstenw.20210615171004.4"><vh>__repr__</vh></v>
+<v t="karstenw.20210615171043.1"><vh>BITS</vh>
+<v t="karstenw.20210615171004.5"><vh>getbits</vh></v>
+<v t="karstenw.20210615171004.6"><vh>setbits</vh></v>
+</v>
+<v t="karstenw.20210615171057.1"><vh>WIDTH &amp; HEIGHT</vh>
+<v t="karstenw.20210615171004.7"><vh>getwidth</vh></v>
+<v t="karstenw.20210615171004.8"><vh>setwidth</vh></v>
+<v t="karstenw.20210615171004.9"><vh>getheight</vh></v>
+<v t="karstenw.20210615171004.10"><vh>setheight</vh></v>
+</v>
+<v t="karstenw.20210615171004.11"><vh>center</vh></v>
+<v t="karstenw.20210615171122.1"><vh>classmethods</vh>
+<v t="karstenw.20210615171004.12"><vh>extent</vh></v>
+<v t="karstenw.20210615171004.13"><vh>extentMode</vh></v>
+<v t="karstenw.20210615171004.14"><vh>dotOfSize</vh></v>
+</v>
+</v>
+<v t="karstenw.20210615171004.15"><vh>imageRectangles</vh></v>
+<v t="karstenw.20210615171216.1"><vh>MAIN</vh></v>
 </v>
 </vnodes>
 <tnodes>
@@ -227,8 +253,12 @@ __all__ = ['makePoint', 'Point', 'Rectangle']
 
 </t>
 <t tx="karstenw.20210301114724.20">def __init__(self, origin, corner):
-    self.porigin = makePoint( origin )
-    self.pcorner = makePoint( corner )
+    p1 = makePoint( origin )
+    p2 = makePoint( corner )
+    if p2 &lt; p1:
+        p1, p2 = p2, p1
+    self.porigin = p1
+    self.pcorner = p2
 
 
 </t>
@@ -1553,5 +1583,227 @@ def rhoDegrees( cls, rho, degrees ):
 </t>
 <t tx="karstenw.20210504100313.1"></t>
 <t tx="karstenw.20210504100438.1"></t>
+<t tx="karstenw.20210603123950.1">def asPointList( self ):
+    return [self.origin, self.corner]
+
+
+</t>
+<t tx="karstenw.20210615170955.1">@language python
+@tabwidth -4
+@others
+</t>
+<t tx="karstenw.20210615171004.1">
+# -*- coding: utf-8 -*-
+
+from __future__ import print_function
+import sys
+import os
+import math
+import random
+import pprint
+pp = pprint.pprint
+
+import PIL
+import PIL.Image
+import PIL.ImageDraw as ImageDraw
+
+import pdb
+
+import squeaklib
+makePoint = squeaklib.makePoint
+Point = squeaklib.Point
+Rectangle = squeaklib.Rectangle
+
+import photobot as pb
+
+
+</t>
+<t tx="karstenw.20210615171004.10">def setheight(self, newHeight):
+    pass
+height = property(getheight) #, setheight)
+
+# pattern
+
+# fill
+
+# outline
+
+# alpha
+
+</t>
+<t tx="karstenw.20210615171004.11">def center( self ):
+    return self.frame.center
+
+
+</t>
+<t tx="karstenw.20210615171004.12">@classmethod
+def extent( cls, extentPoint ):
+    """Answer an instance of me whose top left corner is originPoint
+       and width by height is extentPoint."""
+    p = makePoint( extentPoint )
+    #color=(31,31,31,255)
+    form = cls(int(p.x), int(p.y), 'RGBA' )
+    #draw = PIL.ImageDraw.Draw(form.img)
+    #draw.rectangle( (0,0, p.x,p.y), fill=None, width=1)
+    return form
+
+</t>
+<t tx="karstenw.20210615171004.13">@classmethod
+def extentMode( cls, extentPoint, mode ):
+    """Answer an instance of me with blank bitmap of the given
+       dimensions and depth."""
+    p = makePoint( extentPoint )
+    return cls( int(p.x), int(p.y), mode )
+
+</t>
+<t tx="karstenw.20210615171004.14">@classmethod
+def dotOfSize( cls, dotSizePoint ):
+    color=(15,255)
+    p = makePoint( dotSizePoint )
+    form = cls(int(p.x), int(p.y), 'LA' )
+    draw = PIL.ImageDraw.Draw(form.img)
+    draw.ellipse( (0,0, p.x,p.y), fill=color, width=1)
+    return form    
+
+
+</t>
+<t tx="karstenw.20210615171004.15">def imageRectangles( reclist, frame=(10,10) ):
+    # pdb.set_trace()
+    frame = makePoint( frame )
+    rectangles = []
+    scale = 4.0
+    points = []
+    for r in reclist:
+        rs = r * scale
+        rectangles.append( rs )
+        points.extend( rs.asPointList() )
+        
+    minPoint = min( points )
+    maxPoint = max( points )
+    
+    w = maxPoint.x - minPoint.x
+    w = w + 2 * frame.x
+    h = maxPoint.y - minPoint.y
+    h = h + 2 * frame.y
+    f = Form(w,h)
+    f.canvas.fill( (0,0,0, 0) )
+    draw = PIL.ImageDraw.Draw(f.canvas.top.img)
+
+    for i,r in enumerate(rectangles):
+        x1,y1,x2,y2 = r.asArray()
+        w, h = int(r.width), int(r.height)
+        # f.canvas.fill( (15, 15, 90, 31), x1, y1, w, h )
+        c1 = int( 127*random.random() )
+        c2 = int( 31+127*random.random() )
+        draw.rectangle( (x1,y1, w,h), fill=(c1, c2, 127,15),
+                         outline=(0,0,0,127), width=1)
+    f.canvas.export("RectangleList()_" + pb.datestring(), unique=True  )
+
+
+</t>
+<t tx="karstenw.20210615171004.2">class Form(object):
+    """Translated from a Squeak 3.7 image
+    Implemented as a abstraction layer to Image.
+    """
+
+    @others
+</t>
+<t tx="karstenw.20210615171004.3">def __init__(self, width, height, mode="RGBA" ):
+    width = int(width)
+    height = int(height)
+    self.img =  PIL.Image.new(mode, (width, height) )
+    self.frame = Rectangle( (0,0), (width, height) )
+    self.mode = mode
+    # self.depth = mode
+    self.fill = None
+    self.pattern = None
+    self.offset = Point(0,0)
+    self.canvas = pb.canvas( width, height )
+
+
+</t>
+<t tx="karstenw.20210615171004.4">def __repr__( self ):
+    return u"Form( %.2f, %.2f, %s )" % (self.frame.width,
+                                        self.frame.height,
+                                        self.mode)
+
+
+# bits
+</t>
+<t tx="karstenw.20210615171004.5">def getbits(self):
+    return self.img
+</t>
+<t tx="karstenw.20210615171004.6">def setbits(self, img):
+    if type(img) == type(PIL.Image.Image):
+        self.img = img
+bits = property(getbits, setbits)
+
+# width
+</t>
+<t tx="karstenw.20210615171004.7">def getwidth( self ):
+    s = self.bits.size
+    return self.bits.size[0]
+</t>
+<t tx="karstenw.20210615171004.8">def setwidth(self, newWidth):
+    pass
+width = property(getwidth) #, setwidth)
+
+# height
+</t>
+<t tx="karstenw.20210615171004.9">def getheight( self ):
+    s = self.bits.size
+    return self.bits.size[1]
+</t>
+<t tx="karstenw.20210615171043.1"></t>
+<t tx="karstenw.20210615171057.1"></t>
+<t tx="karstenw.20210615171122.1"></t>
+<t tx="karstenw.20210615171216.1">if __name__ == '__main__':
+    d = Form.dotOfSize(511)
+    d.img.save("Form.dotOfSize(511).png")
+
+    p1 = Point(100,100)
+    p2 = Point(40,60)
+    p3 = Point(40,60)
+    
+    
+    r1 = Rectangle( p1, p2 )
+    print("R1: %s" % repr(r1) )
+    r2 = Rectangle.centerExtent(p1, p2)
+    imageRectangles( [r1,r2] )
+    
+    r3 = Rectangle.leftRightTopBottom( 10, 110, 10, 110 )
+    imageRectangles( [r1,r2,r3] )
+    
+    r4 = p1.extent( p2 )
+    imageRectangles( [r1,r2,r3,r4] )
+    
+    p2 = p1 * 2
+    imageRectangles( [r1,r2,r3,r4] )
+    
+    r5 = p1.extent( p2 )
+    imageRectangles( [r1,r2,r5] )
+    
+    r6 = p1.corner( p2 )
+    imageRectangles( [r1,r2,r6] )
+    
+    r7 = p2.rect( p1 )
+    imageRectangles( [r1,r2,r7] )
+    
+    r8 = Rectangle.centerExtent( Point( 50,50 ), Point(60,60) )
+    print("r8 = Rectangle.centerExtent( Point( 50,50 ), Point(60,60) ) =    %s" % repr(r8))
+    
+    print()
+    r9 = Rectangle.leftRightTopBottom( 10,490,10,890 )
+    print("r9 = Rectangle.leftRightTopBottom( 10,90,10,90 ) =    %s" % repr(r9))
+    
+    print()
+    r10 = Rectangle.merging( (r1,r2,r3,r4,r5,r6,r7,r8,r9) )
+    print("r10 = Rectangle.merging( (r1,r2,r3,r4,r5,r6,r7,r8,r9) ) =    %s" % repr(r10))
+    
+    imageRectangles( [r1,r2,r3,r4,r5,r6,r7,r8,r9] )
+    
+    pp([r1,r2,r3,r4,r5,r6,r7,r8,r9])
+
+</t>
 </tnodes>
 </leo_file>
