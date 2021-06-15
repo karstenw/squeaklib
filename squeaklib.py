@@ -493,8 +493,12 @@ class Rectangle(object):
     "Translated from a Squeak 3.7 image"
 
     def __init__(self, origin, corner):
-        self.porigin = makePoint( origin )
-        self.pcorner = makePoint( corner )
+        p1 = makePoint( origin )
+        p2 = makePoint( corner )
+        if p2 < p1:
+            p1, p2 = p2, p1
+        self.porigin = p1
+        self.pcorner = p2
 
 
     def __repr__( self ):
@@ -781,6 +785,10 @@ class Rectangle(object):
                 self.origin.y,
                 self.corner.x,
                 self.corner.y]
+
+    def asPointList( self ):
+        return [self.origin, self.corner]
+
 
     def bordersOnAlong( self, her, herSide ):
         if (   (herSide == b"right" and self.left == her.right)
