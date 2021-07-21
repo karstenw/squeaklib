@@ -800,11 +800,16 @@ class Rectangle(object):
             return  max(self.left, her.left) < min(self.right, her.right)
         return False
 
-    def encompass( self, aPoint ):
+    def encompass( self, aPointOrRect ):
         """Answer a Rectangle that contains both the receiver and aPoint.
            5/30/96 sw"""
-        return Rectangle( min(self.origin, aPoint.origin),
-                          max(self.corner, aPoint.corner) )
+        if type( aPointOrRect ) in (Rectangle,):
+            return Rectangle( min(self.origin, aPointOrRect.origin),
+                              max(self.corner, aPointOrRect.corner) )
+        else:
+            aPointOrRect = makepoint( aPointOrRect )
+            return Rectangle( min(self.origin, aPointOrRect),
+                              max(self.corner, aPointOrRect) )
 
     def expandBy( self, delta ):
         """Answer a Rectangle that is outset from the receiver by delta.

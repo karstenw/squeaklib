@@ -9,7 +9,7 @@
 <preferences/>
 <find_panel_settings/>
 <vnodes>
-<v t="karstenw.20210301114724.1"><vh>@clean squeaklib.py</vh>
+<v t="karstenw.20210301114724.1" a="E"><vh>@clean squeaklib.py</vh>
 <v t="karstenw.20210301114724.2"><vh>declarations</vh></v>
 <v t="karstenw.20210301114724.4"><vh>tools</vh>
 <v t="karstenw.20210301114724.5"><vh>makePoint</vh></v>
@@ -106,7 +106,7 @@
 <v t="karstenw.20210301114724.29"><vh>corners extent</vh></v>
 </v>
 <v t="karstenw.20210301114724.37"><vh>instance methods</vh>
-<v t="karstenw.20210301114724.38" a="E"><vh>rectangle methods</vh>
+<v t="karstenw.20210301114724.38"><vh>rectangle methods</vh>
 <v t="karstenw.20210401151132.1"><vh>withRight</vh></v>
 <v t="karstenw.20210401151145.1"><vh>withLeft</vh></v>
 <v t="karstenw.20210401151154.1"><vh>withBottom</vh></v>
@@ -151,7 +151,7 @@
 <v t="karstenw.20210403125202.2"><vh>truncateTo</vh></v>
 <v t="karstenw.20210403125202.3"><vh>truncated</vh></v>
 </v>
-<v t="karstenw.20210301114724.40" a="E"><vh>transforming</vh>
+<v t="karstenw.20210301114724.40"><vh>transforming</vh>
 <v t="karstenw.20210403113650.1"><vh>alignWith</vh></v>
 <v t="karstenw.20210403113653.1"><vh>centeredBeneath</vh></v>
 <v t="karstenw.20210403113653.2"><vh>flipByCenterAt</vh></v>
@@ -165,7 +165,7 @@
 <v t="karstenw.20210301114724.41"><vh>inRect</vh></v>
 </v>
 <v t="karstenw.20210301114724.34"><vh>class methods</vh>
-<v t="karstenw.20210403114922.1" a="E"><vh>instance creation</vh>
+<v t="karstenw.20210403114922.1"><vh>instance creation</vh>
 <v t="karstenw.20210301114724.35"><vh>centerExtent</vh></v>
 <v t="karstenw.20210403114944.1"><vh>encompassing</vh></v>
 <v t="karstenw.20210301114724.36"><vh>leftRightTopBottom</vh></v>
@@ -687,11 +687,16 @@ def originExtent( cls, originPoint, extentPoint ):
     return False
 
 </t>
-<t tx="karstenw.20210401151242.1">def encompass( self, aPoint ):
+<t tx="karstenw.20210401151242.1">def encompass( self, aPointOrRect ):
     """Answer a Rectangle that contains both the receiver and aPoint.
        5/30/96 sw"""
-    return Rectangle( min(self.origin, aPoint.origin),
-                      max(self.corner, aPoint.corner) )
+    if type( aPointOrRect ) in (Rectangle,):
+        return Rectangle( min(self.origin, aPointOrRect.origin),
+                          max(self.corner, aPointOrRect.corner) )
+    else:
+        aPointOrRect = makepoint( aPointOrRect )
+        return Rectangle( min(self.origin, aPointOrRect),
+                          max(self.corner, aPointOrRect) )
 
 </t>
 <t tx="karstenw.20210401151248.1">def expandBy( self, delta ):
