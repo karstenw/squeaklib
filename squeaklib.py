@@ -35,6 +35,8 @@ def makePoint( *args  ):
 
 
 def sign( number ):
+    """I can't believe that Python does not have a sign() function."""
+
     if number > 0:
         return +1
     elif number < 0:
@@ -497,8 +499,8 @@ class Rectangle(object):
         p2 = makePoint( corner )
         if p2 < p1:
             p1, p2 = p2, p1
-        self.porigin = p1
-        self.pcorner = p2
+        self.origin = p1
+        self.corner = p2
 
 
     def __repr__( self ):
@@ -534,16 +536,16 @@ class Rectangle(object):
 
     # origin
     def getorigin(self):
-        return self.porigin
+        return self.origin
     def setorigin(self, val):
-        self.porigin = val
+        self.origin = makePoint( val )
     origin = property(getorigin, setorigin)
 
     # corner
     def getcorner(self):
-        return self.pcorner
+        return self.corner
     def setcorner(self, val):
-        self.pcorner = val
+        self.corner = makePoint( val )
     corner = property(getcorner, setcorner)
 
     def setOriginCorner( self, origin, corner ):

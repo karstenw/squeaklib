@@ -9,20 +9,20 @@
 <preferences/>
 <find_panel_settings/>
 <vnodes>
-<v t="karstenw.20210301114724.1"><vh>@clean squeaklib.py</vh>
+<v t="karstenw.20210301114724.1" a="E"><vh>@clean squeaklib.py</vh>
 <v t="karstenw.20210301114724.2"><vh>declarations</vh></v>
-<v t="karstenw.20210301114724.4"><vh>tools</vh>
+<v t="karstenw.20210301114724.4" a="E"><vh>tools</vh>
 <v t="karstenw.20210301114724.5"><vh>makePoint</vh></v>
 <v t="karstenw.20210401150717.1"><vh>sign</vh></v>
 </v>
-<v t="karstenw.20210301114724.6"><vh>Point</vh>
-<v t="karstenw.20210504100313.1"><vh>__python__</vh>
+<v t="karstenw.20210301114724.6" a="E"><vh>Point</vh>
+<v t="karstenw.20210504100313.1" a="E"><vh>__python__</vh>
 <v t="karstenw.20210301114724.7"><vh>__init__</vh></v>
 <v t="karstenw.20210401150733.1"><vh>__repr__</vh></v>
 <v t="karstenw.20210301114724.8"><vh>__lt|le|gt|ge|eq|ne|add|sub|mul__</vh></v>
 </v>
-<v t="karstenw.20210403131024.1"><vh>instance methods</vh>
-<v t="karstenw.20210301114724.10"><vh>converting</vh>
+<v t="karstenw.20210403131024.1" a="E"><vh>instance methods</vh>
+<v t="karstenw.20210301114724.10" a="E"><vh>converting</vh>
 <v t="karstenw.20210401163629.1"><vh>asFloatPoint</vh></v>
 <v t="karstenw.20210401163648.1"><vh>asIntegerPoint</vh></v>
 <v t="karstenw.20210401163653.1"><vh>corner -&gt; Rectangle</vh></v>
@@ -33,7 +33,7 @@
 </v>
 <v t="karstenw.20210301114724.11"><vh>copying</vh></v>
 <v t="karstenw.20210301114724.12"><vh>geometry</vh></v>
-<v t="karstenw.20210301114724.13"><vh>point functions</vh>
+<v t="karstenw.20210301114724.13" a="E"><vh>point functions</vh>
 <v t="karstenw.20210401164244.1"><vh>interpolateToAt</vh></v>
 <v t="karstenw.20210401164258.1"><vh>bearingToPoint</vh></v>
 <v t="karstenw.20210401164304.1"><vh>crossProduct</vh></v>
@@ -90,13 +90,13 @@
 </v>
 </v>
 </v>
-<v t="karstenw.20210301114724.19"><vh>Rectangle</vh>
-<v t="karstenw.20210504100438.1"><vh>__python__</vh>
+<v t="karstenw.20210301114724.19" a="E"><vh>Rectangle</vh>
+<v t="karstenw.20210504100438.1" a="E"><vh>__python__</vh>
 <v t="karstenw.20210301114724.20"><vh>__init__</vh></v>
 <v t="karstenw.20210401150836.1"><vh>__repr__</vh></v>
 <v t="karstenw.20210301114724.21"><vh>__eq|ne|add|sub|mul__</vh></v>
 </v>
-<v t="karstenw.20210301114724.22"><vh>properties</vh>
+<v t="karstenw.20210301114724.22" a="E"><vh>properties</vh>
 <v t="karstenw.20210301114724.23"><vh>origin corner</vh></v>
 <v t="karstenw.20210301114724.24"><vh>height width area</vh></v>
 <v t="karstenw.20210301114724.25"><vh>top left bottom right</vh></v>
@@ -257,8 +257,8 @@ __all__ = ['makePoint', 'Point', 'Rectangle']
     p2 = makePoint( corner )
     if p2 &lt; p1:
         p1, p2 = p2, p1
-    self.porigin = p1
-    self.pcorner = p2
+    self.origin = p1
+    self.corner = p2
 
 
 </t>
@@ -293,16 +293,16 @@ def __mul__( self, other):
 <t tx="karstenw.20210301114724.22"></t>
 <t tx="karstenw.20210301114724.23"># origin
 def getorigin(self):
-    return self.porigin
+    return self.origin
 def setorigin(self, val):
-    self.porigin = val
+    self.origin = makePoint( val )
 origin = property(getorigin, setorigin)
 
 # corner
 def getcorner(self):
-    return self.pcorner
+    return self.corner
 def setcorner(self, val):
-    self.pcorner = val
+    self.corner = makePoint( val )
 corner = property(getcorner, setcorner)
 
 def setOriginCorner( self, origin, corner ):
@@ -555,6 +555,8 @@ def __mul__( self, other):
 
 </t>
 <t tx="karstenw.20210401150717.1">def sign( number ):
+    """I can't believe that Python does not have a sign() function."""
+
     if number &gt; 0:
         return +1
     elif number &lt; 0:
@@ -1614,10 +1616,10 @@ import PIL.ImageDraw as ImageDraw
 
 import pdb
 
-import squeakgeometry
-makePoint = squeakgeometry.makePoint
-Point = squeakgeometry.Point
-Rectangle = squeakgeometry.Rectangle
+import squeaklib
+makePoint = squeaklib.makePoint
+Point = squeaklib.Point
+Rectangle = squeaklib.Rectangle
 
 import photobot as pb
 
