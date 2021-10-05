@@ -22,7 +22,7 @@
 <v t="karstenw.20210301114724.8"><vh>__lt|le|gt|ge|eq|ne|add|sub|mul__</vh></v>
 </v>
 <v t="karstenw.20210403131024.1" a="E"><vh>instance methods</vh>
-<v t="karstenw.20210301114724.10" a="E"><vh>converting</vh>
+<v t="karstenw.20210301114724.10"><vh>converting</vh>
 <v t="karstenw.20210401163629.1"><vh>asFloatPoint</vh></v>
 <v t="karstenw.20210401163648.1"><vh>asIntegerPoint</vh></v>
 <v t="karstenw.20210401163653.1"><vh>corner -&gt; Rectangle</vh></v>
@@ -33,7 +33,7 @@
 </v>
 <v t="karstenw.20210301114724.11"><vh>copying</vh></v>
 <v t="karstenw.20210301114724.12"><vh>geometry</vh></v>
-<v t="karstenw.20210301114724.13" a="E"><vh>point functions</vh>
+<v t="karstenw.20210301114724.13"><vh>point functions</vh>
 <v t="karstenw.20210401164244.1"><vh>interpolateToAt</vh></v>
 <v t="karstenw.20210401164258.1"><vh>bearingToPoint</vh></v>
 <v t="karstenw.20210401164304.1"><vh>crossProduct</vh></v>
@@ -257,8 +257,8 @@ __all__ = ['makePoint', 'Point', 'Rectangle']
     p2 = makePoint( corner )
     if p2 &lt; p1:
         p1, p2 = p2, p1
-    self.origin = p1
-    self.corner = p2
+    self.porigin = p1
+    self.pcorner = p2
 
 
 </t>
@@ -293,16 +293,16 @@ def __mul__( self, other):
 <t tx="karstenw.20210301114724.22"></t>
 <t tx="karstenw.20210301114724.23"># origin
 def getorigin(self):
-    return self.origin
+    return self.porigin
 def setorigin(self, val):
-    self.origin = makePoint( val )
+    self.porigin = makePoint( val )
 origin = property(getorigin, setorigin)
 
 # corner
 def getcorner(self):
-    return self.corner
+    return self.pcorner
 def setcorner(self, val):
-    self.corner = makePoint( val )
+    self.pcorner = makePoint( val )
 corner = property(getcorner, setcorner)
 
 def setOriginCorner( self, origin, corner ):

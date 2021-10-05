@@ -499,8 +499,8 @@ class Rectangle(object):
         p2 = makePoint( corner )
         if p2 < p1:
             p1, p2 = p2, p1
-        self.origin = p1
-        self.corner = p2
+        self.porigin = p1
+        self.pcorner = p2
 
 
     def __repr__( self ):
@@ -536,16 +536,16 @@ class Rectangle(object):
 
     # origin
     def getorigin(self):
-        return self.origin
+        return self.porigin
     def setorigin(self, val):
-        self.origin = makePoint( val )
+        self.porigin = makePoint( val )
     origin = property(getorigin, setorigin)
 
     # corner
     def getcorner(self):
-        return self.corner
+        return self.pcorner
     def setcorner(self, val):
-        self.corner = makePoint( val )
+        self.pcorner = makePoint( val )
     corner = property(getcorner, setcorner)
 
     def setOriginCorner( self, origin, corner ):
