@@ -406,8 +406,8 @@ class Point(object):
 
 
     def bitShiftPoint(self, bits ):
-        self.x = int(self.x) << int(bits)
-        self.y = int(self.y) << int(bits)
+        self.x = int(round(self.x)) << int(bits)
+        self.y = int(round(self.y)) << int(bits)
 
     def setRDegrees(self, rho, degrees ):
         radians = math.radians( float(degrees) )

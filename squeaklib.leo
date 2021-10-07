@@ -22,7 +22,7 @@
 <v t="karstenw.20210301114724.8"><vh>__lt|le|gt|ge|eq|ne|add|sub|mul__</vh></v>
 </v>
 <v t="karstenw.20210403131024.1" a="E"><vh>instance methods</vh>
-<v t="karstenw.20210301114724.10"><vh>converting</vh>
+<v t="karstenw.20210301114724.10" a="E"><vh>converting</vh>
 <v t="karstenw.20210401163629.1"><vh>asFloatPoint</vh></v>
 <v t="karstenw.20210401163648.1"><vh>asIntegerPoint</vh></v>
 <v t="karstenw.20210401163653.1"><vh>corner -&gt; Rectangle</vh></v>
@@ -33,7 +33,7 @@
 </v>
 <v t="karstenw.20210301114724.11"><vh>copying</vh></v>
 <v t="karstenw.20210301114724.12"><vh>geometry</vh></v>
-<v t="karstenw.20210301114724.13"><vh>point functions</vh>
+<v t="karstenw.20210301114724.13" a="E"><vh>point functions</vh>
 <v t="karstenw.20210401164244.1"><vh>interpolateToAt</vh></v>
 <v t="karstenw.20210401164258.1"><vh>bearingToPoint</vh></v>
 <v t="karstenw.20210401164304.1"><vh>crossProduct</vh></v>
@@ -57,17 +57,17 @@
 <v t="karstenw.20210401164520.1"><vh>squaredDistanceTo</vh></v>
 <v t="karstenw.20210401164525.1"><vh>transposed</vh></v>
 </v>
-<v t="karstenw.20210301114724.14"><vh>polar coordinates</vh>
+<v t="karstenw.20210301114724.14" a="E"><vh>polar coordinates</vh>
 <v t="karstenw.20210401164734.1"><vh>degrees</vh></v>
 <v t="karstenw.20210401164748.1"><vh>degreesWith</vh></v>
 <v t="karstenw.20210401164754.1"><vh>r</vh></v>
 <v t="karstenw.20210401164800.1"><vh>theta</vh></v>
 </v>
-<v t="karstenw.20210301114724.15"><vh>private</vh>
+<v t="karstenw.20210301114724.15" a="E"><vh>private</vh>
 <v t="karstenw.20210401164823.1"><vh>bitShiftPoint</vh></v>
 <v t="karstenw.20210401164825.1"><vh>setRDegrees</vh></v>
 </v>
-<v t="karstenw.20210301114724.16"><vh>transforming</vh>
+<v t="karstenw.20210301114724.16" a="E"><vh>transforming</vh>
 <v t="karstenw.20210401164901.1"><vh>adhereTo</vh></v>
 <v t="karstenw.20210401164909.1"><vh>negated</vh></v>
 <v t="karstenw.20210401164917.1"><vh>scaleBy</vh></v>
@@ -1226,8 +1226,8 @@ def octantOf(self, otherPt ):
 
 </t>
 <t tx="karstenw.20210401164823.1">def bitShiftPoint(self, bits ):
-    self.x = int(self.x) &lt;&lt; int(bits)
-    self.y = int(self.y) &lt;&lt; int(bits)
+    self.x = int(round(self.x)) &lt;&lt; int(bits)
+    self.y = int(round(self.y)) &lt;&lt; int(bits)
 
 </t>
 <t tx="karstenw.20210401164825.1">def setRDegrees(self, rho, degrees ):
