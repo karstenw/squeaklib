@@ -19,15 +19,14 @@ __all__ = ['makePoint', 'Point', 'Rectangle']
 
 def makePoint( *args  ):
     "Tries to create a Point from args."
-    # print("makePoint()")
-    # pp( args )
     n = len(args)
     if n == 1:
-        if isinstance(args[0], Point):
+        typ = type( args[0] )
+        if typ in (Point,):
             return args[0]
-        elif isinstance(args[0], int):
+        elif typ in (long, int, float):
             return Point( args[0], args[0] )
-        else:
+        elif typ in (list, tuple):
             return Point( args[0][0], args[0][1] )
     elif n == 2:
         return Point( args[0], args[1] )

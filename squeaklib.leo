@@ -16,13 +16,13 @@
 <v t="karstenw.20210401150717.1"><vh>sign</vh></v>
 </v>
 <v t="karstenw.20210301114724.6" a="E"><vh>Point</vh>
-<v t="karstenw.20210504100313.1" a="E"><vh>__python__</vh>
+<v t="karstenw.20210504100313.1"><vh>__python__</vh>
 <v t="karstenw.20210301114724.7"><vh>__init__</vh></v>
 <v t="karstenw.20210401150733.1"><vh>__repr__</vh></v>
 <v t="karstenw.20210301114724.8"><vh>__lt|le|gt|ge|eq|ne|add|sub|mul__</vh></v>
 </v>
-<v t="karstenw.20210403131024.1" a="E"><vh>instance methods</vh>
-<v t="karstenw.20210301114724.10" a="E"><vh>converting</vh>
+<v t="karstenw.20210403131024.1"><vh>instance methods</vh>
+<v t="karstenw.20210301114724.10"><vh>converting</vh>
 <v t="karstenw.20210401163629.1"><vh>asFloatPoint</vh></v>
 <v t="karstenw.20210401163648.1"><vh>asIntegerPoint</vh></v>
 <v t="karstenw.20210401163653.1"><vh>corner -&gt; Rectangle</vh></v>
@@ -33,7 +33,7 @@
 </v>
 <v t="karstenw.20210301114724.11"><vh>copying</vh></v>
 <v t="karstenw.20210301114724.12"><vh>geometry</vh></v>
-<v t="karstenw.20210301114724.13" a="E"><vh>point functions</vh>
+<v t="karstenw.20210301114724.13"><vh>point functions</vh>
 <v t="karstenw.20210401164244.1"><vh>interpolateToAt</vh></v>
 <v t="karstenw.20210401164258.1"><vh>bearingToPoint</vh></v>
 <v t="karstenw.20210401164304.1"><vh>crossProduct</vh></v>
@@ -57,17 +57,17 @@
 <v t="karstenw.20210401164520.1"><vh>squaredDistanceTo</vh></v>
 <v t="karstenw.20210401164525.1"><vh>transposed</vh></v>
 </v>
-<v t="karstenw.20210301114724.14" a="E"><vh>polar coordinates</vh>
+<v t="karstenw.20210301114724.14"><vh>polar coordinates</vh>
 <v t="karstenw.20210401164734.1"><vh>degrees</vh></v>
 <v t="karstenw.20210401164748.1"><vh>degreesWith</vh></v>
 <v t="karstenw.20210401164754.1"><vh>r</vh></v>
 <v t="karstenw.20210401164800.1"><vh>theta</vh></v>
 </v>
-<v t="karstenw.20210301114724.15" a="E"><vh>private</vh>
+<v t="karstenw.20210301114724.15"><vh>private</vh>
 <v t="karstenw.20210401164823.1"><vh>bitShiftPoint</vh></v>
 <v t="karstenw.20210401164825.1"><vh>setRDegrees</vh></v>
 </v>
-<v t="karstenw.20210301114724.16" a="E"><vh>transforming</vh>
+<v t="karstenw.20210301114724.16"><vh>transforming</vh>
 <v t="karstenw.20210401164901.1"><vh>adhereTo</vh></v>
 <v t="karstenw.20210401164909.1"><vh>negated</vh></v>
 <v t="karstenw.20210401164917.1"><vh>scaleBy</vh></v>
@@ -91,7 +91,7 @@
 </v>
 </v>
 <v t="karstenw.20210301114724.19" a="E"><vh>Rectangle</vh>
-<v t="karstenw.20210504100438.1" a="E"><vh>__python__</vh>
+<v t="karstenw.20210504100438.1"><vh>__python__</vh>
 <v t="karstenw.20210301114724.20"><vh>__init__</vh></v>
 <v t="karstenw.20210401150836.1"><vh>__repr__</vh></v>
 <v t="karstenw.20210301114724.21"><vh>__eq|ne|add|sub|mul__</vh></v>
@@ -105,7 +105,7 @@
 <v t="karstenw.20210301114724.28"><vh>bottomcenter topcenter leftcenter rightcenter</vh></v>
 <v t="karstenw.20210301114724.29"><vh>corners extent</vh></v>
 </v>
-<v t="karstenw.20210301114724.37"><vh>instance methods</vh>
+<v t="karstenw.20210301114724.37" a="E"><vh>instance methods</vh>
 <v t="karstenw.20210301114724.38" a="E"><vh>rectangle methods</vh>
 <v t="karstenw.20210401151132.1"><vh>withRight</vh></v>
 <v t="karstenw.20210401151145.1"><vh>withLeft</vh></v>
@@ -175,16 +175,16 @@
 </v>
 </v>
 </v>
-<v t="karstenw.20210615170955.1"><vh>@clean Form.py</vh>
+<v t="karstenw.20210615170955.1" a="E"><vh>@clean Form.py</vh>
 <v t="karstenw.20210615171004.1"><vh>Declarations</vh></v>
-<v t="karstenw.20210615171004.2"><vh>class Form</vh>
+<v t="karstenw.20210615171004.2" a="E"><vh>class Form</vh>
 <v t="karstenw.20210615171004.3"><vh>__init__</vh></v>
 <v t="karstenw.20210615171004.4"><vh>__repr__</vh></v>
-<v t="karstenw.20210615171043.1"><vh>BITS</vh>
+<v t="karstenw.20210615171043.1" a="E"><vh>BITS</vh>
 <v t="karstenw.20210615171004.5"><vh>getbits</vh></v>
 <v t="karstenw.20210615171004.6"><vh>setbits</vh></v>
 </v>
-<v t="karstenw.20210615171057.1"><vh>WIDTH &amp; HEIGHT</vh>
+<v t="karstenw.20210615171057.1" a="E"><vh>WIDTH &amp; HEIGHT</vh>
 <v t="karstenw.20210615171004.7"><vh>getwidth</vh></v>
 <v t="karstenw.20210615171004.8"><vh>setwidth</vh></v>
 <v t="karstenw.20210615171004.9"><vh>getheight</vh></v>
@@ -484,15 +484,14 @@ def outerSquareRect(self):
 </t>
 <t tx="karstenw.20210301114724.5">def makePoint( *args  ):
     "Tries to create a Point from args."
-    # print("makePoint()")
-    # pp( args )
     n = len(args)
     if n == 1:
-        if isinstance(args[0], Point):
+        typ = type( args[0] )
+        if typ in (Point,):
             return args[0]
-        elif isinstance(args[0], int):
+        elif typ in (long, int, float):
             return Point( args[0], args[0] )
-        else:
+        elif typ in (list, tuple):
             return Point( args[0][0], args[0][1] )
     elif n == 2:
         return Point( args[0], args[1] )
@@ -1735,9 +1734,9 @@ def dotOfSize( cls, dotSizePoint ):
                                         self.mode)
 
 
-# bits
 </t>
-<t tx="karstenw.20210615171004.5">def getbits(self):
+<t tx="karstenw.20210615171004.5"># bits
+def getbits(self):
     return self.img
 </t>
 <t tx="karstenw.20210615171004.6">def setbits(self, img):
@@ -1745,9 +1744,9 @@ def dotOfSize( cls, dotSizePoint ):
         self.img = img
 bits = property(getbits, setbits)
 
-# width
 </t>
-<t tx="karstenw.20210615171004.7">def getwidth( self ):
+<t tx="karstenw.20210615171004.7"># width
+def getwidth( self ):
     s = self.bits.size
     return self.bits.size[0]
 </t>
@@ -1755,9 +1754,9 @@ bits = property(getbits, setbits)
     pass
 width = property(getwidth) #, setwidth)
 
-# height
 </t>
-<t tx="karstenw.20210615171004.9">def getheight( self ):
+<t tx="karstenw.20210615171004.9"># height
+def getheight( self ):
     s = self.bits.size
     return self.bits.size[1]
 </t>
