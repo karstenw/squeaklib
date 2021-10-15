@@ -9,358 +9,261 @@
 <preferences/>
 <find_panel_settings/>
 <vnodes>
-<v t="karstenw.20210301114724.1" a="E"><vh>@clean squeaklib.py</vh>
-<v t="karstenw.20210301114724.2"><vh>declarations</vh></v>
-<v t="karstenw.20210301114724.4" a="E"><vh>tools</vh>
+<v t="karstenw.20211015160132.1"><vh>@clean squeaklib/__init__.py</vh>
+<v t="karstenw.20211015160216.1"><vh>newHeadline</vh></v>
+</v>
+<v t="karstenw.20211015160313.1"><vh>@clean squeaklib/point.py</vh>
+<v t="karstenw.20211015171659.1"><vh>declarations</vh></v>
+<v t="karstenw.20211015172141.1" a="E"><vh>tools</vh>
 <v t="karstenw.20210301114724.5"><vh>makePoint</vh></v>
 <v t="karstenw.20210401150717.1"><vh>sign</vh></v>
 </v>
-<v t="karstenw.20210301114724.6" a="E"><vh>Point</vh>
-<v t="karstenw.20210504100313.1"><vh>__python__</vh>
-<v t="karstenw.20210301114724.7"><vh>__init__</vh></v>
-<v t="karstenw.20210401150733.1"><vh>__repr__</vh></v>
-<v t="karstenw.20210301114724.8"><vh>__lt|le|gt|ge|eq|ne|add|sub|mul__</vh></v>
+<v t="karstenw.20211015171541.1"><vh>Point</vh>
+<v t="karstenw.20211015171541.2"><vh>__python__</vh>
+<v t="karstenw.20211015171541.3"><vh>__init__</vh></v>
+<v t="karstenw.20211015171541.4"><vh>__repr__</vh></v>
+<v t="karstenw.20211015171541.5"><vh>__lt|le|gt|ge|eq|ne|add|sub|mul__</vh></v>
 </v>
-<v t="karstenw.20210403131024.1"><vh>instance methods</vh>
-<v t="karstenw.20210301114724.10"><vh>converting</vh>
-<v t="karstenw.20210401163629.1"><vh>asFloatPoint</vh></v>
-<v t="karstenw.20210401163648.1"><vh>asIntegerPoint</vh></v>
-<v t="karstenw.20210401163653.1"><vh>corner -&gt; Rectangle</vh></v>
-<v t="karstenw.20210401163657.1"><vh>extent -&gt; Rectangle</vh></v>
-<v t="karstenw.20210401163702.1"><vh>isPoint</vh></v>
-<v t="karstenw.20210401163706.1"><vh>rect -&gt; Rectangle</vh></v>
-<v t="karstenw.20210403130944.1"><vh>asArray</vh></v>
+<v t="karstenw.20211015171541.6" a="E"><vh>instance methods</vh>
+<v t="karstenw.20211015171541.7"><vh>converting</vh>
+<v t="karstenw.20211015171541.8"><vh>asFloatPoint</vh></v>
+<v t="karstenw.20211015171541.9"><vh>asIntegerPoint</vh></v>
+<v t="karstenw.20211015171541.10"><vh>corner -&gt; Rectangle</vh></v>
+<v t="karstenw.20211015171541.11"><vh>extent -&gt; Rectangle</vh></v>
+<v t="karstenw.20211015171541.12"><vh>isPoint</vh></v>
+<v t="karstenw.20211015171541.13"><vh>rect -&gt; Rectangle</vh></v>
+<v t="karstenw.20211015171541.14"><vh>asArray</vh></v>
 </v>
-<v t="karstenw.20210301114724.11"><vh>copying</vh></v>
-<v t="karstenw.20210301114724.12"><vh>geometry</vh></v>
-<v t="karstenw.20210301114724.13"><vh>point functions</vh>
-<v t="karstenw.20210401164244.1"><vh>interpolateToAt</vh></v>
-<v t="karstenw.20210401164258.1"><vh>bearingToPoint</vh></v>
-<v t="karstenw.20210401164304.1"><vh>crossProduct</vh></v>
-<v t="karstenw.20210401164311.1"><vh>dist</vh></v>
-<v t="karstenw.20210401164317.1"><vh>dotProduct</vh></v>
-<v t="karstenw.20210401164322.1"><vh>eightNeighbors</vh></v>
-<v t="karstenw.20210401164329.1"><vh>fourNeighbors</vh></v>
-<v t="karstenw.20210401164335.1"><vh>flipByCenterAt</vh></v>
-<v t="karstenw.20210401164341.1"><vh>grid</vh></v>
-<v t="karstenw.20210401164347.1"><vh>insideTriangle</vh></v>
-<v t="karstenw.20210401164357.1"><vh>nearestPointAlongLineFromTo</vh></v>
-<v t="karstenw.20210401164421.1"><vh>skalarPointOnLine</vh></v>
-<v t="karstenw.20210401164432.1"><vh>normal</vh></v>
-<v t="karstenw.20210401164439.1"><vh>normalized</vh></v>
-<v t="karstenw.20210401164444.1"><vh>octantOf</vh></v>
-<v t="karstenw.20210401164450.1"><vh>onLineFromTo</vh></v>
-<v t="karstenw.20210401164455.1"><vh>onLineFromToWithin</vh></v>
-<v t="karstenw.20210401164503.1"><vh>quadrantOf</vh></v>
-<v t="karstenw.20210401164509.1"><vh>rotateByCenterAt</vh></v>
-<v t="karstenw.20210401164515.1"><vh>sortsBefore</vh></v>
-<v t="karstenw.20210401164520.1"><vh>squaredDistanceTo</vh></v>
-<v t="karstenw.20210401164525.1"><vh>transposed</vh></v>
+<v t="karstenw.20211015171541.15"><vh>copying</vh></v>
+<v t="karstenw.20211015171541.16"><vh>geometry</vh></v>
+<v t="karstenw.20211015171541.17" a="E"><vh>point functions</vh>
+<v t="karstenw.20211015171541.18"><vh>interpolateToAt</vh></v>
+<v t="karstenw.20211015171541.19"><vh>bearingToPoint</vh></v>
+<v t="karstenw.20211015171541.20"><vh>crossProduct</vh></v>
+<v t="karstenw.20211015171541.21"><vh>dist</vh></v>
+<v t="karstenw.20211015171541.22"><vh>dotProduct</vh></v>
+<v t="karstenw.20211015171541.23"><vh>eightNeighbors</vh></v>
+<v t="karstenw.20211015171541.24"><vh>fourNeighbors</vh></v>
+<v t="karstenw.20211015171541.25"><vh>flipByCenterAt</vh></v>
+<v t="karstenw.20211015171541.26"><vh>grid</vh></v>
+<v t="karstenw.20211015171541.27"><vh>insideTriangle</vh></v>
+<v t="karstenw.20211015171541.28"><vh>nearestPointAlongLineFromTo</vh></v>
+<v t="karstenw.20211015171541.29"><vh>skalarPointOnLine</vh></v>
+<v t="karstenw.20211015171541.30"><vh>normal</vh></v>
+<v t="karstenw.20211015171541.31"><vh>normalized</vh></v>
+<v t="karstenw.20211015171541.32"><vh>octantOf</vh></v>
+<v t="karstenw.20211015171541.33"><vh>onLineFromTo</vh></v>
+<v t="karstenw.20211015171541.34"><vh>onLineFromToWithin</vh></v>
+<v t="karstenw.20211015171541.35"><vh>quadrantOf</vh></v>
+<v t="karstenw.20211015171541.36"><vh>rotateByCenterAt</vh></v>
+<v t="karstenw.20211015171541.37"><vh>sortsBefore</vh></v>
+<v t="karstenw.20211015171541.38"><vh>squaredDistanceTo</vh></v>
+<v t="karstenw.20211015171541.39"><vh>transposed</vh></v>
 </v>
-<v t="karstenw.20210301114724.14"><vh>polar coordinates</vh>
-<v t="karstenw.20210401164734.1"><vh>degrees</vh></v>
-<v t="karstenw.20210401164748.1"><vh>degreesWith</vh></v>
-<v t="karstenw.20210401164754.1"><vh>r</vh></v>
-<v t="karstenw.20210401164800.1"><vh>theta</vh></v>
+<v t="karstenw.20211015171541.40"><vh>polar coordinates</vh>
+<v t="karstenw.20211015171541.41"><vh>degrees</vh></v>
+<v t="karstenw.20211015171541.42"><vh>degreesWith</vh></v>
+<v t="karstenw.20211015171541.43"><vh>r</vh></v>
+<v t="karstenw.20211015171541.44"><vh>theta</vh></v>
 </v>
-<v t="karstenw.20210301114724.15"><vh>private</vh>
-<v t="karstenw.20210401164823.1"><vh>bitShiftPoint</vh></v>
-<v t="karstenw.20210401164825.1"><vh>setRDegrees</vh></v>
+<v t="karstenw.20211015171541.45"><vh>private</vh>
+<v t="karstenw.20211015171541.46"><vh>bitShiftPoint</vh></v>
+<v t="karstenw.20211015171541.47"><vh>setRDegrees</vh></v>
 </v>
-<v t="karstenw.20210301114724.16"><vh>transforming</vh>
-<v t="karstenw.20210401164901.1"><vh>adhereTo</vh></v>
-<v t="karstenw.20210401164909.1"><vh>negated</vh></v>
-<v t="karstenw.20210401164917.1"><vh>scaleBy</vh></v>
-<v t="karstenw.20210401164922.1"><vh>scaleFromTo</vh></v>
-<v t="karstenw.20210401164927.1"><vh>rotateByAboutCenter</vh></v>
-<v t="karstenw.20210401164933.1"><vh>translateBy</vh></v>
+<v t="karstenw.20211015171541.48"><vh>transforming</vh>
+<v t="karstenw.20211015171541.49"><vh>adhereTo</vh></v>
+<v t="karstenw.20211015171541.50"><vh>negated</vh></v>
+<v t="karstenw.20211015171541.51"><vh>scaleBy</vh></v>
+<v t="karstenw.20211015171541.52"><vh>scaleFromTo</vh></v>
+<v t="karstenw.20211015171541.53"><vh>rotateByAboutCenter</vh></v>
+<v t="karstenw.20211015171541.54"><vh>translateBy</vh></v>
 </v>
-<v t="karstenw.20210301114724.17"><vh>truncation and round off</vh>
-<v t="karstenw.20210401165035.1"><vh>rounded</vh></v>
-<v t="karstenw.20210401165038.1"><vh>truncateTo</vh></v>
-<v t="karstenw.20210401165038.2"><vh>truncated</vh></v>
-</v>
-</v>
-<v t="karstenw.20210403131056.1"><vh>testing</vh>
-<v t="karstenw.20210301114724.9"><vh>isZero</vh></v>
-</v>
-<v t="karstenw.20210301114724.18"><vh>class methods</vh>
-<v t="karstenw.20210403130600.1"><vh>instance creation</vh>
-<v t="karstenw.20210403131045.1"><vh>rhoDegrees</vh></v>
+<v t="karstenw.20211015171541.55"><vh>truncation and round off</vh>
+<v t="karstenw.20211015171541.56"><vh>rounded</vh></v>
+<v t="karstenw.20211015171541.57"><vh>truncateTo</vh></v>
+<v t="karstenw.20211015171541.58"><vh>truncated</vh></v>
 </v>
 </v>
+<v t="karstenw.20211015171541.59"><vh>testing</vh>
+<v t="karstenw.20211015171541.60"><vh>isZero</vh></v>
 </v>
-<v t="karstenw.20210301114724.19" a="E"><vh>Rectangle</vh>
-<v t="karstenw.20210504100438.1"><vh>__python__</vh>
-<v t="karstenw.20210301114724.20"><vh>__init__</vh></v>
-<v t="karstenw.20210401150836.1"><vh>__repr__</vh></v>
-<v t="karstenw.20210301114724.21"><vh>__eq|ne|add|sub|mul__</vh></v>
-</v>
-<v t="karstenw.20210301114724.22" a="E"><vh>properties</vh>
-<v t="karstenw.20210301114724.23"><vh>origin corner</vh></v>
-<v t="karstenw.20210301114724.24"><vh>height width area</vh></v>
-<v t="karstenw.20210301114724.25"><vh>top left bottom right</vh></v>
-<v t="karstenw.20210301114724.26"><vh>topleft topright bottomleft bottomright</vh></v>
-<v t="karstenw.20210301114724.27"><vh>center</vh></v>
-<v t="karstenw.20210301114724.28"><vh>bottomcenter topcenter leftcenter rightcenter</vh></v>
-<v t="karstenw.20210301114724.29"><vh>corners extent</vh></v>
-</v>
-<v t="karstenw.20210301114724.37" a="E"><vh>instance methods</vh>
-<v t="karstenw.20210301114724.38" a="E"><vh>rectangle methods</vh>
-<v t="karstenw.20210401151132.1"><vh>withRight</vh></v>
-<v t="karstenw.20210401151145.1"><vh>withLeft</vh></v>
-<v t="karstenw.20210401151154.1"><vh>withBottom</vh></v>
-<v t="karstenw.20210401151202.1"><vh>withTop</vh></v>
-<v t="karstenw.20210401151209.1"><vh>withSideSetTo</vh></v>
-<v t="karstenw.20210401165417.1"><vh>withHeight</vh></v>
-<v t="karstenw.20210401165420.2"><vh>withWidth</vh></v>
-<v t="karstenw.20210401151219.1"><vh>amountToTranslateWithin</vh></v>
-<v t="karstenw.20210401151226.1"><vh>areasOutside</vh></v>
-<v t="karstenw.20210405143028.1"><vh>asArray</vh></v>
-<v t="karstenw.20210603123950.1"><vh>asPointList</vh></v>
-<v t="karstenw.20210401151234.1"><vh>bordersOnAlong</vh></v>
-<v t="karstenw.20210401151242.1"><vh>encompass</vh></v>
-<v t="karstenw.20210401151248.1"><vh>expandBy</vh></v>
-<v t="karstenw.20210401151257.1"><vh>extendBy</vh></v>
-<v t="karstenw.20210401151315.1"><vh>insetBy</vh></v>
-<v t="karstenw.20210401151321.1"><vh>insetOriginAndCornerBy</vh></v>
-<v t="karstenw.20210401151326.1"><vh>intersect</vh></v>
-<v t="karstenw.20210401151335.1"><vh>merge</vh></v>
-<v t="karstenw.20210401151341.1"><vh>outsetBy</vh></v>
-<v t="karstenw.20210401151347.1"><vh>pointNearestTo</vh></v>
-<v t="karstenw.20210401151604.1"><vh>quickMerge</vh></v>
-<v t="karstenw.20210401151606.1"><vh>rectanglesAtHeight</vh></v>
-<v t="karstenw.20210401151606.2"><vh>sideNearestTo</vh></v>
-<v t="karstenw.20210401151606.3"><vh>translatedToBeWithin</vh></v>
-<v t="karstenw.20210401165419.1"><vh>withSideOrCornerSetToPoint</vh></v>
-<v t="karstenw.20210401165419.2"><vh>withSideOrCornerSetToPointMinExtent</vh></v>
-<v t="karstenw.20210401165419.3"><vh>withSideOrCornerSetToPointMinExtentLimit</vh></v>
-</v>
-<v t="karstenw.20210301114724.39" a="E"><vh>testing</vh>
-<v t="karstenw.20210403125159.1"><vh>containsPoint</vh></v>
-<v t="karstenw.20210403125200.1"><vh>containsRect</vh></v>
-<v t="karstenw.20210403125201.1"><vh>fullIntersects</vh></v>
-<v t="karstenw.20210403125201.2"><vh>hasPositiveExtent</vh></v>
-<v t="karstenw.20210403125201.3"><vh>intersects</vh></v>
-<v t="karstenw.20210403125201.4"><vh>isTall</vh></v>
-<v t="karstenw.20210403125201.5"><vh>isWide</vh></v>
-<v t="karstenw.20210403125201.6"><vh>isZero</vh></v>
-</v>
-<v t="karstenw.20210403163241.1" a="E"><vh>truncation and round off</vh>
-<v t="karstenw.20210403125202.1"><vh>rounded</vh></v>
-<v t="karstenw.20210403125202.2"><vh>truncateTo</vh></v>
-<v t="karstenw.20210403125202.3"><vh>truncated</vh></v>
-</v>
-<v t="karstenw.20210301114724.40" a="E"><vh>transforming</vh>
-<v t="karstenw.20210403113650.1"><vh>alignWith</vh></v>
-<v t="karstenw.20210403113653.1"><vh>centeredBeneath</vh></v>
-<v t="karstenw.20210403113653.2"><vh>flipByCenterAt</vh></v>
-<v t="karstenw.20210403113653.3"><vh>rotateByCenterAt</vh></v>
-<v t="karstenw.20210403113654.1"><vh>scaleBy</vh></v>
-<v t="karstenw.20210403113654.2"><vh>scaleFromTo</vh></v>
-<v t="karstenw.20210403113654.3"><vh>squishedWithin</vh></v>
-<v t="karstenw.20210403113654.4"><vh>translateBy</vh></v>
-<v t="karstenw.20210403113925.1"><vh>translatedAndSquishedToBeWithin</vh></v>
-</v>
-<v t="karstenw.20210301114724.41"><vh>inRect</vh></v>
-</v>
-<v t="karstenw.20210301114724.34"><vh>class methods</vh>
-<v t="karstenw.20210403114922.1" a="E"><vh>instance creation</vh>
-<v t="karstenw.20210301114724.35"><vh>centerExtent</vh></v>
-<v t="karstenw.20210403114944.1"><vh>encompassing</vh></v>
-<v t="karstenw.20210301114724.36"><vh>leftRightTopBottom</vh></v>
-<v t="karstenw.20210403114944.5"><vh>merging</vh></v>
-<v t="karstenw.20210401151058.1"><vh>originExtent</vh></v>
+<v t="karstenw.20211015171541.61"><vh>class methods</vh>
+<v t="karstenw.20211015171541.62"><vh>instance creation</vh>
+<v t="karstenw.20211015171541.63"><vh>rhoDegrees</vh></v>
 </v>
 </v>
 </v>
 </v>
-<v t="karstenw.20210615170955.1" a="E"><vh>@clean Form.py</vh>
-<v t="karstenw.20210615171004.1"><vh>Declarations</vh></v>
-<v t="karstenw.20210615171004.2" a="E"><vh>class Form</vh>
-<v t="karstenw.20210615171004.3"><vh>__init__</vh></v>
-<v t="karstenw.20210615171004.4"><vh>__repr__</vh></v>
-<v t="karstenw.20210615171043.1" a="E"><vh>BITS</vh>
-<v t="karstenw.20210615171004.5"><vh>getbits</vh></v>
-<v t="karstenw.20210615171004.6"><vh>setbits</vh></v>
+<v t="karstenw.20211015160327.1"><vh>@clean squeaklib/rectangle.py</vh>
+<v t="karstenw.20211015171830.1"><vh>declarations</vh></v>
+<v t="karstenw.20211015172042.1" a="E"><vh>tools</vh>
+<v t="karstenw.20210301114724.5"></v>
 </v>
-<v t="karstenw.20210615171057.1" a="E"><vh>WIDTH &amp; HEIGHT</vh>
-<v t="karstenw.20210615171004.7"><vh>getwidth</vh></v>
-<v t="karstenw.20210615171004.8"><vh>setwidth</vh></v>
-<v t="karstenw.20210615171004.9"><vh>getheight</vh></v>
-<v t="karstenw.20210615171004.10"><vh>setheight</vh></v>
+<v t="karstenw.20211015171522.1" a="E"><vh>Rectangle</vh>
+<v t="karstenw.20211015171522.2" a="E"><vh>__python__</vh>
+<v t="karstenw.20211015171522.3"><vh>__init__</vh></v>
+<v t="karstenw.20211015171522.4"><vh>__repr__</vh></v>
+<v t="karstenw.20211015171522.5"><vh>__eq|ne|add|sub|mul__</vh></v>
 </v>
-<v t="karstenw.20210615171004.11"><vh>center</vh></v>
-<v t="karstenw.20210615171122.1"><vh>classmethods</vh>
-<v t="karstenw.20210615171004.12"><vh>extent</vh></v>
-<v t="karstenw.20210615171004.13"><vh>extentMode</vh></v>
-<v t="karstenw.20210615171004.14"><vh>dotOfSize</vh></v>
+<v t="karstenw.20211015171522.6"><vh>properties</vh>
+<v t="karstenw.20211015171522.7"><vh>origin corner</vh></v>
+<v t="karstenw.20211015171522.8"><vh>height width area</vh></v>
+<v t="karstenw.20211015171522.9"><vh>top left bottom right</vh></v>
+<v t="karstenw.20211015171522.10"><vh>topleft topright bottomleft bottomright</vh></v>
+<v t="karstenw.20211015171522.11"><vh>center</vh></v>
+<v t="karstenw.20211015171522.12"><vh>bottomcenter topcenter leftcenter rightcenter</vh></v>
+<v t="karstenw.20211015171522.13"><vh>corners extent</vh></v>
+</v>
+<v t="karstenw.20211015171522.14" a="E"><vh>instance methods</vh>
+<v t="karstenw.20211015171522.15"><vh>rectangle methods</vh>
+<v t="karstenw.20211015171522.16"><vh>withRight</vh></v>
+<v t="karstenw.20211015171522.17"><vh>withLeft</vh></v>
+<v t="karstenw.20211015171522.18"><vh>withBottom</vh></v>
+<v t="karstenw.20211015171522.19"><vh>withTop</vh></v>
+<v t="karstenw.20211015171522.20"><vh>withSideSetTo</vh></v>
+<v t="karstenw.20211015171522.21"><vh>withHeight</vh></v>
+<v t="karstenw.20211015171522.22"><vh>withWidth</vh></v>
+<v t="karstenw.20211015171522.23"><vh>amountToTranslateWithin</vh></v>
+<v t="karstenw.20211015171522.24"><vh>areasOutside</vh></v>
+<v t="karstenw.20211015171522.25"><vh>asArray</vh></v>
+<v t="karstenw.20211015171522.26"><vh>asPointList</vh></v>
+<v t="karstenw.20211015171522.27"><vh>bordersOnAlong</vh></v>
+<v t="karstenw.20211015171522.28"><vh>encompass</vh></v>
+<v t="karstenw.20211015171522.29"><vh>expandBy</vh></v>
+<v t="karstenw.20211015171522.30"><vh>extendBy</vh></v>
+<v t="karstenw.20211015171522.31"><vh>insetBy</vh></v>
+<v t="karstenw.20211015171522.32"><vh>insetOriginAndCornerBy</vh></v>
+<v t="karstenw.20211015171522.33"><vh>intersect</vh></v>
+<v t="karstenw.20211015171522.34"><vh>merge</vh></v>
+<v t="karstenw.20211015171522.35"><vh>outsetBy</vh></v>
+<v t="karstenw.20211015171522.36"><vh>pointNearestTo</vh></v>
+<v t="karstenw.20211015171522.37"><vh>quickMerge</vh></v>
+<v t="karstenw.20211015171522.38"><vh>rectanglesAtHeight</vh></v>
+<v t="karstenw.20211015171522.39"><vh>sideNearestTo</vh></v>
+<v t="karstenw.20211015171522.40"><vh>translatedToBeWithin</vh></v>
+<v t="karstenw.20211015171522.41"><vh>withSideOrCornerSetToPoint</vh></v>
+<v t="karstenw.20211015171522.42"><vh>withSideOrCornerSetToPointMinExtent</vh></v>
+<v t="karstenw.20211015171522.43"><vh>withSideOrCornerSetToPointMinExtentLimit</vh></v>
+</v>
+<v t="karstenw.20211015171522.44"><vh>testing</vh>
+<v t="karstenw.20211015171522.45"><vh>containsPoint</vh></v>
+<v t="karstenw.20211015171522.46"><vh>containsRect</vh></v>
+<v t="karstenw.20211015171522.47"><vh>fullIntersects</vh></v>
+<v t="karstenw.20211015171522.48"><vh>hasPositiveExtent</vh></v>
+<v t="karstenw.20211015171522.49"><vh>intersects</vh></v>
+<v t="karstenw.20211015171522.50"><vh>isTall</vh></v>
+<v t="karstenw.20211015171522.51"><vh>isWide</vh></v>
+<v t="karstenw.20211015171522.52"><vh>isZero</vh></v>
+</v>
+<v t="karstenw.20211015171522.53"><vh>truncation and round off</vh>
+<v t="karstenw.20211015171522.54"><vh>rounded</vh></v>
+<v t="karstenw.20211015171522.55"><vh>truncateTo</vh></v>
+<v t="karstenw.20211015171522.56"><vh>truncated</vh></v>
+</v>
+<v t="karstenw.20211015171522.57"><vh>transforming</vh>
+<v t="karstenw.20211015171522.58"><vh>alignWith</vh></v>
+<v t="karstenw.20211015171522.59"><vh>centeredBeneath</vh></v>
+<v t="karstenw.20211015171522.60"><vh>flipByCenterAt</vh></v>
+<v t="karstenw.20211015171522.61"><vh>rotateByCenterAt</vh></v>
+<v t="karstenw.20211015171522.62"><vh>scaleBy</vh></v>
+<v t="karstenw.20211015171522.63"><vh>scaleFromTo</vh></v>
+<v t="karstenw.20211015171522.64"><vh>squishedWithin</vh></v>
+<v t="karstenw.20211015171522.65"><vh>translateBy</vh></v>
+<v t="karstenw.20211015171522.66"><vh>translatedAndSquishedToBeWithin</vh></v>
+</v>
+<v t="karstenw.20211015171522.67"><vh>inRect</vh></v>
+</v>
+<v t="karstenw.20211015171522.68" a="E"><vh>class methods</vh>
+<v t="karstenw.20211015171522.69" a="E"><vh>instance creation</vh>
+<v t="karstenw.20211015171522.70"><vh>centerExtent</vh></v>
+<v t="karstenw.20211015171522.71"><vh>encompassing</vh></v>
+<v t="karstenw.20211015171522.72"><vh>leftRightTopBottom</vh></v>
+<v t="karstenw.20211015171522.73"><vh>merging</vh></v>
+<v t="karstenw.20211015171522.74"><vh>originExtent</vh></v>
 </v>
 </v>
-<v t="karstenw.20210615171004.15"><vh>imageRectangles</vh></v>
-<v t="karstenw.20210615171216.1"><vh>MAIN</vh></v>
+</v>
+</v>
+<v t="karstenw.20211015172441.1" a="E"><vh>@clean squeaklib/form.py</vh>
+<v t="karstenw.20211015172515.1"><vh>Declarations</vh></v>
+<v t="karstenw.20211015172526.1"><vh>class Form</vh>
+<v t="karstenw.20211015172526.2"><vh>__init__</vh></v>
+<v t="karstenw.20211015172526.3"><vh>__repr__</vh></v>
+<v t="karstenw.20211015172526.4" a="E"><vh>BITS</vh>
+<v t="karstenw.20211015172526.5"><vh>getbits</vh></v>
+<v t="karstenw.20211015172526.6"><vh>setbits</vh></v>
+</v>
+<v t="karstenw.20211015172526.7" a="E"><vh>WIDTH &amp; HEIGHT</vh>
+<v t="karstenw.20211015172526.8"><vh>getwidth</vh></v>
+<v t="karstenw.20211015172526.9"><vh>setwidth</vh></v>
+<v t="karstenw.20211015172526.10"><vh>getheight</vh></v>
+<v t="karstenw.20211015172526.11"><vh>setheight</vh></v>
+</v>
+<v t="karstenw.20211015172526.12"><vh>center</vh></v>
+<v t="karstenw.20211015172526.13"><vh>classmethods</vh>
+<v t="karstenw.20211015172526.14"><vh>extent</vh></v>
+<v t="karstenw.20211015172526.15"><vh>extentMode</vh></v>
+<v t="karstenw.20211015172526.16"><vh>dotOfSize</vh></v>
+</v>
+</v>
+<v t="karstenw.20211015172603.1"><vh>imageRectangles</vh></v>
+<v t="karstenw.20211015172611.1"><vh>MAIN</vh></v>
 </v>
 </vnodes>
 <tnodes>
-<t tx="karstenw.20210301114724.1">@language python
+<t tx="karstenw.20210301114724.5">def makePoint( *args  ):
+    "Tries to create a Point from args."
+    n = len(args)
+    if n == 1:
+        typ = type( args[0] )
+        if typ in (Point,):
+            return args[0]
+        elif typ in (long, int, float):
+            return Point( args[0], args[0] )
+        elif typ in (list, tuple):
+            return Point( args[0][0], args[0][1] )
+    elif n == 2:
+        return Point( args[0], args[1] )
+    return None
+
+
+</t>
+<t tx="karstenw.20210401150717.1">def sign( number ):
+    """I can't believe that Python does not have a sign() function."""
+
+    if number &gt; 0:
+        return +1
+    elif number &lt; 0:
+        return -1
+    return 0
+
+
+</t>
+<t tx="karstenw.20211015160132.1">@language python
 @tabwidth -4
 @others
 </t>
-<t tx="karstenw.20210301114724.10"></t>
-<t tx="karstenw.20210301114724.11">def copy( self ):
-    return Point( self.x, self.y )
+<t tx="karstenw.20211015160216.1">
+from .point import Point
 
-</t>
-<t tx="karstenw.20210301114724.12">def sideOf( self, otherPoint ):
-    """Returns #left, #right or #center if the otherPoint lies to the left,
-       right or on the line given by the vector from 0@0 to self"""
-    side = self.crossProduct( otherPoint )
-    side = sign( side )
-    sides = ('right', 'center', 'left')
-    return sides[side+1]
+from .rectangle import Rectangle
 
+from .form import Form</t>
+<t tx="karstenw.20211015160313.1">@language python
+@tabwidth -4
+@others
 </t>
-<t tx="karstenw.20210301114724.13"></t>
-<t tx="karstenw.20210301114724.14"></t>
-<t tx="karstenw.20210301114724.15"></t>
-<t tx="karstenw.20210301114724.16"></t>
-<t tx="karstenw.20210301114724.17"></t>
-<t tx="karstenw.20210301114724.18"></t>
-<t tx="karstenw.20210301114724.19">class Rectangle(object):
+<t tx="karstenw.20211015160327.1">@language python
+@tabwidth -4
+@others
+</t>
+<t tx="karstenw.20211015171522.1">class Rectangle(object):
     "Translated from a Squeak 3.7 image"
 
     @others
 
 </t>
-<t tx="karstenw.20210301114724.2">
-# -*- coding: utf-8 -*-
-
-from __future__ import print_function
-import sys
-import os
-import math
-import pprint
-pp = pprint.pprint
-
-import PIL
-import PIL.Image
-import PIL.ImageDraw as ImageDraw
-
-import pdb
-
-__all__ = ['makePoint', 'Point', 'Rectangle']
-
-
-</t>
-<t tx="karstenw.20210301114724.20">def __init__(self, origin, corner):
-    p1 = makePoint( origin )
-    p2 = makePoint( corner )
-    if p2 &lt; p1:
-        p1, p2 = p2, p1
-    self.porigin = p1
-    self.pcorner = p2
-
-
-</t>
-<t tx="karstenw.20210301114724.21">def __eq__( self, other ):
-    return (self.origin == other.origin) and (self.corner == other.corner)
-
-def __ne__( self, other ):
-    return (self.origin != other.origin) or (self.corner != other.corner)
-
-def __add__( self, other):
-    if isinstance(other, Rectangle):
-        return Rectangle( self.origin + other.origin, self.corner + other.corner )
-    elif isinstance(other, Point):
-        return Rectangle( self.origin + other.x, self.corner + other.y)
-    return Rectangle( self.origin + other, self.corner + other )
-
-def __sub__( self, other):
-    if isinstance(other, Rectangle):
-        return Rectangle( self.origin - other.origin, self.corner - other.corner )
-    elif isinstance(other, Point):
-        return Rectangle( self.origin - other.x, self.corner - other.y)
-    return Rectangle( self.origin - other, self.corner - other )
-
-def __mul__( self, other):
-    if isinstance(other, Rectangle):
-        return Rectangle( self.origin * other.origin, self.corner * other.corner )
-    elif isinstance(other, Point):
-        return Rectangle( self.origin * other.x, self.corner * other.y)
-    return Rectangle( self.origin * other, self.corner * other )
-
-</t>
-<t tx="karstenw.20210301114724.22"></t>
-<t tx="karstenw.20210301114724.23"># origin
-def getorigin(self):
-    return self.porigin
-def setorigin(self, val):
-    self.porigin = makePoint( val )
-origin = property(getorigin, setorigin)
-
-# corner
-def getcorner(self):
-    return self.pcorner
-def setcorner(self, val):
-    self.pcorner = makePoint( val )
-corner = property(getcorner, setcorner)
-
-def setOriginCorner( self, origin, corner ):
-    self.origin = makePoint( origin )
-    self.corner = makePoint( corner )
-
-</t>
-<t tx="karstenw.20210301114724.24"># height
-def getheight(self):
-    return self.corner.y - self.origin.y
-def setheight( self, height):
-    self.corner.y = self.origin.y + height
-height = property(getheight, setheight)
-
-#  width
-def getwidth(self):
-    return self.corner.x - self.origin.x
-def setwidth( self, width):
-    self.corner.x = self.origin.x + width
-width = property(getwidth, setwidth)
-
-# area
-def getarea( self ):
-    return self.width * self.height
-area = property(getarea)
-
-</t>
-<t tx="karstenw.20210301114724.25"># top
-def gettop( self ):
-    return self.origin.y
-def settop( self, val ):
-    self.origin.y = val
-top = property( gettop, settop )
-
-# bottom
-def getbottom( self ):
-    return self.corner.y
-def setbottom( self, val ):
-    self.corner.y = val
-bottom = property( getbottom, setbottom )
-
-# left
-def getleft( self ):
-    return self.origin.x
-def setleft( self, val ):
-    self.origin.x = val
-left = property( getleft, setleft )
-
-# right
-def getright( self ):
-    return self.corner.x
-def setright( self, val ):
-    self.corner.x = val
-right = property( getright, setright )
-
-
-</t>
-<t tx="karstenw.20210301114724.26"># topleft
+<t tx="karstenw.20211015171522.10"># topleft
 def gettopleft( self ):
     return self.origin
 def settopleft( self, *args):
@@ -393,7 +296,7 @@ def setbottomright( self, *args):
 bottomright = property( getbottomright, setbottomright )
 
 </t>
-<t tx="karstenw.20210301114724.27"># center
+<t tx="karstenw.20211015171522.11"># center
 def getcenter( self ):
     return Point( self.left + self.width / 2.0,
                   self.top + self.height / 2.0 )
@@ -406,7 +309,7 @@ def setcenter( self, *args):
 center = property( getcenter, setcenter )
 
 </t>
-<t tx="karstenw.20210301114724.28"># bottomcenter
+<t tx="karstenw.20211015171522.12"># bottomcenter
 def bottomcenter( self ):
     return Point( self.center.x, self.bottom )
 bottomcenter = property( bottomcenter )
@@ -427,7 +330,7 @@ def rightcenter( self ):
 rightcenter = property( rightcenter )
 
 </t>
-<t tx="karstenw.20210301114724.29">def getcorners( self ):
+<t tx="karstenw.20211015171522.13">def getcorners( self ):
     return [
         self.topleft,
         self.bottomleft,
@@ -447,161 +350,30 @@ extent = property( getextent, setextent )
 
 
 </t>
-<t tx="karstenw.20210301114724.34"></t>
-<t tx="karstenw.20210301114724.35">@classmethod
-def centerExtent(cls, centerPoint, extentPoint):
-    """Answer an instance of me whose center is centerPoint and width 
-       by height is extentPoint."""
-    dx = round( extentPoint.x / 2.0 )
-    dy = round( extentPoint.y / 2.0 )
-    originPoint = Point( centerPoint.x - round( extentPoint.x / 2.0 ),
-                         centerPoint.y - round( extentPoint.y / 2.0 ))
-    cornerPoint = originPoint + extentPoint
-    return cls( originPoint, cornerPoint )
-
-
-</t>
-<t tx="karstenw.20210301114724.36">@classmethod
-def leftRightTopBottom(cls, left, right, top, bottom):
-    """Answer an instance of me whose left, right, top, and bottom coordinates 
-    are determined by the arguments."""
-    return cls( Point(left,top), Point(right,bottom) )
-
-</t>
-<t tx="karstenw.20210301114724.37"></t>
-<t tx="karstenw.20210301114724.38"></t>
-<t tx="karstenw.20210301114724.39"></t>
-<t tx="karstenw.20210301114724.4"></t>
-<t tx="karstenw.20210301114724.40"></t>
-<t tx="karstenw.20210301114724.41">def innerSquare(self):
-    pass
-
-
-def outerSquareRect(self):
-    pass
-
-
-</t>
-<t tx="karstenw.20210301114724.5">def makePoint( *args  ):
-    "Tries to create a Point from args."
-    n = len(args)
-    if n == 1:
-        typ = type( args[0] )
-        if typ in (Point,):
-            return args[0]
-        elif typ in (long, int, float):
-            return Point( args[0], args[0] )
-        elif typ in (list, tuple):
-            return Point( args[0][0], args[0][1] )
-    elif n == 2:
-        return Point( args[0], args[1] )
-    return None
-
-
-</t>
-<t tx="karstenw.20210301114724.6">class Point(object):
-    "Translated from a Squeak 3.7 image"
-    @others
-
-</t>
-<t tx="karstenw.20210301114724.7">def __init__(self, x, y):
-    self.x = x
-    self.y = y
-
-
-</t>
-<t tx="karstenw.20210301114724.8">def __lt__(self, other):
-    return (self.x &lt; other.x) and (self.y &lt; other.y)
-
-def __le__(self, other):
-    return (self.x &lt;= other.x) and (self.y &lt;= other.y)
-
-def __gt__(self, other):
-    return (self.x &gt; other.x) and (self.y &gt; other.y)
-
-def __ge__(self, other):
-    return (self.x &gt;= other.x) and (self.y &gt;= other.y)
-
-def __eq__(self, other):
-    return (self.x == other.x) and (self.y == other.y)
-
-def __ne__(self, other):
-    return (self.x != other.x) or (self.y != other.y)
-
-def __add__( self, other):
-    if isinstance(other, Point):
-        return Point( self.x + other.x, self.y + other.y )
-    return Point( self.x + other, self.y + other )
-
-def __sub__( self, other):
-    if isinstance(other, Point):
-        return Point( self.x - other.x, self.y - other.y )
-    return Point( self.x - other, self.y - other )
-
-def __mul__( self, other):
-    if isinstance(other, Point):
-        return Point( self.x * other.x, self.y * other.y )
-    return Point( self.x * other, self.y * other )
-
-</t>
-<t tx="karstenw.20210301114724.9">def isZero( self ):
-    epsilon = 0.00001
-    if 0.0 - epsilon &lt; self.x &lt; 0.0 + epsilon:
-        if 0.0 - epsilon &lt; self.y &lt; 0.0 + epsilon:
-            return True
-    return False
-
-
-</t>
-<t tx="karstenw.20210401150717.1">def sign( number ):
-    """I can't believe that Python does not have a sign() function."""
-
-    if number &gt; 0:
-        return +1
-    elif number &lt; 0:
-        return -1
-    return 0
-
-
-</t>
-<t tx="karstenw.20210401150733.1">def __repr__( self ):
-    return u"Point( %.2f, %.2f )" % (float(self.x), float(self.y) )
-
-</t>
-<t tx="karstenw.20210401150836.1">def __repr__( self ):
-    return u"Rectangle( %s, %s )" % (repr(self.origin), repr(self.corner) )
-
-
-</t>
-<t tx="karstenw.20210401151058.1">@classmethod
-def originExtent( cls, originPoint, extentPoint ):
-    """Answer an instance of me whose top left corner is originPoint and width 
-       by height is extentPoint."""
-    return cls( originPoint, originPoint + extentPoint )
-
-
-</t>
-<t tx="karstenw.20210401151132.1">def withRight( self, x ):
+<t tx="karstenw.20211015171522.14"></t>
+<t tx="karstenw.20211015171522.15"></t>
+<t tx="karstenw.20211015171522.16">def withRight( self, x ):
     """Return a copy of me with a different right x"""
     return Rectangle( self.origin, Point( x, self.corner.y))
 
 </t>
-<t tx="karstenw.20210401151145.1">def withLeft( self, x ):
+<t tx="karstenw.20211015171522.17">def withLeft( self, x ):
     """Return a copy of me with a different left x"""
     return Rectangle( Point(x, self.origin.y), self.corner)
 
 </t>
-<t tx="karstenw.20210401151154.1">def withBottom( self, y ):
+<t tx="karstenw.20211015171522.18">def withBottom( self, y ):
     """Return a copy of me with a different bottom y"""
     return Rectangle( self.origin, Point( self.corner.x, y) )
 
 </t>
-<t tx="karstenw.20210401151202.1">def withTop( self, y ):
+<t tx="karstenw.20211015171522.19">def withTop( self, y ):
     """Return a copy of me with a different top y"""
     return Rectangle( Point(self.origin.x, y), self.corner )
 
 </t>
-<t tx="karstenw.20210401151209.1">def withSideSetTo( self, side, val ):
+<t tx="karstenw.20211015171522.2"></t>
+<t tx="karstenw.20211015171522.20">def withSideSetTo( self, side, val ):
     """return a copy with side set to value"""
     if side == "left":
         return Rectangle( Point(val, self.origin.y), self.corner )
@@ -613,7 +385,19 @@ def originExtent( cls, originPoint, extentPoint ):
         return Rectangle( self.origin, Point(self.corner.x, val) )
 
 </t>
-<t tx="karstenw.20210401151219.1">def amountToTranslateWithin( self, aRectangle ):
+<t tx="karstenw.20211015171522.21">def withHeight( self, height ):
+    """Return a copy of me with a different height"""
+    return Rectangle( self.origin,
+                      Point( self.corner.x, self.origin.y + height ))
+
+</t>
+<t tx="karstenw.20211015171522.22">def withWidth( self, width ):
+    """Return a copy of me with a different width"""
+    return Rectangle( self.origin,
+                      Point( self.origin.x + width, self.corner.y))
+
+</t>
+<t tx="karstenw.20211015171522.23">def amountToTranslateWithin( self, aRectangle ):
     """Answer a Point, delta, such that self + delta is forced
        within aRectangle.
 
@@ -634,7 +418,7 @@ def originExtent( cls, originPoint, extentPoint ):
     return Point(dx,dy)
 
 </t>
-<t tx="karstenw.20210401151226.1">def areasOutside( self, aRectangle ):
+<t tx="karstenw.20211015171522.24">def areasOutside( self, aRectangle ):
     """Answer an Array of Rectangles comprising the parts of the receiver
        not intersecting aRectangle."""
 
@@ -677,7 +461,19 @@ def originExtent( cls, originPoint, extentPoint ):
     return areas
 
 </t>
-<t tx="karstenw.20210401151234.1">def bordersOnAlong( self, her, herSide ):
+<t tx="karstenw.20211015171522.25">def asArray( self ):
+    return [self.origin.x,
+            self.origin.y,
+            self.corner.x,
+            self.corner.y]
+
+</t>
+<t tx="karstenw.20211015171522.26">def asPointList( self ):
+    return [self.origin, self.corner]
+
+
+</t>
+<t tx="karstenw.20211015171522.27">def bordersOnAlong( self, her, herSide ):
     if (   (herSide == b"right" and self.left == her.right)
         or (herSide == b"left"  and self.right == her.left)):
         return max(self.top, her.top) &lt; min(self.bottom, her.bottom)
@@ -688,7 +484,7 @@ def originExtent( cls, originPoint, extentPoint ):
     return False
 
 </t>
-<t tx="karstenw.20210401151242.1">def encompass( self, aPointOrRect ):
+<t tx="karstenw.20211015171522.28">def encompass( self, aPointOrRect ):
     """Answer a Rectangle that contains both the receiver and aPoint.
        5/30/96 sw"""
     if type( aPointOrRect ) in (Rectangle,):
@@ -700,7 +496,7 @@ def originExtent( cls, originPoint, extentPoint ):
                           max(self.corner, aPointOrRect) )
 
 </t>
-<t tx="karstenw.20210401151248.1">def expandBy( self, delta ):
+<t tx="karstenw.20211015171522.29">def expandBy( self, delta ):
     """Answer a Rectangle that is outset from the receiver by delta.
        delta is a Rectangle, Point, or scalar."""
     if isinstance(delta, Rectangle):
@@ -713,7 +509,17 @@ def originExtent( cls, originPoint, extentPoint ):
 
 
 </t>
-<t tx="karstenw.20210401151257.1">def extendBy( self, delta ):
+<t tx="karstenw.20211015171522.3">def __init__(self, origin, corner):
+    p1 = makePoint( origin )
+    p2 = makePoint( corner )
+    if p2 &lt; p1:
+        p1, p2 = p2, p1
+    self.porigin = p1
+    self.pcorner = p2
+
+
+</t>
+<t tx="karstenw.20211015171522.30">def extendBy( self, delta ):
     """Answer a Rectangle with the same origin as the receiver,
        but whose corner is offset by delta. delta is a
        Rectangle, Point, or scalar."""
@@ -723,7 +529,7 @@ def originExtent( cls, originPoint, extentPoint ):
     return Rectangle( self.origin, self.corner + delta)
 
 </t>
-<t tx="karstenw.20210401151315.1">def insetBy( self, delta ):
+<t tx="karstenw.20211015171522.31">def insetBy( self, delta ):
     """Answer a Rectangle that is inset from the receiver by delta.
        delta is a Rectangle, Point, or scalar."""
     if isinstance(delta, Rectangle):
@@ -734,7 +540,7 @@ def originExtent( cls, originPoint, extentPoint ):
 
 
 </t>
-<t tx="karstenw.20210401151321.1">def insetOriginAndCornerBy( self, originDeltaPoint, cornerDeltaPoint ):
+<t tx="karstenw.20211015171522.32">def insetOriginAndCornerBy( self, originDeltaPoint, cornerDeltaPoint ):
     """Answer a Rectangle that is inset from the receiver by a given
        amount in the origin and corner."""
     return Rectangle( self.origin + originDeltaPoint,
@@ -742,7 +548,7 @@ def originExtent( cls, originPoint, extentPoint ):
 
 
 </t>
-<t tx="karstenw.20210401151326.1">def intersect( self, aRectangle ):
+<t tx="karstenw.20211015171522.33">def intersect( self, aRectangle ):
     """Answer a Rectangle that is the area in which the receiver overlaps
        with aRectangle. Optimized for speed; old code read:
         ^Rectangle 
@@ -778,14 +584,14 @@ def originExtent( cls, originPoint, extentPoint ):
 
 
 </t>
-<t tx="karstenw.20210401151335.1">def merge( self, aRectangle ):
+<t tx="karstenw.20211015171522.34">def merge( self, aRectangle ):
     """Answer a Rectangle that contains both the receiver
        and aRectangle."""
     return Rectangle( min(self.origin, aRectangle.origin),
                       max(self.corner, aRectangle.corner) )
 
 </t>
-<t tx="karstenw.20210401151341.1">def outsetBy( self, delta ):
+<t tx="karstenw.20211015171522.35">def outsetBy( self, delta ):
     """Answer a Rectangle that is outset from the receiver by delta.
        delta is a Rectangle, Point, or scalar."""
     if isinstance( delta, Rectangle ):
@@ -797,7 +603,7 @@ def originExtent( cls, originPoint, extentPoint ):
 
 
 </t>
-<t tx="karstenw.20210401151347.1">def pointNearestTo( self, aPoint ):
+<t tx="karstenw.20211015171522.36">def pointNearestTo( self, aPoint ):
     """Return the point on my border closest to aPoint"""
     side = ""
     if self.containsPoint( aPoint ):
@@ -815,7 +621,7 @@ def originExtent( cls, originPoint, extentPoint ):
 
 
 </t>
-<t tx="karstenw.20210401151604.1">def quickMerge( self, aRectangle ):
+<t tx="karstenw.20211015171522.37">def quickMerge( self, aRectangle ):
     """Answer the receiver if it encloses the given rectangle or the
        merge of the two rectangles if it doesn't. THis method is an
        optimization to reduce extra rectangle creations."""
@@ -854,14 +660,14 @@ def originExtent( cls, originPoint, extentPoint ):
         return Rectangle( Point(minX, minY), Point(maxX, maxY) )
 
 </t>
-<t tx="karstenw.20210401151606.1">def rectanglesAtHeight( self, y, ht ):
+<t tx="karstenw.20211015171522.38">def rectanglesAtHeight( self, y, ht ):
     if (y + ht) &gt; self.bottom:
         return []
     return [ Rectangle( Point(self.origin.x, y),
                         Point(self.corner.x, (y+ht)) ) ]
 
 </t>
-<t tx="karstenw.20210401151606.2">def sideNearestTo( self, aPoint ):
+<t tx="karstenw.20211015171522.39">def sideNearestTo( self, aPoint ):
     aPoint = makePoint( aPoint )
     distToLeft = aPoint.x - self.left
     distToRight = self.right - aPoint.x
@@ -881,444 +687,25 @@ def originExtent( cls, originPoint, extentPoint ):
     return side
         
 </t>
-<t tx="karstenw.20210401151606.3">def translatedToBeWithin( self, aRectangle ):
+<t tx="karstenw.20211015171522.4">def __repr__( self ):
+    return u"Rectangle( %s, %s )" % (repr(self.origin), repr(self.corner) )
+
+
+</t>
+<t tx="karstenw.20211015171522.40">def translatedToBeWithin( self, aRectangle ):
     """Answer a copy of the receiver that does not extend
        beyond aRectangle.  7/8/96 sw"""
     return self.translatedBy( self.amountToTranslateWithin( aRectangle ))
 
 
 </t>
-<t tx="karstenw.20210401163629.1">def asFloatPoint( self ):
-    return Point( float(self.x), float(self.y))
-
-</t>
-<t tx="karstenw.20210401163648.1">def asIntegerPoint( self ):
-    return Point( int( round(self.x) ), int( round(self.y) ))
-
-</t>
-<t tx="karstenw.20210401163653.1">def corner( self, aPoint ):
-    """Return a Rectangle( self, aPoint )"""
-    return Rectangle( self, aPoint )
-
-</t>
-<t tx="karstenw.20210401163657.1">def extent( self, aPoint ):
-    """Answer a Rectangle whose origin is the receiver and whose extent is
-       aPoint. This is one of the infix ways of expressing the creation of
-       a rectangle."""
-    return Rectangle.originExtent( self, aPoint )
-
-</t>
-<t tx="karstenw.20210401163702.1">def isPoint( self ):
-    return True
-
-</t>
-<t tx="karstenw.20210401163706.1">def rect( self, aPoint ):
-    """Answer a Rectangle that encompasses the receiver and aPoint.
-       This is the most general infix way to create a rectangle."""
-    return Rectangle( min(self, aPoint), max(self, aPoint ))
-
-
-</t>
-<t tx="karstenw.20210401164244.1">def interpolateToAt( self, end, amountDone ):
-    """Interpolate between the instance and end after the specified amount
-       has been done (0 - 1)."""
-    return self + ((end - self) * amountDone)
-
-</t>
-<t tx="karstenw.20210401164258.1">def bearingToPoint( self, anotherPoint ):
-    """Return the bearing, in degrees, from the receiver to anotherPoint.
-       Adapted from Playground, where the ultimate provenance of the
-       algorithm was a wild earlier method of Jay Fenton's which I never
-       checked carefully, but the thing has always seemed to work."""
-
-    deltaX = anotherPoint.x - self.x
-    deltaY = anotherPoint.y - self.x
-    
-    if abs(deltaX) &lt; 0.001:
-        if deltaY &gt; 0:
-            return 180.0
-        else:
-            return 0.0
-    
-    q = 270
-    if deltaX &gt;= 0:
-        q = 90
-    return q - round( math.degrees(-math.arctan(deltaY / deltaX)) )
-
-</t>
-<t tx="karstenw.20210401164304.1">def crossProduct( self, aPoint ):
-    """Answer a number that is the cross product of the receiver and the 
-    argument, aPoint."""
-    
-    return (self.x * aPoint.y) - (self.y * aPoint.x)
-
-
-</t>
-<t tx="karstenw.20210401164311.1">def dist( self, aPoint ):
-    """Answer the distance between aPoint and the receiver."""
-    dx = aPoint.x - self.x
-    dy = aPoint.y - self.y
-    return math.sqrt( (dx * dx) + (dy * dy) )
-
-</t>
-<t tx="karstenw.20210401164317.1">def dotProduct( self, aPoint ):
-    """Answer a number that is the dot product of the receiver and the 
-    argument, aPoint. That is, the two points are multipled and the 
-    coordinates of the result summed."""
-    return (self.x * aPoint.x) + (self.y * aPoint.y)
-
-</t>
-<t tx="karstenw.20210401164322.1">def eightNeighbors( self ):
-    return [
-        self + Point( 1, 0),
-        self + Point( 1, 1),
-        self + Point( 0, 1),
-        self + Point(-1, 1),
-        self + Point(-1, 0),
-        self + Point(-1,-1),
-        self + Point( 0,-1),
-        self + Point( 1,-1)]
-
-</t>
-<t tx="karstenw.20210401164329.1">def fourNeighbors( self ):
-    return [
-        self + Point( 1, 0),
-        self + Point( 0, 1),
-        self + Point(-1, 0),
-        self + Point( 0,-1)]
-
-</t>
-<t tx="karstenw.20210401164335.1">def flipByCenterAt( self, direction, center ):
-    """Answer a Point which is flipped according to the direction about
-       the point c.  Direction must be #vertical or #horizontal."""
-    if direction == "vertical":
-        return Point( self.x, center.y * 2 - self.y)
-    elif direction == "horizontal":
-        return Point( center.x * 2 - self.x, self.y )
-    # raise error: 'unrecognizable direction'
-
-</t>
-<t tx="karstenw.20210401164341.1">def grid( self, aPoint ):
-    """Answer a Point to the nearest rounded grid modules specified
-    by aPoint."""
-    gridPoint = makePoint( aPoint )
-    newX = round(self.x / float( gridPoint.x )) * gridPoint.x
-    newY = round(self.y / float( gridPoint.y )) * gridPoint.y
-    return Point(newX,newY)
-
-</t>
-<t tx="karstenw.20210401164347.1">def insideTriangle( self, p1, p2, p3 ):
-    """Return true if the receiver is within the triangle defined by the
-       three coordinates.
-       
-       Note: This method computes the barycentric coordinates for the
-             receiver and tests those coordinates."""
-    pass
-
-</t>
-<t tx="karstenw.20210401164357.1">def nearestPointAlongLineFromTo( self, p1, p2 ):
-    """Note this will give points beyond the endpoints.
-    Streamlined by Gerardo Richarte 11/3/97"""
-
-    if p1.x == p2.x:
-        return Point(p1.x, self.y)
-    if p1.y == p2.y:
-        return Point( self.x, p1.y )
-    x1 = float( p1.x )
-    y1 = float( p1.y )
-    x21 = float(p2.x) - x1
-    y21 = float(p2.y) - y1
-    t =  (((float(self.y) - y1) / x21
-         + (float(self.x) - x1) / y21)
-         / ( (x21 / y21) + (y21 / x21)))
-    return Point(x1 + (t * x21)) , (y1 + (t * y21))
-
-</t>
-<t tx="karstenw.20210401164421.1">def skalarPointOnLine( self, p1, p2, t ):
-    """return the point p1 + (t * (p2-p1))
-    kw 2021-02-25"""
-    if t &gt; 1.0:
-        return p2
-    elif t &lt; 0.0:
-        return p1
-    
-    dist = p2 - p1
-    return p1 + (t * dist)
-
-</t>
-<t tx="karstenw.20210401164432.1">def normal(self):
-    """Answer a Point representing the unit vector rotated
-       90 deg clockwise."""
-    p = Point(-self.y, self.x)
-    return p / math.sqrt((p.x * p.x + p.y * p.y))
-
-</t>
-<t tx="karstenw.20210401164439.1">def normalized( self ):
-    r = math.sqrt((self.x ** 2) + (self.y ** 2))
-    return Point( self.x / r, self.y / r)
-
-</t>
-<t tx="karstenw.20210401164444.1"># BAUSTELLE
-def octantOf(self, otherPt ):
-    """Return 1..8 indicating relative direction to otherPoint.
-       1=ESE, 2=SSE, ... etc. clockwise to 8=ENE"""
-    if (self.x == otherPt.x) and (self.y &gt; otherPt.y):
-        return 6
-    if (self.y &lt; otherPt.y) and (self.x &lt; otherPt.x):
-        return 8
-    quad = self.quadrantOf( otherPt )
-    moreHoriz = abs( self.x - otherPt.x) &gt;= abs(self.y - otherPt.y)
-    """
-        moreHoriz _ (x - otherPoint x) abs &gt;= (y - otherPoint y) abs.
-        (quad even eqv: moreHoriz)
-            ifTrue: [^ quad * 2]
-            ifFalse: [^ quad * 2 - 1]! !
-    """
-
-</t>
-<t tx="karstenw.20210401164450.1">def onLineFromTo(self, p1, p2):
-    return self.onLineFromToWithin( p1, p2, 2)
-
-</t>
-<t tx="karstenw.20210401164455.1">def onLineFromToWithin( self, p1, p2, epsilon):
-    """Answer true if the receiver lies on the given line segment
-       between p1 and p2 within a small epsilon."""
-    # is this point within the box spanning p1 and p2
-    # expanded by epsilon? (optimized)
-    if p1.x &lt; p2.x:
-        if (   (self.x &lt; (p1.x - epsilon))
-            or (self.x &gt; (p2.x + epsilon))):
-            return False
-    else:
-        if (   (self.x &lt; (p2.x - epsilon))
-            or (self.x &gt; (p1.x + epsilon))):
-            return False
-
-    if p1.y &lt; p2.y:
-        if (   (self.y &lt; (p1.y - epsilon)) 
-            or (self.y &gt; (p2.y + epsilon))):
-            return False
-    else:
-        if (   (self.y &lt; (p2.y - epsilon))
-            or (self.y &gt; (p1.y + epsilon))):
-            return False
-
-    return self.dist(self.nearestPointAlongLineFromTo(p1, p2)) &lt;= epsilon
-
-</t>
-<t tx="karstenw.20210401164503.1">def quadrantOf(self, otherPoint):
-    """Return 1..4 indicating relative direction to otherPoint.
-    1 is downRight, 2=downLeft, 3=upLeft, 4=upRight"""
-    if  self.x &lt;= otherPoint.x:
-        if self.y &lt; otherPoint.y:
-            return 1
-        else:
-            return 4
-    else:
-        if  self.y &lt;= otherPoint.y:
-            return 2
-        else:
-            return 4
-
-</t>
-<t tx="karstenw.20210401164509.1">def rotateByCenterAt( self, direction, c  ):
-    """Answer a Point which is rotated according to direction, about the
-       point c.
-       Direction must be one of #right (CW), #left (CCW)
-       or #pi (180 degrees)."""
-    c = makePoint( c )
-    offset = self - c
-    if direction == "right":
-        return( Point(-offset.y,  offset.x) + c )
-    elif direction == "right":
-        return( Point( offset.y, -offset.x) + c )
-    elif direction == "pi":
-        return( c - offset )
-    return False    
-
-</t>
-<t tx="karstenw.20210401164515.1">def sortsBefore( self, other ):
-    """Return true if the receiver sorts before the other point"""
-    if self.y == other.y:
-        return self.x &lt;= other.x
-    else:
-        return self.y &lt;= other.y
-
-</t>
-<t tx="karstenw.20210401164520.1">def squaredDistanceTo( self, aPoint ):
-    """Answer the distance between aPoint and the receiver."""
-    aPoint = makePoint( aPoint )
-    delta = aPoint - self
-    return delta.dotProduct( delta )
-
-</t>
-<t tx="karstenw.20210401164525.1">def transposed( self ):
-    return Point( self.y, self.x )
-
-</t>
-<t tx="karstenw.20210401164734.1">def degrees( self ):
-    if self.x == 0:
-        if self.y &gt;= 0:
-            return 90.0
-        else:
-            return 270.0
-    else:
-        tangente = float(self.y) / float(self.x)
-        theta = math.atan( tangente )
-        if self.x &gt;= 0:
-            if self.y &gt;= 0:
-                return math.degrees( theta )
-            else:
-                return 360.0 + math.degrees( theta )
-        else:
-            return 180.0 + math.degrees( theta )
-
-</t>
-<t tx="karstenw.20210401164748.1">def degreesWith( self, aPoint ):
-    """Answer the angle the receiver makes with origin in degrees.
-        right is 0;
-        down is 90."""
-    if self.x == aPoint.x:
-        if self.y &gt;= aPoint.y:
-            return 0.0
-        else:
-            return 180.0
-    else:
-        tan = float(self.y - aPoint.y) / float(self.x - aPoint.x )
-        thetadeg = math.degrees(math.atan( tan ))
-        if self.x &gt;= aPoint.x:
-            if self.y &gt;= aPoint.y:
-                return thetadeg
-            else:
-                return 360.0 + thetadeg
-        else:
-            return 180.0 + thetadeg
-
-</t>
-<t tx="karstenw.20210401164754.1">def r( self ):
-    """Answer the receiver's radius in polar coordinate system."""
-    return math.sqrt( self.dotProduct( self ) )
-
-</t>
-<t tx="karstenw.20210401164800.1">def theta( self ):
-    """Answer the angle the receiver makes with origin in radians.
-        right is 0;
-        down is 90."""
-    if self.x == 0:
-        if self.y &gt;= 0:
-            return math.radians( 90 )
-            # return 1.5708 # 90.0 degreesToRadians
-        else:
-            return math.radians( 270 )
-            # return 4.71239 # 270.0 degreesToRadians
-    else:
-        tangente = float(self.y) / float(self.x)
-        theta = math.atan( tangente )
-        if self.x &gt;= 0:
-            if self.y &gt;= 0:
-                return theta
-            else:
-                return math.radians( 360.0 ) + theta
-        else:
-            return math.radians( 180 ) + theta
-
-
-</t>
-<t tx="karstenw.20210401164823.1">def bitShiftPoint(self, bits ):
-    self.x = int(round(self.x)) &lt;&lt; int(bits)
-    self.y = int(round(self.y)) &lt;&lt; int(bits)
-
-</t>
-<t tx="karstenw.20210401164825.1">def setRDegrees(self, rho, degrees ):
-    radians = math.radians( float(degrees) )
-    self.x = float( rho ) * math.cos( radians )
-    self.y = float( rho ) * math.sin( radians )
-
-</t>
-<t tx="karstenw.20210401164901.1">def adhereTo( self, aRect ):
-    """If the receiver lies outside aRectangle, return the nearest point
-       on the boundary of the rectangle, otherwise return self."""
-    if aRect.containsPoint( self ):
-        return self
-    x = min(max(self.x. aRect.left), aRect.right)
-    y = min(max(self.y, aRect.top), aRect.bottom)
-    return Point( x, y )
-
-</t>
-<t tx="karstenw.20210401164909.1">def negated( self ):
-    """Answer a point whose x and y coordinates are the negatives of
-       those of the receiver.  6/6/96 sw"""
-    return Point( 0-self.x, 0-self.y )
-
-</t>
-<t tx="karstenw.20210401164917.1">def scaleBy( self, factorpt ):
-    """Answer a Point scaled by factor (an instance of Point)."""
-    return Point(self.x * factorpt.x, self.y * factorpt.y)
-
-</t>
-<t tx="karstenw.20210401164922.1">def scaleFromTo(self, rect1, rect2 ):
-    """Produce a point stretched according to the stretch from
-       rect1 to rect2"""
-    x = rect2.topLeft + ((self.x - rect1.left) * rect2.width // rect1.width)
-    y = (self.y - rect1.top) * rect2.height // rect1.height
-    return Point( x, y )
-
-</t>
-<t tx="karstenw.20210401164927.1">def rotateByAboutCenter( self, angle, center ):
-    """Even though Point.theta is measured CW, this rotates with the
-       more conventional CCW interpretateion of angle."""
-    p = self - center
-    r = p.r
-    theta = float( angle ) - p.theta
-    x = float( center.x ) + ( r * math.cos( theta ))
-    y = float( center.y ) - ( r * math.sin( theta ))
-    return Point( x, y )
-
-</t>
-<t tx="karstenw.20210401164933.1">def translateBy( self, delta ):
-    """Answer a Point translated by delta (an instance of Point)."""
-    delta = makePoint( delta )
-    return self + delta
-
-</t>
-<t tx="karstenw.20210401165035.1">def rounded( self ):
-    """Answer a Point that is the receiver's x and y rounded. Answer
-       the receiver if its coordinates are already integral."""
-    if isinstance(self.x, int):
-        if isinstance(self.y, int):
-            return self
-    return Point( round(self.x), round(self.y) )
-
-</t>
-<t tx="karstenw.20210401165038.1">def truncateTo( self, grid ):
-    """Answer a Point that is the receiver's x and y truncated to
-       grid x and grid y."""
-    gridPoint = makePoint(grid)
-    x = (self.x // gridPoint.x) * gridPoint.x
-    y = (self.y // gridPoint.y) * gridPoint.y
-    return Point(x,y)
-
-</t>
-<t tx="karstenw.20210401165038.2">def truncated( self ):
-    """Answer a Point whose x and y coordinates are integers.
-    Answer the receiver if its coordinates are already integral."""
-    if (int(self.x) == self.x) and (int(self.y) == self.y ):
-        return self
-    return Point( int( self.x ), int(self.y) )
-</t>
-<t tx="karstenw.20210401165417.1">def withHeight( self, height ):
-    """Return a copy of me with a different height"""
-    return Rectangle( self.origin,
-                      Point( self.corner.x, self.origin.y + height ))
-
-</t>
-<t tx="karstenw.20210401165419.1">def withSideOrCornerSetToPoint( self, side, newPoint ):
+<t tx="karstenw.20211015171522.41">def withSideOrCornerSetToPoint( self, side, newPoint ):
     """Return a copy with side set to newPoint"""
     return self.sideWithCornerSetToPointMinExtent( side,
                                                    newPoint, Point(0,0) )
 
 </t>
-<t tx="karstenw.20210401165419.2">def sideWithCornerSetToPointMinExtent( self, side, newPoint, minExtent ):
+<t tx="karstenw.20211015171522.42">def sideWithCornerSetToPointMinExtent( self, side, newPoint, minExtent ):
     """Return a copy with side set to newPoint"""
     limit = 999999
     if side in ("left", "top"):
@@ -1329,7 +716,7 @@ def octantOf(self, otherPt ):
     
 
 </t>
-<t tx="karstenw.20210401165419.3"># unfinished - need to lookup precedence
+<t tx="karstenw.20211015171522.43"># unfinished - need to lookup precedence
 def withSideOrCornerSetToPointMinExtentLimit(self, side, newPoint, minExtent, limit ):
     """Return a copy with side set to newPoint"""
     if side == "top":
@@ -1378,107 +765,18 @@ withSideOrCorner: side setToPoint: newPoint minExtent: minExtent limit: limit
 """
 
 </t>
-<t tx="karstenw.20210401165420.2">def withWidth( self, width ):
-    """Return a copy of me with a different width"""
-    return Rectangle( self.origin,
-                      Point( self.origin.x + width, self.corner.y))
-
-</t>
-<t tx="karstenw.20210403113650.1">def alignWith( self, aPoint1, aPoint2 ):
-    return self.translateBy( aPoint2 - aPoint1 )
-
-</t>
-<t tx="karstenw.20210403113653.1">def centeredBeneath( self, aRectangle ):
-    """Move the reciever so that its top center point coincides with the bottom
-       center point of aRectangle.  5/20/96 sw:"""
-    return self.alignWith( self.topCenter, self.bottomCenter )
-
-
-</t>
-<t tx="karstenw.20210403113653.2">def flipByCenterAt( self, direction, aPoint ):
-    """Return a copy flipped #vertical or #horizontal, about aPoint."""
-    return Rectangle( self.origin.flipByCenterAt( direction, aPoint ) )
-
-
-</t>
-<t tx="karstenw.20210403113653.3">def rotateByCenterAt( self, direction, aPoint ):
-    """Return a copy rotated #right, #left, or #pi about aPoint"""
-    return self.origin.rotateByCenterAt( aPoint ).rect( self.corner.rotateByCenterAt( direction, aPoint))
-
-
-</t>
-<t tx="karstenw.20210403113654.1">def scaleBy( self, scale ):
-    """Answer a Rectangle scaled by scale, a Point or a scalar."""
-    return Rectangle( self.origin * scale, self.corner * scale )
-
-
-</t>
-<t tx="karstenw.20210403113654.2">def scaleFromTo( self, rect1, rect2 ):
-    """Produce a rectangle stretched according to the stretch from rect1 to rect2"""
-    return Rectangle( self.origin.scaleFromTo(rect1, rect2),
-                      self.corner.scaleFromTo(rect1, rect2))
-    
-
-</t>
-<t tx="karstenw.20210403113654.3">def squishedWithin(self, aRectangle ):
-    """Return an adjustment of the receiver that fits within aRectangle by reducing its size, not by changing its origin."""
-    return Rectangle( self.origin.corner( min(self.corner, aRectangle.bottomRight) ))
-
-
-</t>
-<t tx="karstenw.20210403113654.4">def translateBy(self, factor ):
-    """Answer a Rectangle translated by factor, a Point or a scalar."""
-    return Rectangle( self.origin + factor, self.corner + factor )
-
-</t>
-<t tx="karstenw.20210403113925.1">def translatedAndSquishedToBeWithin( self, aRectangle ):
-    """Return an adjustment of the receiver that fits within aRectangle by
-        - translating it to be within aRectangle if necessary, then
-        - reducing its size, if necessary"""
-    return self.translatedToBeWithin( aRectangle ).squishedWithin( aRectangle )
-
-
-</t>
-<t tx="karstenw.20210403114922.1"></t>
-<t tx="karstenw.20210403114944.1">@classmethod
-def encompassing( cls, pointList ):
-    """A number of callers of encompass: should use this method."""
-    topLeft = bottomRight = None
-    for p in pointList:
-        p = makePoint( p )
-        if topLeft == None:
-            topLeft = bottomRight = p
-        else:
-            topLeft = min( topLeft, p)
-            bottomRight = max( bottomRight, p)
-    return cls( topLeft, bottomRight )
-
-
-</t>
-<t tx="karstenw.20210403114944.5">@classmethod
-def merging( cls, listOfRects ):
-    """A number of callers of merge: should use this method."""
-    minX = minY =  9999999
-    maxX = maxY = -9999999
-    for r in listOfRects:
-        minX = min( minX, r.origin.x )
-        minY = min( minY, r.origin.y )
-        maxX = max( maxX, r.corner.x )
-        maxY = max( maxY, r.corner.y )
-    return cls( Point(minX, minY), Point(maxX, maxY) )
-
-</t>
-<t tx="karstenw.20210403125159.1">def containsPoint( self, aPoint ):
+<t tx="karstenw.20211015171522.44"></t>
+<t tx="karstenw.20211015171522.45">def containsPoint( self, aPoint ):
     "Answer whether aPoint is within the receiver."
     return (self.origin &lt;= aPoint) and (aPoint &lt; self.corner)
 
 </t>
-<t tx="karstenw.20210403125200.1">def containsRect( self, aRect ):
+<t tx="karstenw.20211015171522.46">def containsRect( self, aRect ):
     """Answer whether aRect is within the receiver (OK to coincide)."""
     return (aRect.origin &gt;= self.origin) and (aRect.corner &lt;= self.corner)
 
 </t>
-<t tx="karstenw.20210403125201.1">def fullIntersects( self, aRectangle ):
+<t tx="karstenw.20211015171522.47">def fullIntersects( self, aRectangle ):
     """Answer whether aRectangle intersects the receiver anywhere.
        Optimized
        
@@ -1508,12 +806,12 @@ def merging( cls, listOfRects ):
         return True
 
 </t>
-<t tx="karstenw.20210403125201.2">def hasPositiveExtent( self ):
+<t tx="karstenw.20211015171522.48">def hasPositiveExtent( self ):
     """Answer whether aPoint is within the receiver."""
     return (self.corner.x &gt; self.origin.x) and (self.corner.y &gt; self.origin.y)
 
 </t>
-<t tx="karstenw.20210403125201.3">def intersects( self, aRectangle ):
+<t tx="karstenw.20211015171522.49">def intersects( self, aRectangle ):
     """Answer whether aRectangle intersects the receiver anywhere.
     Optimized
 
@@ -1534,29 +832,58 @@ def merging( cls, listOfRects ):
     return True
 
 </t>
-<t tx="karstenw.20210403125201.4">def isTall( self ):
+<t tx="karstenw.20211015171522.5">def __eq__( self, other ):
+    return (self.origin == other.origin) and (self.corner == other.corner)
+
+def __ne__( self, other ):
+    return (self.origin != other.origin) or (self.corner != other.corner)
+
+def __add__( self, other):
+    if isinstance(other, Rectangle):
+        return Rectangle( self.origin + other.origin, self.corner + other.corner )
+    elif isinstance(other, Point):
+        return Rectangle( self.origin + other.x, self.corner + other.y)
+    return Rectangle( self.origin + other, self.corner + other )
+
+def __sub__( self, other):
+    if isinstance(other, Rectangle):
+        return Rectangle( self.origin - other.origin, self.corner - other.corner )
+    elif isinstance(other, Point):
+        return Rectangle( self.origin - other.x, self.corner - other.y)
+    return Rectangle( self.origin - other, self.corner - other )
+
+def __mul__( self, other):
+    if isinstance(other, Rectangle):
+        return Rectangle( self.origin * other.origin, self.corner * other.corner )
+    elif isinstance(other, Point):
+        return Rectangle( self.origin * other.x, self.corner * other.y)
+    return Rectangle( self.origin * other, self.corner * other )
+
+</t>
+<t tx="karstenw.20211015171522.50">def isTall( self ):
     return self.height &gt; self.width
 
 </t>
-<t tx="karstenw.20210403125201.5">def isWide( self ):
+<t tx="karstenw.20211015171522.51">def isWide( self ):
     return self.width &gt; self.height
 
 </t>
-<t tx="karstenw.20210403125201.6">def isZero( self ):
+<t tx="karstenw.20211015171522.52">def isZero( self ):
     return self.origin.isZero() and self.corner.isZero()
 
 </t>
-<t tx="karstenw.20210403125202.1">def rounded( self ):
+<t tx="karstenw.20211015171522.53"></t>
+<t tx="karstenw.20211015171522.54">def rounded( self ):
     """Answer a Rectangle whose origin and corner are rounded."""
     return Rectangle( self.origin.rounded(), self.corner.rounded() )
 
 </t>
-<t tx="karstenw.20210403125202.2">def truncateTo( self, grid ):
+<t tx="karstenw.20211015171522.55">def truncateTo( self, grid ):
     """Answer a Rectangle whose origin and corner are truncated to grid x and grid y."""
     return Rectangle( self.origin.trincateTo( grid ), self.corner.truncateTo( grid ) )
 
 </t>
-<t tx="karstenw.20210403125202.3">def truncated( self ):
+<t tx="karstenw.20211015171522.56">def truncated( self ):
     if int(self.origin.x) == self.origin.x:
         if int(self.origin.y) == self.origin.y:
             if int(self.corner.x) == self.corner.x:
@@ -1565,40 +892,751 @@ def merging( cls, listOfRects ):
     return Rectangle( self.origin.truncated(), self.corner.truncated() )
 
 </t>
-<t tx="karstenw.20210403130600.1"></t>
-<t tx="karstenw.20210403130944.1">def asArray( self ):
+<t tx="karstenw.20211015171522.57"></t>
+<t tx="karstenw.20211015171522.58">def alignWith( self, aPoint1, aPoint2 ):
+    return self.translateBy( aPoint2 - aPoint1 )
+
+</t>
+<t tx="karstenw.20211015171522.59">def centeredBeneath( self, aRectangle ):
+    """Move the reciever so that its top center point coincides with the bottom
+       center point of aRectangle.  5/20/96 sw:"""
+    return self.alignWith( self.topCenter, self.bottomCenter )
+
+
+</t>
+<t tx="karstenw.20211015171522.6"></t>
+<t tx="karstenw.20211015171522.60">def flipByCenterAt( self, direction, aPoint ):
+    """Return a copy flipped #vertical or #horizontal, about aPoint."""
+    return Rectangle( self.origin.flipByCenterAt( direction, aPoint ) )
+
+
+</t>
+<t tx="karstenw.20211015171522.61">def rotateByCenterAt( self, direction, aPoint ):
+    """Return a copy rotated #right, #left, or #pi about aPoint"""
+    return self.origin.rotateByCenterAt( aPoint ).rect( self.corner.rotateByCenterAt( direction, aPoint))
+
+
+</t>
+<t tx="karstenw.20211015171522.62">def scaleBy( self, scale ):
+    """Answer a Rectangle scaled by scale, a Point or a scalar."""
+    return Rectangle( self.origin * scale, self.corner * scale )
+
+
+</t>
+<t tx="karstenw.20211015171522.63">def scaleFromTo( self, rect1, rect2 ):
+    """Produce a rectangle stretched according to the stretch from rect1 to rect2"""
+    return Rectangle( self.origin.scaleFromTo(rect1, rect2),
+                      self.corner.scaleFromTo(rect1, rect2))
+    
+
+</t>
+<t tx="karstenw.20211015171522.64">def squishedWithin(self, aRectangle ):
+    """Return an adjustment of the receiver that fits within aRectangle by reducing its size, not by changing its origin."""
+    return Rectangle( self.origin.corner( min(self.corner, aRectangle.bottomRight) ))
+
+
+</t>
+<t tx="karstenw.20211015171522.65">def translateBy(self, factor ):
+    """Answer a Rectangle translated by factor, a Point or a scalar."""
+    return Rectangle( self.origin + factor, self.corner + factor )
+
+</t>
+<t tx="karstenw.20211015171522.66">def translatedAndSquishedToBeWithin( self, aRectangle ):
+    """Return an adjustment of the receiver that fits within aRectangle by
+        - translating it to be within aRectangle if necessary, then
+        - reducing its size, if necessary"""
+    return self.translatedToBeWithin( aRectangle ).squishedWithin( aRectangle )
+
+
+</t>
+<t tx="karstenw.20211015171522.67">def innerSquare(self):
+    pass
+
+
+def outerSquareRect(self):
+    pass
+
+
+</t>
+<t tx="karstenw.20211015171522.68"></t>
+<t tx="karstenw.20211015171522.69"></t>
+<t tx="karstenw.20211015171522.7"># origin
+def getorigin(self):
+    return self.porigin
+def setorigin(self, val):
+    self.porigin = makePoint( val )
+origin = property(getorigin, setorigin)
+
+# corner
+def getcorner(self):
+    return self.pcorner
+def setcorner(self, val):
+    self.pcorner = makePoint( val )
+corner = property(getcorner, setcorner)
+
+def setOriginCorner( self, origin, corner ):
+    self.origin = makePoint( origin )
+    self.corner = makePoint( corner )
+
+</t>
+<t tx="karstenw.20211015171522.70">@classmethod
+def centerExtent(cls, centerPoint, extentPoint):
+    """Answer an instance of me whose center is centerPoint and width 
+       by height is extentPoint."""
+    dx = round( extentPoint.x / 2.0 )
+    dy = round( extentPoint.y / 2.0 )
+    originPoint = Point( centerPoint.x - round( extentPoint.x / 2.0 ),
+                         centerPoint.y - round( extentPoint.y / 2.0 ))
+    cornerPoint = originPoint + extentPoint
+    return cls( originPoint, cornerPoint )
+
+
+</t>
+<t tx="karstenw.20211015171522.71">@classmethod
+def encompassing( cls, pointList ):
+    """A number of callers of encompass: should use this method."""
+    topLeft = bottomRight = None
+    for p in pointList:
+        p = makePoint( p )
+        if topLeft == None:
+            topLeft = bottomRight = p
+        else:
+            topLeft = min( topLeft, p)
+            bottomRight = max( bottomRight, p)
+    return cls( topLeft, bottomRight )
+
+
+</t>
+<t tx="karstenw.20211015171522.72">@classmethod
+def leftRightTopBottom(cls, left, right, top, bottom):
+    """Answer an instance of me whose left, right, top, and bottom coordinates 
+    are determined by the arguments."""
+    return cls( Point(left,top), Point(right,bottom) )
+
+</t>
+<t tx="karstenw.20211015171522.73">@classmethod
+def merging( cls, listOfRects ):
+    """A number of callers of merge: should use this method."""
+    minX = minY =  9999999
+    maxX = maxY = -9999999
+    for r in listOfRects:
+        minX = min( minX, r.origin.x )
+        minY = min( minY, r.origin.y )
+        maxX = max( maxX, r.corner.x )
+        maxY = max( maxY, r.corner.y )
+    return cls( Point(minX, minY), Point(maxX, maxY) )
+
+</t>
+<t tx="karstenw.20211015171522.74">@classmethod
+def originExtent( cls, originPoint, extentPoint ):
+    """Answer an instance of me whose top left corner is originPoint and width 
+       by height is extentPoint."""
+    return cls( originPoint, originPoint + extentPoint )
+
+
+</t>
+<t tx="karstenw.20211015171522.8"># height
+def getheight(self):
+    return self.corner.y - self.origin.y
+def setheight( self, height):
+    self.corner.y = self.origin.y + height
+height = property(getheight, setheight)
+
+#  width
+def getwidth(self):
+    return self.corner.x - self.origin.x
+def setwidth( self, width):
+    self.corner.x = self.origin.x + width
+width = property(getwidth, setwidth)
+
+# area
+def getarea( self ):
+    return self.width * self.height
+area = property(getarea)
+
+</t>
+<t tx="karstenw.20211015171522.9"># top
+def gettop( self ):
+    return self.origin.y
+def settop( self, val ):
+    self.origin.y = val
+top = property( gettop, settop )
+
+# bottom
+def getbottom( self ):
+    return self.corner.y
+def setbottom( self, val ):
+    self.corner.y = val
+bottom = property( getbottom, setbottom )
+
+# left
+def getleft( self ):
+    return self.origin.x
+def setleft( self, val ):
+    self.origin.x = val
+left = property( getleft, setleft )
+
+# right
+def getright( self ):
+    return self.corner.x
+def setright( self, val ):
+    self.corner.x = val
+right = property( getright, setright )
+
+
+</t>
+<t tx="karstenw.20211015171541.1">class Point(object):
+    "Translated from a Squeak 3.7 image"
+    @others
+
+</t>
+<t tx="karstenw.20211015171541.10">def corner( self, aPoint ):
+    """Return a Rectangle( self, aPoint )"""
+    return Rectangle( self, aPoint )
+
+</t>
+<t tx="karstenw.20211015171541.11">def extent( self, aPoint ):
+    """Answer a Rectangle whose origin is the receiver and whose extent is
+       aPoint. This is one of the infix ways of expressing the creation of
+       a rectangle."""
+    return Rectangle.originExtent( self, aPoint )
+
+</t>
+<t tx="karstenw.20211015171541.12">def isPoint( self ):
+    return True
+
+</t>
+<t tx="karstenw.20211015171541.13">def rect( self, aPoint ):
+    """Answer a Rectangle that encompasses the receiver and aPoint.
+       This is the most general infix way to create a rectangle."""
+    return Rectangle( min(self, aPoint), max(self, aPoint ))
+
+
+</t>
+<t tx="karstenw.20211015171541.14">def asArray( self ):
     return [self.x, self.y]
 
 </t>
-<t tx="karstenw.20210403131024.1"></t>
-<t tx="karstenw.20210403131045.1">@classmethod
+<t tx="karstenw.20211015171541.15">def copy( self ):
+    return Point( self.x, self.y )
+
+</t>
+<t tx="karstenw.20211015171541.16">def sideOf( self, otherPoint ):
+    """Returns #left, #right or #center if the otherPoint lies to the left,
+       right or on the line given by the vector from 0@0 to self"""
+    side = self.crossProduct( otherPoint )
+    side = sign( side )
+    sides = ('right', 'center', 'left')
+    return sides[side+1]
+
+</t>
+<t tx="karstenw.20211015171541.17"></t>
+<t tx="karstenw.20211015171541.18">def interpolateToAt( self, end, amountDone ):
+    """Interpolate between the instance and end after the specified amount
+       has been done (0 - 1)."""
+    return self + ((end - self) * amountDone)
+
+</t>
+<t tx="karstenw.20211015171541.19">def bearingToPoint( self, anotherPoint ):
+    """Return the bearing, in degrees, from the receiver to anotherPoint.
+       Adapted from Playground, where the ultimate provenance of the
+       algorithm was a wild earlier method of Jay Fenton's which I never
+       checked carefully, but the thing has always seemed to work."""
+
+    deltaX = anotherPoint.x - self.x
+    deltaY = anotherPoint.y - self.x
+    
+    if abs(deltaX) &lt; 0.001:
+        if deltaY &gt; 0:
+            return 180.0
+        else:
+            return 0.0
+    
+    q = 270
+    if deltaX &gt;= 0:
+        q = 90
+    return q - round( math.degrees(-math.arctan(deltaY / deltaX)) )
+
+</t>
+<t tx="karstenw.20211015171541.2"></t>
+<t tx="karstenw.20211015171541.20">def crossProduct( self, aPoint ):
+    """Answer a number that is the cross product of the receiver and the 
+    argument, aPoint."""
+    
+    return (self.x * aPoint.y) - (self.y * aPoint.x)
+
+
+</t>
+<t tx="karstenw.20211015171541.21">def dist( self, aPoint ):
+    """Answer the distance between aPoint and the receiver."""
+    dx = aPoint.x - self.x
+    dy = aPoint.y - self.y
+    return math.sqrt( (dx * dx) + (dy * dy) )
+
+</t>
+<t tx="karstenw.20211015171541.22">def dotProduct( self, aPoint ):
+    """Answer a number that is the dot product of the receiver and the 
+    argument, aPoint. That is, the two points are multipled and the 
+    coordinates of the result summed."""
+    return (self.x * aPoint.x) + (self.y * aPoint.y)
+
+</t>
+<t tx="karstenw.20211015171541.23">def eightNeighbors( self ):
+    return [
+        self + Point( 1, 0),
+        self + Point( 1, 1),
+        self + Point( 0, 1),
+        self + Point(-1, 1),
+        self + Point(-1, 0),
+        self + Point(-1,-1),
+        self + Point( 0,-1),
+        self + Point( 1,-1)]
+
+</t>
+<t tx="karstenw.20211015171541.24">def fourNeighbors( self ):
+    return [
+        self + Point( 1, 0),
+        self + Point( 0, 1),
+        self + Point(-1, 0),
+        self + Point( 0,-1)]
+
+</t>
+<t tx="karstenw.20211015171541.25">def flipByCenterAt( self, direction, center ):
+    """Answer a Point which is flipped according to the direction about
+       the point c.  Direction must be #vertical or #horizontal."""
+    if direction == "vertical":
+        return Point( self.x, center.y * 2 - self.y)
+    elif direction == "horizontal":
+        return Point( center.x * 2 - self.x, self.y )
+    # raise error: 'unrecognizable direction'
+
+</t>
+<t tx="karstenw.20211015171541.26">def grid( self, aPoint ):
+    """Answer a Point to the nearest rounded grid modules specified
+    by aPoint."""
+    gridPoint = makePoint( aPoint )
+    newX = round(self.x / float( gridPoint.x )) * gridPoint.x
+    newY = round(self.y / float( gridPoint.y )) * gridPoint.y
+    return Point(newX,newY)
+
+</t>
+<t tx="karstenw.20211015171541.27">def insideTriangle( self, p1, p2, p3 ):
+    """Return true if the receiver is within the triangle defined by the
+       three coordinates.
+       
+       Note: This method computes the barycentric coordinates for the
+             receiver and tests those coordinates."""
+    pass
+
+</t>
+<t tx="karstenw.20211015171541.28">def nearestPointAlongLineFromTo( self, p1, p2 ):
+    """Note this will give points beyond the endpoints.
+    Streamlined by Gerardo Richarte 11/3/97"""
+
+    if p1.x == p2.x:
+        return Point(p1.x, self.y)
+    if p1.y == p2.y:
+        return Point( self.x, p1.y )
+    x1 = float( p1.x )
+    y1 = float( p1.y )
+    x21 = float(p2.x) - x1
+    y21 = float(p2.y) - y1
+    t =  (((float(self.y) - y1) / x21
+         + (float(self.x) - x1) / y21)
+         / ( (x21 / y21) + (y21 / x21)))
+    return Point(x1 + (t * x21)) , (y1 + (t * y21))
+
+</t>
+<t tx="karstenw.20211015171541.29">def skalarPointOnLine( self, p1, p2, t ):
+    """return the point p1 + (t * (p2-p1))
+    kw 2021-02-25"""
+    if t &gt; 1.0:
+        return p2
+    elif t &lt; 0.0:
+        return p1
+    
+    dist = p2 - p1
+    return p1 + (t * dist)
+
+</t>
+<t tx="karstenw.20211015171541.3">def __init__(self, x, y):
+    self.x = x
+    self.y = y
+
+
+</t>
+<t tx="karstenw.20211015171541.30">def normal(self):
+    """Answer a Point representing the unit vector rotated
+       90 deg clockwise."""
+    p = Point(-self.y, self.x)
+    return p / math.sqrt((p.x * p.x + p.y * p.y))
+
+</t>
+<t tx="karstenw.20211015171541.31">def normalized( self ):
+    r = math.sqrt((self.x ** 2) + (self.y ** 2))
+    return Point( self.x / r, self.y / r)
+
+</t>
+<t tx="karstenw.20211015171541.32"># BAUSTELLE
+def octantOf(self, otherPt ):
+    """Return 1..8 indicating relative direction to otherPoint.
+       1=ESE, 2=SSE, ... etc. clockwise to 8=ENE"""
+    if (self.x == otherPt.x) and (self.y &gt; otherPt.y):
+        return 6
+    if (self.y &lt; otherPt.y) and (self.x &lt; otherPt.x):
+        return 8
+    quad = self.quadrantOf( otherPt )
+    moreHoriz = abs( self.x - otherPt.x) &gt;= abs(self.y - otherPt.y)
+    """
+        moreHoriz _ (x - otherPoint x) abs &gt;= (y - otherPoint y) abs.
+        (quad even eqv: moreHoriz)
+            ifTrue: [^ quad * 2]
+            ifFalse: [^ quad * 2 - 1]! !
+    """
+
+</t>
+<t tx="karstenw.20211015171541.33">def onLineFromTo(self, p1, p2):
+    return self.onLineFromToWithin( p1, p2, 2)
+
+</t>
+<t tx="karstenw.20211015171541.34">def onLineFromToWithin( self, p1, p2, epsilon):
+    """Answer true if the receiver lies on the given line segment
+       between p1 and p2 within a small epsilon."""
+    # is this point within the box spanning p1 and p2
+    # expanded by epsilon? (optimized)
+    if p1.x &lt; p2.x:
+        if (   (self.x &lt; (p1.x - epsilon))
+            or (self.x &gt; (p2.x + epsilon))):
+            return False
+    else:
+        if (   (self.x &lt; (p2.x - epsilon))
+            or (self.x &gt; (p1.x + epsilon))):
+            return False
+
+    if p1.y &lt; p2.y:
+        if (   (self.y &lt; (p1.y - epsilon)) 
+            or (self.y &gt; (p2.y + epsilon))):
+            return False
+    else:
+        if (   (self.y &lt; (p2.y - epsilon))
+            or (self.y &gt; (p1.y + epsilon))):
+            return False
+
+    return self.dist(self.nearestPointAlongLineFromTo(p1, p2)) &lt;= epsilon
+
+</t>
+<t tx="karstenw.20211015171541.35">def quadrantOf(self, otherPoint):
+    """Return 1..4 indicating relative direction to otherPoint.
+    1 is downRight, 2=downLeft, 3=upLeft, 4=upRight"""
+    if  self.x &lt;= otherPoint.x:
+        if self.y &lt; otherPoint.y:
+            return 1
+        else:
+            return 4
+    else:
+        if  self.y &lt;= otherPoint.y:
+            return 2
+        else:
+            return 4
+
+</t>
+<t tx="karstenw.20211015171541.36">def rotateByCenterAt( self, direction, c  ):
+    """Answer a Point which is rotated according to direction, about the
+       point c.
+       Direction must be one of #right (CW), #left (CCW)
+       or #pi (180 degrees)."""
+    c = makePoint( c )
+    offset = self - c
+    if direction == "right":
+        return( Point(-offset.y,  offset.x) + c )
+    elif direction == "right":
+        return( Point( offset.y, -offset.x) + c )
+    elif direction == "pi":
+        return( c - offset )
+    return False    
+
+</t>
+<t tx="karstenw.20211015171541.37">def sortsBefore( self, other ):
+    """Return true if the receiver sorts before the other point"""
+    if self.y == other.y:
+        return self.x &lt;= other.x
+    else:
+        return self.y &lt;= other.y
+
+</t>
+<t tx="karstenw.20211015171541.38">def squaredDistanceTo( self, aPoint ):
+    """Answer the distance between aPoint and the receiver."""
+    aPoint = makePoint( aPoint )
+    delta = aPoint - self
+    return delta.dotProduct( delta )
+
+</t>
+<t tx="karstenw.20211015171541.39">def transposed( self ):
+    return Point( self.y, self.x )
+
+</t>
+<t tx="karstenw.20211015171541.4">def __repr__( self ):
+    return u"Point( %.2f, %.2f )" % (float(self.x), float(self.y) )
+
+</t>
+<t tx="karstenw.20211015171541.40"></t>
+<t tx="karstenw.20211015171541.41">def degrees( self ):
+    if self.x == 0:
+        if self.y &gt;= 0:
+            return 90.0
+        else:
+            return 270.0
+    else:
+        tangente = float(self.y) / float(self.x)
+        theta = math.atan( tangente )
+        if self.x &gt;= 0:
+            if self.y &gt;= 0:
+                return math.degrees( theta )
+            else:
+                return 360.0 + math.degrees( theta )
+        else:
+            return 180.0 + math.degrees( theta )
+
+</t>
+<t tx="karstenw.20211015171541.42">def degreesWith( self, aPoint ):
+    """Answer the angle the receiver makes with origin in degrees.
+        right is 0;
+        down is 90."""
+    if self.x == aPoint.x:
+        if self.y &gt;= aPoint.y:
+            return 0.0
+        else:
+            return 180.0
+    else:
+        tan = float(self.y - aPoint.y) / float(self.x - aPoint.x )
+        thetadeg = math.degrees(math.atan( tan ))
+        if self.x &gt;= aPoint.x:
+            if self.y &gt;= aPoint.y:
+                return thetadeg
+            else:
+                return 360.0 + thetadeg
+        else:
+            return 180.0 + thetadeg
+
+</t>
+<t tx="karstenw.20211015171541.43">def r( self ):
+    """Answer the receiver's radius in polar coordinate system."""
+    return math.sqrt( self.dotProduct( self ) )
+
+</t>
+<t tx="karstenw.20211015171541.44">def theta( self ):
+    """Answer the angle the receiver makes with origin in radians.
+        right is 0;
+        down is 90."""
+    if self.x == 0:
+        if self.y &gt;= 0:
+            return math.radians( 90 )
+            # return 1.5708 # 90.0 degreesToRadians
+        else:
+            return math.radians( 270 )
+            # return 4.71239 # 270.0 degreesToRadians
+    else:
+        tangente = float(self.y) / float(self.x)
+        theta = math.atan( tangente )
+        if self.x &gt;= 0:
+            if self.y &gt;= 0:
+                return theta
+            else:
+                return math.radians( 360.0 ) + theta
+        else:
+            return math.radians( 180 ) + theta
+
+
+</t>
+<t tx="karstenw.20211015171541.45"></t>
+<t tx="karstenw.20211015171541.46">def bitShiftPoint(self, bits ):
+    self.x = int(round(self.x)) &lt;&lt; int(bits)
+    self.y = int(round(self.y)) &lt;&lt; int(bits)
+
+</t>
+<t tx="karstenw.20211015171541.47">def setRDegrees(self, rho, degrees ):
+    radians = math.radians( float(degrees) )
+    self.x = float( rho ) * math.cos( radians )
+    self.y = float( rho ) * math.sin( radians )
+
+</t>
+<t tx="karstenw.20211015171541.48"></t>
+<t tx="karstenw.20211015171541.49">def adhereTo( self, aRect ):
+    """If the receiver lies outside aRectangle, return the nearest point
+       on the boundary of the rectangle, otherwise return self."""
+    if aRect.containsPoint( self ):
+        return self
+    x = min(max(self.x. aRect.left), aRect.right)
+    y = min(max(self.y, aRect.top), aRect.bottom)
+    return Point( x, y )
+
+</t>
+<t tx="karstenw.20211015171541.5">def __lt__(self, other):
+    return (self.x &lt; other.x) and (self.y &lt; other.y)
+
+def __le__(self, other):
+    return (self.x &lt;= other.x) and (self.y &lt;= other.y)
+
+def __gt__(self, other):
+    return (self.x &gt; other.x) and (self.y &gt; other.y)
+
+def __ge__(self, other):
+    return (self.x &gt;= other.x) and (self.y &gt;= other.y)
+
+def __eq__(self, other):
+    return (self.x == other.x) and (self.y == other.y)
+
+def __ne__(self, other):
+    return (self.x != other.x) or (self.y != other.y)
+
+def __add__( self, other):
+    if isinstance(other, Point):
+        return Point( self.x + other.x, self.y + other.y )
+    return Point( self.x + other, self.y + other )
+
+def __sub__( self, other):
+    if isinstance(other, Point):
+        return Point( self.x - other.x, self.y - other.y )
+    return Point( self.x - other, self.y - other )
+
+def __mul__( self, other):
+    if isinstance(other, Point):
+        return Point( self.x * other.x, self.y * other.y )
+    return Point( self.x * other, self.y * other )
+
+</t>
+<t tx="karstenw.20211015171541.50">def negated( self ):
+    """Answer a point whose x and y coordinates are the negatives of
+       those of the receiver.  6/6/96 sw"""
+    return Point( 0-self.x, 0-self.y )
+
+</t>
+<t tx="karstenw.20211015171541.51">def scaleBy( self, factorpt ):
+    """Answer a Point scaled by factor (an instance of Point)."""
+    return Point(self.x * factorpt.x, self.y * factorpt.y)
+
+</t>
+<t tx="karstenw.20211015171541.52">def scaleFromTo(self, rect1, rect2 ):
+    """Produce a point stretched according to the stretch from
+       rect1 to rect2"""
+    x = rect2.topLeft + ((self.x - rect1.left) * rect2.width // rect1.width)
+    y = (self.y - rect1.top) * rect2.height // rect1.height
+    return Point( x, y )
+
+</t>
+<t tx="karstenw.20211015171541.53">def rotateByAboutCenter( self, angle, center ):
+    """Even though Point.theta is measured CW, this rotates with the
+       more conventional CCW interpretateion of angle."""
+    p = self - center
+    r = p.r
+    theta = float( angle ) - p.theta
+    x = float( center.x ) + ( r * math.cos( theta ))
+    y = float( center.y ) - ( r * math.sin( theta ))
+    return Point( x, y )
+
+</t>
+<t tx="karstenw.20211015171541.54">def translateBy( self, delta ):
+    """Answer a Point translated by delta (an instance of Point)."""
+    delta = makePoint( delta )
+    return self + delta
+
+</t>
+<t tx="karstenw.20211015171541.55"></t>
+<t tx="karstenw.20211015171541.56">def rounded( self ):
+    """Answer a Point that is the receiver's x and y rounded. Answer
+       the receiver if its coordinates are already integral."""
+    if isinstance(self.x, int):
+        if isinstance(self.y, int):
+            return self
+    return Point( round(self.x), round(self.y) )
+
+</t>
+<t tx="karstenw.20211015171541.57">def truncateTo( self, grid ):
+    """Answer a Point that is the receiver's x and y truncated to
+       grid x and grid y."""
+    gridPoint = makePoint(grid)
+    x = (self.x // gridPoint.x) * gridPoint.x
+    y = (self.y // gridPoint.y) * gridPoint.y
+    return Point(x,y)
+
+</t>
+<t tx="karstenw.20211015171541.58">def truncated( self ):
+    """Answer a Point whose x and y coordinates are integers.
+    Answer the receiver if its coordinates are already integral."""
+    if (int(self.x) == self.x) and (int(self.y) == self.y ):
+        return self
+    return Point( int( self.x ), int(self.y) )
+</t>
+<t tx="karstenw.20211015171541.59"></t>
+<t tx="karstenw.20211015171541.6"></t>
+<t tx="karstenw.20211015171541.60">def isZero( self ):
+    epsilon = 0.00001
+    if 0.0 - epsilon &lt; self.x &lt; 0.0 + epsilon:
+        if 0.0 - epsilon &lt; self.y &lt; 0.0 + epsilon:
+            return True
+    return False
+
+
+</t>
+<t tx="karstenw.20211015171541.61"></t>
+<t tx="karstenw.20211015171541.62"></t>
+<t tx="karstenw.20211015171541.63">@classmethod
 def rhoDegrees( cls, rho, degrees ):
     "Answer an instance of me with polar coordinates rho and degrees."
     p = cls(0,0)
     return p.setRDegrees( rho, degrees )
 
 </t>
-<t tx="karstenw.20210403131056.1"></t>
-<t tx="karstenw.20210403163241.1"></t>
-<t tx="karstenw.20210405143028.1">def asArray( self ):
-    return [self.origin.x,
-            self.origin.y,
-            self.corner.x,
-            self.corner.y]
+<t tx="karstenw.20211015171541.7"></t>
+<t tx="karstenw.20211015171541.8">def asFloatPoint( self ):
+    return Point( float(self.x), float(self.y))
 
 </t>
-<t tx="karstenw.20210504100313.1"></t>
-<t tx="karstenw.20210504100438.1"></t>
-<t tx="karstenw.20210603123950.1">def asPointList( self ):
-    return [self.origin, self.corner]
-
+<t tx="karstenw.20211015171541.9">def asIntegerPoint( self ):
+    return Point( int( round(self.x) ), int( round(self.y) ))
 
 </t>
-<t tx="karstenw.20210615170955.1">@language python
+<t tx="karstenw.20211015171659.1">
+# -*- coding: utf-8 -*-
+
+from __future__ import print_function
+import sys
+import os
+import math
+
+
+import pprint
+pp = pprint.pprint
+
+import pdb
+
+kwdbg = 1
+
+</t>
+<t tx="karstenw.20211015171830.1">
+# -*- coding: utf-8 -*-
+
+from __future__ import print_function
+import sys
+import os
+import math
+
+
+import pprint
+pp = pprint.pprint
+
+import pdb
+
+kwdbg = 1
+
+</t>
+<t tx="karstenw.20211015172042.1"></t>
+<t tx="karstenw.20211015172141.1"></t>
+<t tx="karstenw.20211015172441.1">@language python
 @tabwidth -4
 @others
 </t>
-<t tx="karstenw.20210615171004.1">
+<t tx="karstenw.20211015172515.1">
 # -*- coding: utf-8 -*-
 
 from __future__ import print_function
@@ -1624,7 +1662,19 @@ import photobot as pb
 
 
 </t>
-<t tx="karstenw.20210615171004.10">def setheight(self, newHeight):
+<t tx="karstenw.20211015172526.1">class Form(object):
+    """Translated from a Squeak 3.7 image
+    Implemented as a abstraction layer to Image.
+    """
+
+    @others
+</t>
+<t tx="karstenw.20211015172526.10"># height
+def getheight( self ):
+    s = self.bits.size
+    return self.bits.size[1]
+</t>
+<t tx="karstenw.20211015172526.11">def setheight(self, newHeight):
     pass
 height = property(getheight) #, setheight)
 
@@ -1637,12 +1687,13 @@ height = property(getheight) #, setheight)
 # alpha
 
 </t>
-<t tx="karstenw.20210615171004.11">def center( self ):
+<t tx="karstenw.20211015172526.12">def center( self ):
     return self.frame.center
 
 
 </t>
-<t tx="karstenw.20210615171004.12">@classmethod
+<t tx="karstenw.20211015172526.13"></t>
+<t tx="karstenw.20211015172526.14">@classmethod
 def extent( cls, extentPoint ):
     """Answer an instance of me whose top left corner is originPoint
        and width by height is extentPoint."""
@@ -1654,7 +1705,7 @@ def extent( cls, extentPoint ):
     return form
 
 </t>
-<t tx="karstenw.20210615171004.13">@classmethod
+<t tx="karstenw.20211015172526.15">@classmethod
 def extentMode( cls, extentPoint, mode ):
     """Answer an instance of me with blank bitmap of the given
        dimensions and depth."""
@@ -1662,7 +1713,7 @@ def extentMode( cls, extentPoint, mode ):
     return cls( int(p.x), int(p.y), mode )
 
 </t>
-<t tx="karstenw.20210615171004.14">@classmethod
+<t tx="karstenw.20211015172526.16">@classmethod
 def dotOfSize( cls, dotSizePoint ):
     color=(15,255)
     p = makePoint( dotSizePoint )
@@ -1673,7 +1724,50 @@ def dotOfSize( cls, dotSizePoint ):
 
 
 </t>
-<t tx="karstenw.20210615171004.15">def imageRectangles( reclist, frame=(10,10) ):
+<t tx="karstenw.20211015172526.2">def __init__(self, width, height, mode="RGBA" ):
+    width = int(width)
+    height = int(height)
+    self.img =  PIL.Image.new(mode, (width, height) )
+    self.frame = Rectangle( (0,0), (width, height) )
+    self.mode = mode
+    # self.depth = mode
+    self.fill = None
+    self.pattern = None
+    self.offset = Point(0,0)
+    self.canvas = pb.canvas( width, height )
+
+
+</t>
+<t tx="karstenw.20211015172526.3">def __repr__( self ):
+    return u"Form( %.2f, %.2f, %s )" % (self.frame.width,
+                                        self.frame.height,
+                                        self.mode)
+
+
+</t>
+<t tx="karstenw.20211015172526.4"></t>
+<t tx="karstenw.20211015172526.5"># bits
+def getbits(self):
+    return self.img
+</t>
+<t tx="karstenw.20211015172526.6">def setbits(self, img):
+    if type(img) == type(PIL.Image.Image):
+        self.img = img
+bits = property(getbits, setbits)
+
+</t>
+<t tx="karstenw.20211015172526.7"></t>
+<t tx="karstenw.20211015172526.8"># width
+def getwidth( self ):
+    s = self.bits.size
+    return self.bits.size[0]
+</t>
+<t tx="karstenw.20211015172526.9">def setwidth(self, newWidth):
+    pass
+width = property(getwidth) #, setwidth)
+
+</t>
+<t tx="karstenw.20211015172603.1">def imageRectangles( reclist, frame=(10,10) ):
     # pdb.set_trace()
     frame = makePoint( frame )
     rectangles = []
@@ -1707,63 +1801,7 @@ def dotOfSize( cls, dotSizePoint ):
 
 
 </t>
-<t tx="karstenw.20210615171004.2">class Form(object):
-    """Translated from a Squeak 3.7 image
-    Implemented as a abstraction layer to Image.
-    """
-
-    @others
-</t>
-<t tx="karstenw.20210615171004.3">def __init__(self, width, height, mode="RGBA" ):
-    width = int(width)
-    height = int(height)
-    self.img =  PIL.Image.new(mode, (width, height) )
-    self.frame = Rectangle( (0,0), (width, height) )
-    self.mode = mode
-    # self.depth = mode
-    self.fill = None
-    self.pattern = None
-    self.offset = Point(0,0)
-    self.canvas = pb.canvas( width, height )
-
-
-</t>
-<t tx="karstenw.20210615171004.4">def __repr__( self ):
-    return u"Form( %.2f, %.2f, %s )" % (self.frame.width,
-                                        self.frame.height,
-                                        self.mode)
-
-
-</t>
-<t tx="karstenw.20210615171004.5"># bits
-def getbits(self):
-    return self.img
-</t>
-<t tx="karstenw.20210615171004.6">def setbits(self, img):
-    if type(img) == type(PIL.Image.Image):
-        self.img = img
-bits = property(getbits, setbits)
-
-</t>
-<t tx="karstenw.20210615171004.7"># width
-def getwidth( self ):
-    s = self.bits.size
-    return self.bits.size[0]
-</t>
-<t tx="karstenw.20210615171004.8">def setwidth(self, newWidth):
-    pass
-width = property(getwidth) #, setwidth)
-
-</t>
-<t tx="karstenw.20210615171004.9"># height
-def getheight( self ):
-    s = self.bits.size
-    return self.bits.size[1]
-</t>
-<t tx="karstenw.20210615171043.1"></t>
-<t tx="karstenw.20210615171057.1"></t>
-<t tx="karstenw.20210615171122.1"></t>
-<t tx="karstenw.20210615171216.1">if __name__ == '__main__':
+<t tx="karstenw.20211015172611.1">if __name__ == '__main__':
     d = Form.dotOfSize(511)
     d.img.save("Form.dotOfSize(511).png")
 
