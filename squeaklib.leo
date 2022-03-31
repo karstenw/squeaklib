@@ -9,22 +9,21 @@
 <preferences/>
 <find_panel_settings/>
 <vnodes>
-<v t="karstenw.20211015160132.1"><vh>@clean squeaklib/__init__.py</vh>
+<v t="karstenw.20211015160132.1" a="E"><vh>@clean squeaklib/__init__.py</vh>
 <v t="karstenw.20211015160216.1"><vh>newHeadline</vh></v>
 </v>
-<v t="karstenw.20211015160313.1"><vh>@clean squeaklib/point.py</vh>
+<v t="karstenw.20211015160313.1" a="E"><vh>@clean squeaklib/point.py</vh>
 <v t="karstenw.20211015171659.1"><vh>declarations</vh></v>
-<v t="karstenw.20211015172141.1"><vh>tools</vh>
-<v t="karstenw.20210301114724.5"><vh>makePoint</vh></v>
+<v t="karstenw.20211015172141.1" a="E"><vh>tools</vh>
 <v t="karstenw.20210401150717.1"><vh>sign</vh></v>
 </v>
-<v t="karstenw.20211015171541.1"><vh>Point</vh>
+<v t="karstenw.20211015171541.1" a="E"><vh>Point</vh>
 <v t="karstenw.20211015171541.2"><vh>__python__</vh>
 <v t="karstenw.20211015171541.3"><vh>__init__</vh></v>
 <v t="karstenw.20211015171541.4"><vh>__repr__</vh></v>
 <v t="karstenw.20211015171541.5"><vh>__lt|le|gt|ge|eq|ne|add|sub|mul__</vh></v>
 </v>
-<v t="karstenw.20211015171541.6" a="E"><vh>instance methods</vh>
+<v t="karstenw.20211015171541.6"><vh>instance methods</vh>
 <v t="karstenw.20211015171541.7"><vh>converting</vh>
 <v t="karstenw.20211015171541.8"><vh>asFloatPoint</vh></v>
 <v t="karstenw.20211015171541.9"><vh>asIntegerPoint</vh></v>
@@ -84,21 +83,18 @@
 <v t="karstenw.20211015171541.58"><vh>truncated</vh></v>
 </v>
 </v>
-<v t="karstenw.20211015171541.59"><vh>testing</vh>
+<v t="karstenw.20211015171541.59" a="E"><vh>testing</vh>
 <v t="karstenw.20211015171541.60"><vh>isZero</vh></v>
 </v>
-<v t="karstenw.20211015171541.61"><vh>class methods</vh>
+<v t="karstenw.20211015171541.61" a="E"><vh>class methods</vh>
 <v t="karstenw.20211015171541.62"><vh>instance creation</vh>
 <v t="karstenw.20211015171541.63"><vh>rhoDegrees</vh></v>
 </v>
 </v>
 </v>
 </v>
-<v t="karstenw.20211015160327.1"><vh>@clean squeaklib/rectangle.py</vh>
+<v t="karstenw.20211015160327.1" a="E"><vh>@clean squeaklib/rectangle.py</vh>
 <v t="karstenw.20211015171830.1"><vh>declarations</vh></v>
-<v t="karstenw.20211015172042.1"><vh>tools</vh>
-<v t="karstenw.20210301114724.5"></v>
-</v>
 <v t="karstenw.20211015171522.1" a="E"><vh>Rectangle</vh>
 <v t="karstenw.20211015171522.2"><vh>__python__</vh>
 <v t="karstenw.20211015171522.3"><vh>__init__</vh></v>
@@ -186,9 +182,6 @@
 </v>
 <v t="karstenw.20211015172441.1" a="E"><vh>@clean squeaklib/form.py</vh>
 <v t="karstenw.20211015172515.1"><vh>Declarations</vh></v>
-<v t="karstenw.20211015174823.1" a="E"><vh>tools</vh>
-<v t="karstenw.20210301114724.5"></v>
-</v>
 <v t="karstenw.20211015172526.1"><vh>class Form</vh>
 <v t="karstenw.20211015172526.2"><vh>__init__</vh></v>
 <v t="karstenw.20211015172526.3"><vh>__repr__</vh></v>
@@ -212,7 +205,7 @@
 <v t="karstenw.20211015172603.1"><vh>imageRectangles</vh></v>
 </v>
 <v t="karstenw.20211017122643.1" a="E"><vh>trash</vh>
-<v t="karstenw.20211015201020.1"><vh>subdivision</vh>
+<v t="karstenw.20211015201020.1" a="E"><vh>subdivision</vh>
 <v t="karstenw.20211015201030.1"><vh>split</vh></v>
 <v t="karstenw.20211017114859.1"><vh>quadsplit</vh></v>
 <v t="karstenw.20211017115305.1"><vh>outerrects</vh></v>
@@ -220,23 +213,6 @@
 </v>
 </vnodes>
 <tnodes>
-<t tx="karstenw.20210301114724.5">def makePoint( *args  ):
-    "Tries to create a Point from args."
-    n = len(args)
-    if n == 1:
-        typ = type( args[0] )
-        if typ in (Point,):
-            return args[0]
-        elif typ in (long, int, float):
-            return Point( args[0], args[0] )
-        elif typ in (list, tuple):
-            return Point( args[0][0], args[0][1] )
-    elif n == 2:
-        return Point( args[0], args[1] )
-    return None
-
-
-</t>
 <t tx="karstenw.20210401150717.1">def sign( number ):
     """I can't believe that Python does not have a sign() function."""
 
@@ -253,7 +229,7 @@
 @others
 </t>
 <t tx="karstenw.20211015160216.1">
-import point, rectangle, form
+from . import point, rectangle, form
 
 Point = point.Point
 Rectangle = rectangle.Rectangle
@@ -264,9 +240,6 @@ rectangle.Point = Point
 form.Point = Point
 form.Rectangle = Rectangle
 
-#from .point import Point
-#from .rectangle import Rectangle
-#from .form import Form
 
 </t>
 <t tx="karstenw.20211015160313.1">@language python
@@ -1620,37 +1593,26 @@ def rhoDegrees( cls, rho, degrees ):
 # -*- coding: utf-8 -*-
 
 from __future__ import print_function
-import sys
-import os
+
+
 import math
 
+from makepoint import makepoint
 
 import pprint
 pp = pprint.pprint
 
 import pdb
-
-kwdbg = 1
-
 
 </t>
 <t tx="karstenw.20211015171830.1">
 # -*- coding: utf-8 -*-
 
 from __future__ import print_function
-import sys
-import os
-import math
 
+from makepoint import makepoint
 
-import pprint
-pp = pprint.pprint
-
-import pdb
-
-kwdbg = 1
 </t>
-<t tx="karstenw.20211015172042.1"></t>
 <t tx="karstenw.20211015172141.1"></t>
 <t tx="karstenw.20211015172441.1">@language python
 @tabwidth -4
@@ -1660,9 +1622,7 @@ kwdbg = 1
 # -*- coding: utf-8 -*-
 
 from __future__ import print_function
-import sys
-import os
-import math
+
 import random
 import pprint
 pp = pprint.pprint
@@ -1673,12 +1633,9 @@ import PIL.ImageDraw as ImageDraw
 
 import pdb
 
-#from .point import Point
-# from .rectangle import Rectangle
+from makepoint import makepoint
 
 import photobot as pb
-
-
 </t>
 <t tx="karstenw.20211015172526.1">class Form(object):
     """Translated from a Squeak 3.7 image
@@ -1818,7 +1775,6 @@ width = property(getwidth) #, setwidth)
     f.canvas.export("RectangleList()_" + pb.datestring(), unique=True  )
 
 </t>
-<t tx="karstenw.20211015174823.1"></t>
 <t tx="karstenw.20211015201020.1"></t>
 <t tx="karstenw.20211015201030.1">def split(self, horizontal=True, t=0.5):
     """Split a Rectangle horizontally or vertically.

@@ -13,8 +13,6 @@ pp = pprint.pprint
 
 import pdb
 
-
-
 def sign( number ):
     """I can't believe that Python does not have a sign() function."""
 

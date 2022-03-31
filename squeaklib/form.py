@@ -16,8 +16,6 @@ import pdb
 from makepoint import makepoint
 
 import photobot as pb
-
-
 class Form(object):
     """Translated from a Squeak 3.7 image
     Implemented as a abstraction layer to Image.

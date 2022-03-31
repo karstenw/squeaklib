@@ -5,7 +5,6 @@ from __future__ import print_function
 
 from makepoint import makepoint
 
-
 class Rectangle(object):
     "Translated from a Squeak 3.7 image"
 
