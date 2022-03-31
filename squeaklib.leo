@@ -14,7 +14,7 @@
 </v>
 <v t="karstenw.20211015160313.1"><vh>@clean squeaklib/point.py</vh>
 <v t="karstenw.20211015171659.1"><vh>declarations</vh></v>
-<v t="karstenw.20211015172141.1" a="E"><vh>tools</vh>
+<v t="karstenw.20211015172141.1"><vh>tools</vh>
 <v t="karstenw.20210301114724.5"><vh>makePoint</vh></v>
 <v t="karstenw.20210401150717.1"><vh>sign</vh></v>
 </v>
@@ -96,11 +96,11 @@
 </v>
 <v t="karstenw.20211015160327.1"><vh>@clean squeaklib/rectangle.py</vh>
 <v t="karstenw.20211015171830.1"><vh>declarations</vh></v>
-<v t="karstenw.20211015172042.1" a="E"><vh>tools</vh>
+<v t="karstenw.20211015172042.1"><vh>tools</vh>
 <v t="karstenw.20210301114724.5"></v>
 </v>
 <v t="karstenw.20211015171522.1" a="E"><vh>Rectangle</vh>
-<v t="karstenw.20211015171522.2" a="E"><vh>__python__</vh>
+<v t="karstenw.20211015171522.2"><vh>__python__</vh>
 <v t="karstenw.20211015171522.3"><vh>__init__</vh></v>
 <v t="karstenw.20211015171522.4"><vh>__repr__</vh></v>
 <v t="karstenw.20211015171522.5"><vh>__eq|ne|add|sub|mul__</vh></v>
@@ -173,7 +173,7 @@
 </v>
 <v t="karstenw.20211015171522.67"><vh>inRect</vh></v>
 </v>
-<v t="karstenw.20211015171522.68" a="E"><vh>class methods</vh>
+<v t="karstenw.20211015171522.68"><vh>class methods</vh>
 <v t="karstenw.20211015171522.69" a="E"><vh>instance creation</vh>
 <v t="karstenw.20211015171522.70"><vh>centerExtent</vh></v>
 <v t="karstenw.20211015171522.71"><vh>encompassing</vh></v>
@@ -186,6 +186,9 @@
 </v>
 <v t="karstenw.20211015172441.1" a="E"><vh>@clean squeaklib/form.py</vh>
 <v t="karstenw.20211015172515.1"><vh>Declarations</vh></v>
+<v t="karstenw.20211015174823.1" a="E"><vh>tools</vh>
+<v t="karstenw.20210301114724.5"></v>
+</v>
 <v t="karstenw.20211015172526.1"><vh>class Form</vh>
 <v t="karstenw.20211015172526.2"><vh>__init__</vh></v>
 <v t="karstenw.20211015172526.3"><vh>__repr__</vh></v>
@@ -207,7 +210,13 @@
 </v>
 </v>
 <v t="karstenw.20211015172603.1"><vh>imageRectangles</vh></v>
-<v t="karstenw.20211015172611.1"><vh>MAIN</vh></v>
+</v>
+<v t="karstenw.20211017122643.1" a="E"><vh>trash</vh>
+<v t="karstenw.20211015201020.1"><vh>subdivision</vh>
+<v t="karstenw.20211015201030.1"><vh>split</vh></v>
+<v t="karstenw.20211017114859.1"><vh>quadsplit</vh></v>
+<v t="karstenw.20211017115305.1"><vh>outerrects</vh></v>
+</v>
 </v>
 </vnodes>
 <tnodes>
@@ -244,11 +253,22 @@
 @others
 </t>
 <t tx="karstenw.20211015160216.1">
-from .point import Point
+import point, rectangle, form
 
-from .rectangle import Rectangle
+Point = point.Point
+Rectangle = rectangle.Rectangle
+Form = form.Form
 
-from .form import Form</t>
+point.Rectangle = Rectangle
+rectangle.Point = Point
+form.Point = Point
+form.Rectangle = Rectangle
+
+#from .point import Point
+#from .rectangle import Rectangle
+#from .form import Form
+
+</t>
 <t tx="karstenw.20211015160313.1">@language python
 @tabwidth -4
 @others
@@ -1612,6 +1632,7 @@ import pdb
 
 kwdbg = 1
 
+
 </t>
 <t tx="karstenw.20211015171830.1">
 # -*- coding: utf-8 -*-
@@ -1628,7 +1649,6 @@ pp = pprint.pprint
 import pdb
 
 kwdbg = 1
-
 </t>
 <t tx="karstenw.20211015172042.1"></t>
 <t tx="karstenw.20211015172141.1"></t>
@@ -1653,10 +1673,8 @@ import PIL.ImageDraw as ImageDraw
 
 import pdb
 
-import squeaklib
-makePoint = squeaklib.makePoint
-Point = squeaklib.Point
-Rectangle = squeaklib.Rectangle
+#from .point import Point
+# from .rectangle import Rectangle
 
 import photobot as pb
 
@@ -1799,55 +1817,46 @@ width = property(getwidth) #, setwidth)
                          outline=(0,0,0,127), width=1)
     f.canvas.export("RectangleList()_" + pb.datestring(), unique=True  )
 
+</t>
+<t tx="karstenw.20211015174823.1"></t>
+<t tx="karstenw.20211015201020.1"></t>
+<t tx="karstenw.20211015201030.1">def split(self, horizontal=True, t=0.5):
+    """Split a Rectangle horizontally or vertically.
+    For now t is UNUSED but should be used for placing the splitpoint."""
+    if horizontal:
+        o1 = self.origin
+        c1 = self.bottomcenter
+        o2 = self.topcenter
+        c2 = self.corner
+    else:
+        o1 = self.origin
+        c1 = self.rightcenter
+        o2 = self.leftcenter
+        c2 = self.corner
+    return Rectangle( o1, c1 ), Rectangle( o2, c2 )
 
 </t>
-<t tx="karstenw.20211015172611.1">if __name__ == '__main__':
-    d = Form.dotOfSize(511)
-    d.img.save("Form.dotOfSize(511).png")
+<t tx="karstenw.20211017114859.1">def quadsplit( self ):
+    """Subdivide a rectangle into 4 equal sizes subrectangles."""
+    
+    result = []
+    tmpleft, tmpright = self.split()
+    result.extend( tmpleft.split( horizontal=False ) )
+    result.extend( tmpright.split( horizontal=False ) )
+    return result
 
-    p1 = Point(100,100)
-    p2 = Point(40,60)
-    p3 = Point(40,60)
-    
-    
-    r1 = Rectangle( p1, p2 )
-    print("R1: %s" % repr(r1) )
-    r2 = Rectangle.centerExtent(p1, p2)
-    imageRectangles( [r1,r2] )
-    
-    r3 = Rectangle.leftRightTopBottom( 10, 110, 10, 110 )
-    imageRectangles( [r1,r2,r3] )
-    
-    r4 = p1.extent( p2 )
-    imageRectangles( [r1,r2,r3,r4] )
-    
-    p2 = p1 * 2
-    imageRectangles( [r1,r2,r3,r4] )
-    
-    r5 = p1.extent( p2 )
-    imageRectangles( [r1,r2,r5] )
-    
-    r6 = p1.corner( p2 )
-    imageRectangles( [r1,r2,r6] )
-    
-    r7 = p2.rect( p1 )
-    imageRectangles( [r1,r2,r7] )
-    
-    r8 = Rectangle.centerExtent( Point( 50,50 ), Point(60,60) )
-    print("r8 = Rectangle.centerExtent( Point( 50,50 ), Point(60,60) ) =    %s" % repr(r8))
-    
-    print()
-    r9 = Rectangle.leftRightTopBottom( 10,490,10,890 )
-    print("r9 = Rectangle.leftRightTopBottom( 10,90,10,90 ) =    %s" % repr(r9))
-    
-    print()
-    r10 = Rectangle.merging( (r1,r2,r3,r4,r5,r6,r7,r8,r9) )
-    print("r10 = Rectangle.merging( (r1,r2,r3,r4,r5,r6,r7,r8,r9) ) =    %s" % repr(r10))
-    
-    imageRectangles( [r1,r2,r3,r4,r5,r6,r7,r8,r9] )
-    
-    pp([r1,r2,r3,r4,r5,r6,r7,r8,r9])
 
 </t>
+<t tx="karstenw.20211017115305.1">def outerrects( self ):
+    """
+    """
+    top = self.origin.y - self.height
+    left = self.origin.x - self.width
+    bottom = self.corner.y + self.height
+    right = self.corner.x + self.width
+    
+
+</t>
+<t tx="karstenw.20211017122643.1"></t>
 </tnodes>
 </leo_file>

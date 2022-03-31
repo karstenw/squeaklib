@@ -2,9 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import print_function
-import sys
-import os
-import math
+
 import random
 import pprint
 pp = pprint.pprint
@@ -15,10 +13,7 @@ import PIL.ImageDraw as ImageDraw
 
 import pdb
 
-import squeaklib
-makePoint = squeaklib.makePoint
-Point = squeaklib.Point
-Rectangle = squeaklib.Rectangle
+from makepoint import makepoint
 
 import photobot as pb
 
@@ -142,52 +137,4 @@ def imageRectangles( reclist, frame=(10,10) ):
         draw.rectangle( (x1,y1, w,h), fill=(c1, c2, 127,15),
                          outline=(0,0,0,127), width=1)
     f.canvas.export("RectangleList()_" + pb.datestring(), unique=True  )
-
-
-if __name__ == '__main__':
-    d = Form.dotOfSize(511)
-    d.img.save("Form.dotOfSize(511).png")
-
-    p1 = Point(100,100)
-    p2 = Point(40,60)
-    p3 = Point(40,60)
-    
-    
-    r1 = Rectangle( p1, p2 )
-    print("R1: %s" % repr(r1) )
-    r2 = Rectangle.centerExtent(p1, p2)
-    imageRectangles( [r1,r2] )
-    
-    r3 = Rectangle.leftRightTopBottom( 10, 110, 10, 110 )
-    imageRectangles( [r1,r2,r3] )
-    
-    r4 = p1.extent( p2 )
-    imageRectangles( [r1,r2,r3,r4] )
-    
-    p2 = p1 * 2
-    imageRectangles( [r1,r2,r3,r4] )
-    
-    r5 = p1.extent( p2 )
-    imageRectangles( [r1,r2,r5] )
-    
-    r6 = p1.corner( p2 )
-    imageRectangles( [r1,r2,r6] )
-    
-    r7 = p2.rect( p1 )
-    imageRectangles( [r1,r2,r7] )
-    
-    r8 = Rectangle.centerExtent( Point( 50,50 ), Point(60,60) )
-    print("r8 = Rectangle.centerExtent( Point( 50,50 ), Point(60,60) ) =    %s" % repr(r8))
-    
-    print()
-    r9 = Rectangle.leftRightTopBottom( 10,490,10,890 )
-    print("r9 = Rectangle.leftRightTopBottom( 10,90,10,90 ) =    %s" % repr(r9))
-    
-    print()
-    r10 = Rectangle.merging( (r1,r2,r3,r4,r5,r6,r7,r8,r9) )
-    print("r10 = Rectangle.merging( (r1,r2,r3,r4,r5,r6,r7,r8,r9) ) =    %s" % repr(r10))
-    
-    imageRectangles( [r1,r2,r3,r4,r5,r6,r7,r8,r9] )
-    
-    pp([r1,r2,r3,r4,r5,r6,r7,r8,r9])
 
