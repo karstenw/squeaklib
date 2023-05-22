@@ -1,5 +1,8 @@
 
-from squeaklib import Point, Rectangle, Form
+import pprint
+pp = pprint.pprint
+
+from squeaklib import Point, Rectangle, Form, imageRectangles
 
 
 d = Form.dotOfSize(511)

@@ -3,7 +3,12 @@
 
 from __future__ import print_function
 
-from makepoint import makepoint
+
+# from . import makepoint
+# makePoint = makepoint.makePoint
+
+# from . import point
+# Point = point.Point
 
 class Rectangle(object):
     "Translated from a Squeak 3.7 image"
@@ -149,7 +154,7 @@ class Rectangle(object):
     # center
     def getcenter( self ):
         return Point( self.left + self.width / 2.0,
-                      self.top + self.height / 2.0 )
+                            self.top + self.height / 2.0 )
     def setcenter( self, *args):
         center = makePoint( args )
         ext = self.extent
@@ -698,6 +703,34 @@ class Rectangle(object):
         return self.translatedToBeWithin( aRectangle ).squishedWithin( aRectangle )
 
 
+    def split(self, x, y ):
+        """Split rectangle at x,y. if either value is 0 or (w|h) only along the other value ist split."""
+        
+        splitpoint = makePoint( x, y )
+        
+        if (x > 0) and (x < self.width):
+            topx = makePoint( x, self.origin.y )
+            botx = makePoint( x, self.corner.y )
+            if (y > 0) and (y < self.height):
+
+                lefty = makePoint( self.origin.x, y )
+                righty = makePoint( self.corner.x, y )
+                
+                tl = Rectangle( self.origin, splitpoint )
+                tr = Rectangle( topx, righty )
+                bl = Rectangle( lefty, botx )
+                br = Rectangle( splitpoint, self.corner )
+                return (tl, tr, bl, br)
+            else:
+                # y fails return left and right rectangle
+                pass
+        else:
+            if (y > 0) and (y < self.height):
+                # x fails - return upper and lower rectangle
+                pass
+            else:
+                # complete failure - both values out of sight
+                return []
     def innerSquare(self):
         pass
 

@@ -6,12 +6,16 @@ from __future__ import print_function
 
 import math
 
-from makepoint import makepoint
-
 import pprint
 pp = pprint.pprint
 
 import pdb
+
+# from . import makepoint
+# makePoint = makepoint.makePoint
+
+# from . import rectangle
+# Rectangle = rectangle.Rectangle
 
 def sign( number ):
     """I can't believe that Python does not have a sign() function."""

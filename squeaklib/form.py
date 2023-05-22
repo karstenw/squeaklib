@@ -13,9 +13,17 @@ import PIL.ImageDraw as ImageDraw
 
 import pdb
 
-from makepoint import makepoint
-
 import photobot as pb
+
+from . import makepoint
+makePoint = makepoint.makePoint
+
+from . import point
+Point = point.Point
+
+from . import rectangle
+Rectangle = rectangle.Rectangle
+
 class Form(object):
     """Translated from a Squeak 3.7 image
     Implemented as a abstraction layer to Image.
