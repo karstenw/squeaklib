@@ -473,4 +473,3 @@ class Point(object):
         p = cls(0,0)
         return p.setRDegrees( rho, degrees )
 
-
