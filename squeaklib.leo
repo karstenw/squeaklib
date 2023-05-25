@@ -9,22 +9,22 @@
 <preferences/>
 <find_panel_settings/>
 <vnodes>
-<v t="karstenw.20211015160132.1" a="E"><vh>@clean squeaklib/__init__.py</vh>
+<v t="karstenw.20211015160132.1"><vh>@clean squeaklib/__init__.py</vh>
 <v t="karstenw.20211015160216.1"><vh>newHeadline</vh></v>
 </v>
-<v t="karstenw.20211015160313.1" a="E"><vh>@clean squeaklib/point.py</vh>
+<v t="karstenw.20211015160313.1"><vh>@clean squeaklib/point.py</vh>
 <v t="karstenw.20211015171659.1"><vh>declarations</vh></v>
 <v t="karstenw.20211015172141.1"><vh>tools</vh>
 <v t="karstenw.20210401150717.1"><vh>sign</vh></v>
 </v>
-<v t="karstenw.20211015171541.1" a="E"><vh>Point</vh>
+<v t="karstenw.20211015171541.1"><vh>Point</vh>
 <v t="karstenw.20211015171541.2"><vh>__python__</vh>
 <v t="karstenw.20211015171541.3"><vh>__init__</vh></v>
 <v t="karstenw.20211015171541.4"><vh>__repr__</vh></v>
 <v t="karstenw.20211015171541.5"><vh>__lt|le|gt|ge|eq|ne|add|sub|mul__</vh></v>
 </v>
-<v t="karstenw.20211015171541.6" a="E"><vh>instance methods</vh>
-<v t="karstenw.20211015171541.7" a="E"><vh>converting</vh>
+<v t="karstenw.20211015171541.6"><vh>instance methods</vh>
+<v t="karstenw.20211015171541.7"><vh>converting</vh>
 <v t="karstenw.20211015171541.8"><vh>asFloatPoint</vh></v>
 <v t="karstenw.20211015171541.9"><vh>asIntegerPoint</vh></v>
 <v t="karstenw.20211015171541.10"><vh>corner -&gt; Rectangle</vh></v>
@@ -35,7 +35,7 @@
 </v>
 <v t="karstenw.20211015171541.15"><vh>copying</vh></v>
 <v t="karstenw.20211015171541.16"><vh>geometry</vh></v>
-<v t="karstenw.20211015171541.17" a="E"><vh>point functions</vh>
+<v t="karstenw.20211015171541.17"><vh>point functions</vh>
 <v t="karstenw.20211015171541.18"><vh>interpolateToAt</vh></v>
 <v t="karstenw.20211015171541.19"><vh>bearingToPoint</vh></v>
 <v t="karstenw.20211015171541.20"><vh>crossProduct</vh></v>
@@ -69,7 +69,7 @@
 <v t="karstenw.20211015171541.46"><vh>bitShiftPoint</vh></v>
 <v t="karstenw.20211015171541.47"><vh>setRDegrees</vh></v>
 </v>
-<v t="karstenw.20211015171541.48" a="E"><vh>transforming</vh>
+<v t="karstenw.20211015171541.48"><vh>transforming</vh>
 <v t="karstenw.20211015171541.49"><vh>adhereTo</vh></v>
 <v t="karstenw.20211015171541.50"><vh>negated</vh></v>
 <v t="karstenw.20211015171541.51"><vh>scaleBy</vh></v>
@@ -95,8 +95,8 @@
 </v>
 <v t="karstenw.20211015160327.1" a="E"><vh>@clean squeaklib/rectangle.py</vh>
 <v t="karstenw.20211015171830.1"><vh>declarations</vh></v>
-<v t="karstenw.20211015171522.1"><vh>Rectangle</vh>
-<v t="karstenw.20211015171522.2" a="E"><vh>__python__</vh>
+<v t="karstenw.20211015171522.1" a="E"><vh>Rectangle</vh>
+<v t="karstenw.20211015171522.2"><vh>__python__</vh>
 <v t="karstenw.20211015171522.3"><vh>__init__</vh></v>
 <v t="karstenw.20211015171522.4"><vh>__repr__</vh></v>
 <v t="karstenw.20211015171522.5"><vh>__eq|ne|add|sub|mul__</vh></v>
@@ -109,9 +109,10 @@
 <v t="karstenw.20211015171522.11"><vh>center</vh></v>
 <v t="karstenw.20211015171522.12"><vh>bottomcenter topcenter leftcenter rightcenter</vh></v>
 <v t="karstenw.20211015171522.13"><vh>corners extent</vh></v>
+<v t="karstenw.20230525123613.1"><vh>lines</vh></v>
 </v>
 <v t="karstenw.20211015171522.14" a="E"><vh>instance methods</vh>
-<v t="karstenw.20211015171522.15" a="E"><vh>rectangle methods</vh>
+<v t="karstenw.20211015171522.15"><vh>rectangle methods</vh>
 <v t="karstenw.20211015171522.16"><vh>withRight</vh></v>
 <v t="karstenw.20211015171522.17"><vh>withLeft</vh></v>
 <v t="karstenw.20211015171522.18"><vh>withBottom</vh></v>
@@ -141,7 +142,7 @@
 <v t="karstenw.20211015171522.42"><vh>withSideOrCornerSetToPointMinExtent</vh></v>
 <v t="karstenw.20211015171522.43"><vh>withSideOrCornerSetToPointMinExtentLimit</vh></v>
 </v>
-<v t="karstenw.20211015171522.44" a="E"><vh>testing</vh>
+<v t="karstenw.20211015171522.44"><vh>testing</vh>
 <v t="karstenw.20211015171522.45"><vh>containsPoint</vh></v>
 <v t="karstenw.20211015171522.46"><vh>containsRect</vh></v>
 <v t="karstenw.20211015171522.47"><vh>fullIntersects</vh></v>
@@ -170,10 +171,13 @@
 <v t="karstenw.20230522211615.1" a="E"><vh>subdivision</vh>
 <v t="karstenw.20230522211654.1"><vh>split</vh></v>
 </v>
-<v t="karstenw.20211015171522.67"><vh>inRect</vh></v>
+<v t="karstenw.20211015171522.67" a="E"><vh>inRect</vh>
+<v t="karstenw.20230525122537.1"><vh>innerSquare</vh></v>
+<v t="karstenw.20230525122546.1"><vh>outerSquare</vh></v>
 </v>
-<v t="karstenw.20211015171522.68" a="E"><vh>class methods</vh>
-<v t="karstenw.20211015171522.69" a="E"><vh>instance creation</vh>
+</v>
+<v t="karstenw.20211015171522.68"><vh>class methods</vh>
+<v t="karstenw.20211015171522.69"><vh>instance creation</vh>
 <v t="karstenw.20211015171522.70"><vh>centerExtent</vh></v>
 <v t="karstenw.20211015171522.71"><vh>encompassing</vh></v>
 <v t="karstenw.20211015171522.72"><vh>leftRightTopBottom</vh></v>
@@ -182,24 +186,25 @@
 </v>
 </v>
 </v>
+<v t="karstenw.20230525121754.1"><vh>Region</vh></v>
 </v>
 <v t="karstenw.20211015172441.1"><vh>@clean squeaklib/form.py</vh>
 <v t="karstenw.20211015172515.1"><vh>Declarations</vh></v>
-<v t="karstenw.20211015172526.1" a="E"><vh>class Form</vh>
+<v t="karstenw.20211015172526.1"><vh>class Form</vh>
 <v t="karstenw.20211015172526.2"><vh>__init__</vh></v>
 <v t="karstenw.20211015172526.3"><vh>__repr__</vh></v>
-<v t="karstenw.20211015172526.4" a="E"><vh>BITS</vh>
+<v t="karstenw.20211015172526.4"><vh>BITS</vh>
 <v t="karstenw.20211015172526.5"><vh>getbits</vh></v>
 <v t="karstenw.20211015172526.6"><vh>setbits</vh></v>
 </v>
-<v t="karstenw.20211015172526.7" a="E"><vh>WIDTH &amp; HEIGHT</vh>
+<v t="karstenw.20211015172526.7"><vh>WIDTH &amp; HEIGHT</vh>
 <v t="karstenw.20211015172526.8"><vh>getwidth</vh></v>
 <v t="karstenw.20211015172526.9"><vh>setwidth</vh></v>
 <v t="karstenw.20211015172526.10"><vh>getheight</vh></v>
 <v t="karstenw.20211015172526.11"><vh>setheight</vh></v>
 </v>
 <v t="karstenw.20211015172526.12"><vh>center</vh></v>
-<v t="karstenw.20211015172526.13" a="E"><vh>classmethods</vh>
+<v t="karstenw.20211015172526.13"><vh>classmethods</vh>
 <v t="karstenw.20211015172526.14"><vh>extent</vh></v>
 <v t="karstenw.20211015172526.15"><vh>extentMode</vh></v>
 <v t="karstenw.20211015172526.16"><vh>dotOfSize</vh></v>
@@ -207,8 +212,8 @@
 </v>
 <v t="karstenw.20211015172603.1"><vh>imageRectangles</vh></v>
 </v>
-<v t="karstenw.20211017122643.1" a="E"><vh>trash</vh>
-<v t="karstenw.20211015201020.1" a="E"><vh>subdivision</vh>
+<v t="karstenw.20211017122643.1"><vh>trash</vh>
+<v t="karstenw.20211015201020.1"><vh>subdivision</vh>
 <v t="karstenw.20211015201030.1"><vh>split</vh></v>
 <v t="karstenw.20211017114859.1"><vh>quadsplit</vh></v>
 <v t="karstenw.20211017115305.1"><vh>outerrects</vh></v>
@@ -263,7 +268,6 @@ makepoint.Point = Point
     "Translated from a Squeak 3.7 image"
 
     @others
-
 </t>
 <t tx="karstenw.20211015171522.10"># topleft
 def gettopleft( self ):
@@ -951,15 +955,7 @@ def __mul__( self, other):
 
 
 </t>
-<t tx="karstenw.20211015171522.67">def innerSquare(self):
-    pass
-
-
-def outerSquareRect(self):
-    pass
-
-
-</t>
+<t tx="karstenw.20211015171522.67"></t>
 <t tx="karstenw.20211015171522.68"></t>
 <t tx="karstenw.20211015171522.69"></t>
 <t tx="karstenw.20211015171522.7"># origin
@@ -1035,7 +1031,6 @@ def originExtent( cls, originPoint, extentPoint ):
        by height is extentPoint."""
     return cls( originPoint, originPoint + extentPoint )
 
-
 </t>
 <t tx="karstenw.20211015171522.8"># height
 def getheight(self):
@@ -1090,7 +1085,6 @@ right = property( getright, setright )
 <t tx="karstenw.20211015171541.1">class Point(object):
     "Translated from a Squeak 3.7 image"
     @others
-
 </t>
 <t tx="karstenw.20211015171541.10">def corner( self, aPoint ):
     """Return a Rectangle( self, aPoint )"""
@@ -1768,7 +1762,7 @@ def getwidth( self ):
 width = property(getwidth) #, setwidth)
 
 </t>
-<t tx="karstenw.20211015172603.1">def imageRectangles( reclist, frame=(10,10) ):
+<t tx="karstenw.20211015172603.1">def imageRectangles( reclist, exportname="RectangleList()_", frame=(10,10) ):
     # pdb.set_trace()
     frame = makePoint( frame )
     rectangles = []
@@ -1798,7 +1792,7 @@ width = property(getwidth) #, setwidth)
         c2 = int( 31+127*random.random() )
         draw.rectangle( (x1,y1, w,h), fill=(c1, c2, 127,15),
                          outline=(0,0,0,127), width=1)
-    f.canvas.export("RectangleList()_" + pb.datestring(), unique=True  )
+    f.canvas.export(exportname + pb.datestring(), unique=True  )
 
 </t>
 <t tx="karstenw.20211015201020.1"></t>
@@ -1869,6 +1863,51 @@ width = property(getwidth) #, setwidth)
         else:
             # complete failure - both values out of sight
             return []
+</t>
+<t tx="karstenw.20230525121754.1"></t>
+<t tx="karstenw.20230525122537.1">def innerSquare(self):
+    pass
+
+
+</t>
+<t tx="karstenw.20230525122546.1">def outerSquareRect(self):
+    pass
+
+
+</t>
+<t tx="karstenw.20230525123613.1"># horizontal lines  
+def gethorizontallines(self):
+    return [
+        # top
+        (self.topleft, self.topright),
+        # bottom
+        (self.bottomleft, self.bottomright)]
+def sethorizontallines( self, lines ):
+    # top
+    self.topleft = lines[0][0]
+    self.topright = lines[0][1]
+    # bottom
+    self.bottomleft = lines[1][0]
+    self.bottomright = lines[1][1]
+horizontallines = property( gethorizontallines, sethorizontallines )
+
+# vertical lines  
+def getverticallines(self):
+    return [
+        # left
+        (self.topleft, self.bottomleft),
+        # right
+        (self.topright, self.bottomright)]
+def setverticallines( self, lines ):
+    # left
+    self.topleft = lines[0][0]
+    self.bottomleft = lines[0][1]
+    # right
+    self.topright = lines[1][0]
+    self.bottomright = lines[1][1]
+verticallines = property( getverticallines, setverticallines )
+
+
 </t>
 </tnodes>
 </leo_file>
