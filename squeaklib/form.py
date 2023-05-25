@@ -112,7 +112,7 @@ class Form(object):
         return form    
 
 
-def imageRectangles( reclist, frame=(10,10) ):
+def imageRectangles( reclist, exportname="RectangleList()_", frame=(10,10) ):
     # pdb.set_trace()
     frame = makePoint( frame )
     rectangles = []
@@ -142,5 +142,5 @@ def imageRectangles( reclist, frame=(10,10) ):
         c2 = int( 31+127*random.random() )
         draw.rectangle( (x1,y1, w,h), fill=(c1, c2, 127,15),
                          outline=(0,0,0,127), width=1)
-    f.canvas.export("RectangleList()_" + pb.datestring(), unique=True  )
+    f.canvas.export(exportname + pb.datestring(), unique=True  )
 
