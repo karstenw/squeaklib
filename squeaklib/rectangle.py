@@ -202,6 +202,39 @@ class Rectangle(object):
     extent = property( getextent, setextent )
 
 
+    # horizontal lines  
+    def gethorizontallines(self):
+        return [
+            # top
+            (self.topleft, self.topright),
+            # bottom
+            (self.bottomleft, self.bottomright)]
+    def sethorizontallines( self, lines ):
+        # top
+        self.topleft = lines[0][0]
+        self.topright = lines[0][1]
+        # bottom
+        self.bottomleft = lines[1][0]
+        self.bottomright = lines[1][1]
+    horizontallines = property( gethorizontallines, sethorizontallines )
+
+    # vertical lines  
+    def getverticallines(self):
+        return [
+            # left
+            (self.topleft, self.bottomleft),
+            # right
+            (self.topright, self.bottomright)]
+    def setverticallines( self, lines ):
+        # left
+        self.topleft = lines[0][0]
+        self.bottomleft = lines[0][1]
+        # right
+        self.topright = lines[1][0]
+        self.bottomright = lines[1][1]
+    verticallines = property( getverticallines, setverticallines )
+
+
     def withRight( self, x ):
         """Return a copy of me with a different right x"""
         return Rectangle( self.origin, Point( x, self.corner.y))
@@ -788,6 +821,4 @@ class Rectangle(object):
         """Answer an instance of me whose top left corner is originPoint and width 
            by height is extentPoint."""
         return cls( originPoint, originPoint + extentPoint )
-
-
 
