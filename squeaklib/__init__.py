@@ -1,29 +1,20 @@
 
-import math
 
+__ALL__ = ('makePoint', 'Point', 'Rectangle', 'Form')
+
+import math
+import random
 import pprint
 pp = pprint.pprint
 
+import PIL
+import PIL.Image
+import PIL.ImageDraw as ImageDraw
+
 import pdb
 
-# from . import point, rectangle, form, makepoint
-from . import form
+import photobot as pb
 
-# Point = point.Point
-# Rectangle = rectangle.Rectangle
-Form = form.Form
-
-# makePoint = makepoint.makePoint
-# imageRectangles = form.imageRectangles
-
-# point.Rectangle = Rectangle
-# point.makePoint = makePoint
-# rectangle.Point = Point
-# rectangle.makePoint = makePoint
-form.Point = Point
-form.Rectangle = Rectangle
-form.makePoint = makePoint
-# makepoint.Point = Point
 
 def sign( number ):
     """I can't believe that Python does not have a sign() function."""
@@ -34,6 +25,58 @@ def sign( number ):
         return -1
     return 0
 
+
+try:
+    unicode
+except NameError:
+    long = int
+
+def makePoint( *args  ):
+    "Tries to create a Point from args."
+    n = len(args)
+    if n == 1:
+        typ = type( args[0] )
+        if typ in (Point,):
+            return args[0]
+        elif typ in (long, int, float):
+            return Point( args[0], args[0] )
+        elif typ in (list, tuple):
+            return Point( args[0][0], args[0][1] )
+    elif n == 2:
+        return Point( args[0], args[1] )
+    return None
+
+def imageRectangles( reclist, exportname="RectangleList()_", frame=(10,10) ):
+    # pdb.set_trace()
+    frame = makePoint( frame )
+    rectangles = []
+    scale = 4.0
+    points = []
+    for r in reclist:
+        rs = r * scale
+        rectangles.append( rs )
+        points.extend( rs.asPointList() )
+        
+    minPoint = min( points )
+    maxPoint = max( points )
+    
+    w = maxPoint.x - minPoint.x
+    w = w + 2 * frame.x
+    h = maxPoint.y - minPoint.y
+    h = h + 2 * frame.y
+    f = Form(w,h)
+    f.canvas.fill( (0,0,0, 0) )
+    draw = PIL.ImageDraw.Draw(f.canvas.top.img)
+
+    for i,r in enumerate(rectangles):
+        x1,y1,x2,y2 = r.asArray()
+        w, h = int(r.width), int(r.height)
+        # f.canvas.fill( (15, 15, 90, 31), x1, y1, w, h )
+        c1 = int( 127*random.random() )
+        c2 = int( 31+127*random.random() )
+        draw.rectangle( (x1,y1, w,h), fill=(c1, c2, 127,15),
+                         outline=(0,0,0,127), width=1)
+    f.canvas.export(exportname + pb.datestring(), unique=True  )
 
 class Point(object):
     "Translated from a Squeak 3.7 image"
@@ -102,9 +145,8 @@ class Point(object):
            This is the most general infix way to create a rectangle."""
         return Rectangle( min(self, aPoint), max(self, aPoint ))
 
-
     def asArray( self ):
-        return [self.x, self.y]
+        return (self.x, self.y)
 
     def copy( self ):
         return Point( self.x, self.y )
@@ -561,6 +603,17 @@ class Rectangle(object):
         return self.width * self.height
     area = property(getarea)
 
+    # widthheight
+    def getwidthheight( self ):
+        return  (self.width, self.height)
+
+    def setwidthheight( self, width, height ):
+        self.width = width
+        self.height = height
+        return self.getwidth, self.getheight
+    widthheight = property( getwidthheight, setwidthheight )
+
+
     # top
     def gettop( self ):
         return self.origin.y
@@ -763,45 +816,39 @@ class Rectangle(object):
             dy = aRectangle.top - self.top
         return Point(dx,dy)
 
-    def areasOutside( self, aRectangle ):
-        """Answer an Array of Rectangles comprising the parts of the receiver
-           not intersecting aRectangle."""
+    def areasOutside( self, otherRect ):
+        """Answer a list of Rectangles comprising the parts of the receiver
+           not intersecting otherRect."""
 
         areas = []
         
         # this is the negated overlap condition -> no overlap -> self
-        if not (    (self.origin <= aRectangle.corner)
-                and (aRectangle.origin <= self.corner)):
-            #print("self")
+        if not (    (self.origin <= otherRect.corner)
+                and (otherRect.origin <= self.corner)):
             return [self]
 
         # overlap
-        if aRectangle.origin.y > self.origin.y:
-            yOrigin = aRectangle.origin.y
-            #print("other origin y is higher; append")
+        if otherRect.origin.y > self.origin.y:
             areas.append( Rectangle( self.origin,
-                                     Point(self.corner.x, yOrigin)) )
+                                     Point(self.corner.x,
+                                           otherRect.origin.y)) )
+            yOrigin = otherRect.origin.y
         else:
-            #print("self origin y is higher")
             yOrigin = self.origin.y
 
-        if aRectangle.corner.y < self.corner.y:
-            yCorner = aRectangle.corner.y
-            #print("self corner y higher; append")
+        if otherRect.corner.y < self.corner.y:
+            yCorner = otherRect.corner.y
             areas.append( Rectangle( Point(self.origin.x, yCorner ),
                                      self.corner) )
         else:
-            #print("self corner y lower")
             yCorner = self.corner.y
 
-        if aRectangle.origin.x > self.origin.x:
-            #print("other origin x more right; append")
+        if otherRect.origin.x > self.origin.x:
             areas.append( Rectangle( Point(self.origin.x, yOrigin),
-                                     Point(aRectangle.origin.x, yCorner)) )
+                                     Point(otherRect.origin.x, yCorner)) )
 
-        if aRectangle.corner.x < self.corner.x:
-            #print("self corner more right; append")
-            areas.append( Rectangle( Point(aRectangle.corner.x, yOrigin),
+        if otherRect.corner.x < self.corner.x:
+            areas.append( Rectangle( Point(otherRect.corner.x, yOrigin),
                                      Point(self.corner.x, yCorner) ))
         return areas
 
@@ -1292,6 +1339,94 @@ class Rectangle(object):
         """Answer an instance of me whose top left corner is originPoint and width 
            by height is extentPoint."""
         return cls( originPoint, originPoint + extentPoint )
+
+class Form(object):
+    """Translated from a Squeak 3.7 image
+    Implemented as a abstraction layer to Image.
+    """
+
+    def __init__(self, width, height, mode="RGBA" ):
+        width = int(width)
+        height = int(height)
+        self.img =  PIL.Image.new(mode, (width, height) )
+        self.frame = Rectangle( (0,0), (width, height) )
+        self.mode = mode
+        # self.depth = mode
+        self.fill = None
+        self.pattern = None
+        self.offset = Point(0,0)
+        self.canvas = pb.canvas( width, height )
+
+
+    def __repr__( self ):
+        return u"Form( %.2f, %.2f, %s )" % (self.frame.width,
+                                            self.frame.height,
+                                            self.mode)
+
+
+    # bits
+    def getbits(self):
+        return self.img
+    def setbits(self, img):
+        if type(img) == type(PIL.Image.Image):
+            self.img = img
+    bits = property(getbits, setbits)
+
+    # width
+    def getwidth( self ):
+        s = self.bits.size
+        return self.bits.size[0]
+    def setwidth(self, newWidth):
+        pass
+    width = property(getwidth) #, setwidth)
+
+    # height
+    def getheight( self ):
+        s = self.bits.size
+        return self.bits.size[1]
+    def setheight(self, newHeight):
+        pass
+    height = property(getheight) #, setheight)
+
+    # pattern
+
+    # fill
+
+    # outline
+
+    # alpha
+
+    def center( self ):
+        return self.frame.center
+
+
+    @classmethod
+    def extent( cls, extentPoint ):
+        """Answer an instance of me whose top left corner is originPoint
+           and width by height is extentPoint."""
+        p = makePoint( extentPoint )
+        #color=(31,31,31,255)
+        form = cls(int(p.x), int(p.y), 'RGBA' )
+        #draw = PIL.ImageDraw.Draw(form.img)
+        #draw.rectangle( (0,0, p.x,p.y), fill=None, width=1)
+        return form
+
+    @classmethod
+    def extentMode( cls, extentPoint, mode ):
+        """Answer an instance of me with blank bitmap of the given
+           dimensions and depth."""
+        p = makePoint( extentPoint )
+        return cls( int(p.x), int(p.y), mode )
+
+    @classmethod
+    def dotOfSize( cls, dotSizePoint ):
+        color=(15,255)
+        p = makePoint( dotSizePoint )
+        form = cls(int(p.x), int(p.y), 'LA' )
+        draw = PIL.ImageDraw.Draw(form.img)
+        draw.ellipse( (0,0, p.x,p.y), fill=color, width=1)
+        return form    
+
 
 class Region:
     def __init__(self):
