@@ -796,59 +796,59 @@ class Rectangle(object):
         return Rectangle( self.origin,
                           Point( self.origin.x + width, self.corner.y))
 
-    def amountToTranslateWithin( self, aRectangle ):
+    def amountToTranslateWithin( self, otherRectangle ):
         """Answer a Point, delta, such that self + delta is forced
-           within aRectangle.
+           within otherRectangle.
 
            Altered so as to prefer to keep self topLeft inside when all of self
            cannot be made to fit 7/27/96 di"""
         dx = dy = 0
-        if self.right > aRectangle.right:
-            dx = aRectangle.right - self.right
+        if self.right > otherRectangle.right:
+            dx = otherRectangle.right - self.right
 
-        if self.bottom > aRectangle.bottom:
-            dy = aRectangle.bottom - self.bottom
+        if self.bottom > otherRectangle.bottom:
+            dy = otherRectangle.bottom - self.bottom
 
-        if (self.left + dx) < aRectangle.left:
-            dx = aRectangle.left - self.left
+        if (self.left + dx) < otherRectangle.left:
+            dx = otherRectangle.left - self.left
 
-        if (self.top + dy) < aRectangle.top:
-            dy = aRectangle.top - self.top
+        if (self.top + dy) < otherRectangle.top:
+            dy = otherRectangle.top - self.top
         return Point(dx,dy)
 
-    def areasOutside( self, otherRect ):
+    def areasOutside( self, otherRectangle ):
         """Answer a list of Rectangles comprising the parts of the receiver
-           not intersecting otherRect."""
+           not intersecting otherRectangle."""
 
         areas = []
         
         # this is the negated overlap condition -> no overlap -> self
-        if not (    (self.origin <= otherRect.corner)
-                and (otherRect.origin <= self.corner)):
+        if not (    (self.origin <= otherRectangle.corner)
+                and (otherRectangle.origin <= self.corner)):
             return [self]
 
         # overlap
-        if otherRect.origin.y > self.origin.y:
+        if otherRectangle.origin.y > self.origin.y:
             areas.append( Rectangle( self.origin,
                                      Point(self.corner.x,
-                                           otherRect.origin.y)) )
-            yOrigin = otherRect.origin.y
+                                           otherRectangle.origin.y)) )
+            yOrigin = otherRectangle.origin.y
         else:
             yOrigin = self.origin.y
 
-        if otherRect.corner.y < self.corner.y:
-            yCorner = otherRect.corner.y
+        if otherRectangle.corner.y < self.corner.y:
+            yCorner = otherRectangle.corner.y
             areas.append( Rectangle( Point(self.origin.x, yCorner ),
                                      self.corner) )
         else:
             yCorner = self.corner.y
 
-        if otherRect.origin.x > self.origin.x:
+        if otherRectangle.origin.x > self.origin.x:
             areas.append( Rectangle( Point(self.origin.x, yOrigin),
-                                     Point(otherRect.origin.x, yCorner)) )
+                                     Point(otherRectangle.origin.x, yCorner)) )
 
-        if otherRect.corner.x < self.corner.x:
-            areas.append( Rectangle( Point(otherRect.corner.x, yOrigin),
+        if otherRectangle.corner.x < self.corner.x:
+            areas.append( Rectangle( Point(otherRectangle.corner.x, yOrigin),
                                      Point(self.corner.x, yCorner) ))
         return areas
 
@@ -921,18 +921,18 @@ class Rectangle(object):
                           self.corner - cornerDeltaPoint )
 
 
-    def intersect( self, aRectangle ):
+    def intersect( self, otherRectangle ):
         """Answer a Rectangle that is the area in which the receiver overlaps
-           with aRectangle. Optimized for speed; old code read:
+           with otherRectangle. Optimized for speed; old code read:
             ^Rectangle 
-                origin: (origin max: aRectangle origin)
-                corner: (corner min: aRectangle corner)"""
+                origin: (origin max: otherRectangle origin)
+                corner: (corner min: otherRectangle corner)"""
         if 0: # old code
-            return Rectangle( max(self.origin, aRectangle.origin),
-                              min(sel.corner, aRectangle.corner) )
+            return Rectangle( max(self.origin, otherRectangle.origin),
+                              min(sel.corner, otherRectangle.corner) )
         else:
             left = right = top = bottom = 0
-            aPoint = aRectangle.origin
+            aPoint = otherRectangle.origin
             if aPoint.x > origin.x:
                 left = aPoint.x
             else:
@@ -943,7 +943,7 @@ class Rectangle(object):
             else:
                 top = origin.y
 
-            aPoint = aRectangle.corner
+            aPoint = otherRectangle.corner
             if aPoint.x < self.corner.x:
                 right = aPoint.x
             else:
@@ -956,11 +956,11 @@ class Rectangle(object):
             return Rectangle( (left,top), (right, bottom) )
 
 
-    def merge( self, aRectangle ):
+    def merge( self, otherRectangle ):
         """Answer a Rectangle that contains both the receiver
-           and aRectangle."""
-        return Rectangle( min(self.origin, aRectangle.origin),
-                          max(self.corner, aRectangle.corner) )
+           and otherRectangle."""
+        return Rectangle( min(self.origin, otherRectangle.origin),
+                          max(self.corner, otherRectangle.corner) )
 
     def outsetBy( self, delta ):
         """Answer a Rectangle that is outset from the receiver by delta.
@@ -990,14 +990,14 @@ class Rectangle(object):
             return aPoint.adhereTo( self )
 
 
-    def quickMerge( self, aRectangle ):
+    def quickMerge( self, otherRectangle ):
         """Answer the receiver if it encloses the given rectangle or the
            merge of the two rectangles if it doesn't. THis method is an
            optimization to reduce extra rectangle creations."""
         
         useReceiver = True
-        rOrigin = aRectangle.topLeft
-        rCorner = aRectangle.bottomRight
+        rOrigin = otherRectangle.topLeft
+        rCorner = otherRectangle.bottomRight
 
         if rOrigin.x < self.origin.x:
             useReceiver = False
@@ -1053,10 +1053,10 @@ class Rectangle(object):
             side = "bottom"
         return side
             
-    def translatedToBeWithin( self, aRectangle ):
+    def translatedToBeWithin( self, otherRectangle ):
         """Answer a copy of the receiver that does not extend
-           beyond aRectangle.  7/8/96 sw"""
-        return self.translatedBy( self.amountToTranslateWithin( aRectangle ))
+           beyond otherRectangle.  7/8/96 sw"""
+        return self.translatedBy( self.amountToTranslateWithin( otherRectangle ))
 
 
     def withSideOrCornerSetToPoint( self, side, newPoint ):
@@ -1130,25 +1130,25 @@ class Rectangle(object):
         """Answer whether aRect is within the receiver (OK to coincide)."""
         return (aRect.origin >= self.origin) and (aRect.corner <= self.corner)
 
-    def fullIntersects( self, aRectangle ):
-        """Answer whether aRectangle intersects the receiver anywhere.
+    def fullIntersects( self, otherRectangle ):
+        """Answer whether otherRectangle intersects the receiver anywhere.
            Optimized
            
            old code answered:
-            (origin max: aRectangle origin) < (corner min: aRectangle corner)"""
+            (origin max: otherRectangle origin) < (corner min: otherRectangle corner)"""
 
         if 0: # old code
-            return (  max( self.origin, aRectangle.origin )
-                    < min(self.corner, aRectangle.corner))
+            return (  max( self.origin, otherRectangle.origin )
+                    < min(self.corner, otherRectangle.corner))
         else:
-            if self.containsPoint( aRectangle.origin ) or self.containsPoint( aRectangle.corner ):
+            if self.containsPoint( otherRectangle.origin ) or self.containsPoint( otherRectangle.corner ):
                 return True
 
-            if self.corner < aRectangle.origin:
+            if self.corner < otherRectangle.origin:
                 return false
 
-            rOrigin = aRectangle.origin
-            rCorner = aRectangle.corner
+            rOrigin = otherRectangle.origin
+            rCorner = otherRectangle.corner
             if rCorner.x <= self.origin.x:
                 return False
             if rCorner.y <= self.origin.y:
@@ -1163,16 +1163,16 @@ class Rectangle(object):
         """Answer whether aPoint is within the receiver."""
         return (self.corner.x > self.origin.x) and (self.corner.y > self.origin.y)
 
-    def intersects( self, aRectangle ):
-        """Answer whether aRectangle intersects the receiver anywhere.
+    def intersects( self, otherRectangle ):
+        """Answer whether otherRectangle intersects the receiver anywhere.
         Optimized
 
         old code answered:
-            (origin max: aRectangle origin) < (corner min: aRectangle corner)"""
+            (origin max: otherRectangle origin) < (corner min: otherRectangle corner)"""
         
         # | rOrigin rCorner |
-        rOrigin = aRectangle.origin
-        rCorner = aRectangle.corner
+        rOrigin = otherRectangle.origin
+        rCorner = otherRectangle.corner
         if rCorner.x <= self.origin.x:
             return False
         if rCorner.y <= self.origin.y:
@@ -1211,9 +1211,9 @@ class Rectangle(object):
     def alignWith( self, aPoint1, aPoint2 ):
         return self.translateBy( aPoint2 - aPoint1 )
 
-    def centeredBeneath( self, aRectangle ):
+    def centeredBeneath( self, otherRectangle ):
         """Move the reciever so that its top center point coincides with the bottom
-           center point of aRectangle.  5/20/96 sw:"""
+           center point of otherRectangle.  5/20/96 sw:"""
         return self.alignWith( self.topCenter, self.bottomCenter )
 
 
@@ -1238,20 +1238,20 @@ class Rectangle(object):
                           self.corner.scaleFromTo(rect1, rect2))
         
 
-    def squishedWithin(self, aRectangle ):
-        """Return an adjustment of the receiver that fits within aRectangle by reducing its size, not by changing its origin."""
-        return Rectangle( self.origin.corner( min(self.corner, aRectangle.bottomRight) ))
+    def squishedWithin(self, otherRectangle ):
+        """Return an adjustment of the receiver that fits within otherRectangle by reducing its size, not by changing its origin."""
+        return Rectangle( self.origin.corner( min(self.corner, otherRectangle.bottomRight) ))
 
 
     def translateBy(self, factor ):
         """Answer a Rectangle translated by factor, a Point or a scalar."""
         return Rectangle( self.origin + factor, self.corner + factor )
 
-    def translatedAndSquishedToBeWithin( self, aRectangle ):
-        """Return an adjustment of the receiver that fits within aRectangle by
-            - translating it to be within aRectangle if necessary, then
+    def translatedAndSquishedToBeWithin( self, otherRectangle ):
+        """Return an adjustment of the receiver that fits within otherRectangle by
+            - translating it to be within otherRectangle if necessary, then
             - reducing its size, if necessary"""
-        return self.translatedToBeWithin( aRectangle ).squishedWithin( aRectangle )
+        return self.translatedToBeWithin( otherRectangle ).squishedWithin( otherRectangle )
 
 
     def split(self, x, y ):

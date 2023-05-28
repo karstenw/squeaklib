@@ -138,7 +138,7 @@
 <v t="karstenw.20230526122626.43"><vh>withSideOrCornerSetToPointMinExtent</vh></v>
 <v t="karstenw.20230526122626.44"><vh>withSideOrCornerSetToPointMinExtentLimit</vh></v>
 </v>
-<v t="karstenw.20230526122626.45"><vh>testing</vh>
+<v t="karstenw.20230526122626.45" a="E"><vh>testing</vh>
 <v t="karstenw.20230526122626.46"><vh>containsPoint</vh></v>
 <v t="karstenw.20230526122626.47"><vh>containsRect</vh></v>
 <v t="karstenw.20230526122626.48"><vh>fullIntersects</vh></v>
@@ -153,7 +153,7 @@
 <v t="karstenw.20230526122626.56"><vh>truncateTo</vh></v>
 <v t="karstenw.20230526122626.57"><vh>truncated</vh></v>
 </v>
-<v t="karstenw.20230526122626.58"><vh>transforming</vh>
+<v t="karstenw.20230526122626.58" a="E"><vh>transforming</vh>
 <v t="karstenw.20230526122626.59"><vh>alignWith</vh></v>
 <v t="karstenw.20230526122626.60"><vh>centeredBeneath</vh></v>
 <v t="karstenw.20230526122626.61"><vh>flipByCenterAt</vh></v>
@@ -2765,60 +2765,60 @@ verticallines = property( getverticallines, setverticallines )
                       Point( self.origin.x + width, self.corner.y))
 
 </t>
-<t tx="karstenw.20230526122626.24">def amountToTranslateWithin( self, aRectangle ):
+<t tx="karstenw.20230526122626.24">def amountToTranslateWithin( self, otherRectangle ):
     """Answer a Point, delta, such that self + delta is forced
-       within aRectangle.
+       within otherRectangle.
 
        Altered so as to prefer to keep self topLeft inside when all of self
        cannot be made to fit 7/27/96 di"""
     dx = dy = 0
-    if self.right &gt; aRectangle.right:
-        dx = aRectangle.right - self.right
+    if self.right &gt; otherRectangle.right:
+        dx = otherRectangle.right - self.right
 
-    if self.bottom &gt; aRectangle.bottom:
-        dy = aRectangle.bottom - self.bottom
+    if self.bottom &gt; otherRectangle.bottom:
+        dy = otherRectangle.bottom - self.bottom
 
-    if (self.left + dx) &lt; aRectangle.left:
-        dx = aRectangle.left - self.left
+    if (self.left + dx) &lt; otherRectangle.left:
+        dx = otherRectangle.left - self.left
 
-    if (self.top + dy) &lt; aRectangle.top:
-        dy = aRectangle.top - self.top
+    if (self.top + dy) &lt; otherRectangle.top:
+        dy = otherRectangle.top - self.top
     return Point(dx,dy)
 
 </t>
-<t tx="karstenw.20230526122626.25">def areasOutside( self, otherRect ):
+<t tx="karstenw.20230526122626.25">def areasOutside( self, otherRectangle ):
     """Answer a list of Rectangles comprising the parts of the receiver
-       not intersecting otherRect."""
+       not intersecting otherRectangle."""
 
     areas = []
     
     # this is the negated overlap condition -&gt; no overlap -&gt; self
-    if not (    (self.origin &lt;= otherRect.corner)
-            and (otherRect.origin &lt;= self.corner)):
+    if not (    (self.origin &lt;= otherRectangle.corner)
+            and (otherRectangle.origin &lt;= self.corner)):
         return [self]
 
     # overlap
-    if otherRect.origin.y &gt; self.origin.y:
+    if otherRectangle.origin.y &gt; self.origin.y:
         areas.append( Rectangle( self.origin,
                                  Point(self.corner.x,
-                                       otherRect.origin.y)) )
-        yOrigin = otherRect.origin.y
+                                       otherRectangle.origin.y)) )
+        yOrigin = otherRectangle.origin.y
     else:
         yOrigin = self.origin.y
 
-    if otherRect.corner.y &lt; self.corner.y:
-        yCorner = otherRect.corner.y
+    if otherRectangle.corner.y &lt; self.corner.y:
+        yCorner = otherRectangle.corner.y
         areas.append( Rectangle( Point(self.origin.x, yCorner ),
                                  self.corner) )
     else:
         yCorner = self.corner.y
 
-    if otherRect.origin.x &gt; self.origin.x:
+    if otherRectangle.origin.x &gt; self.origin.x:
         areas.append( Rectangle( Point(self.origin.x, yOrigin),
-                                 Point(otherRect.origin.x, yCorner)) )
+                                 Point(otherRectangle.origin.x, yCorner)) )
 
-    if otherRect.corner.x &lt; self.corner.x:
-        areas.append( Rectangle( Point(otherRect.corner.x, yOrigin),
+    if otherRectangle.corner.x &lt; self.corner.x:
+        areas.append( Rectangle( Point(otherRectangle.corner.x, yOrigin),
                                  Point(self.corner.x, yCorner) ))
     return areas
 
@@ -2910,18 +2910,18 @@ verticallines = property( getverticallines, setverticallines )
 
 
 </t>
-<t tx="karstenw.20230526122626.34">def intersect( self, aRectangle ):
+<t tx="karstenw.20230526122626.34">def intersect( self, otherRectangle ):
     """Answer a Rectangle that is the area in which the receiver overlaps
-       with aRectangle. Optimized for speed; old code read:
+       with otherRectangle. Optimized for speed; old code read:
         ^Rectangle 
-            origin: (origin max: aRectangle origin)
-            corner: (corner min: aRectangle corner)"""
+            origin: (origin max: otherRectangle origin)
+            corner: (corner min: otherRectangle corner)"""
     if 0: # old code
-        return Rectangle( max(self.origin, aRectangle.origin),
-                          min(sel.corner, aRectangle.corner) )
+        return Rectangle( max(self.origin, otherRectangle.origin),
+                          min(sel.corner, otherRectangle.corner) )
     else:
         left = right = top = bottom = 0
-        aPoint = aRectangle.origin
+        aPoint = otherRectangle.origin
         if aPoint.x &gt; origin.x:
             left = aPoint.x
         else:
@@ -2932,7 +2932,7 @@ verticallines = property( getverticallines, setverticallines )
         else:
             top = origin.y
 
-        aPoint = aRectangle.corner
+        aPoint = otherRectangle.corner
         if aPoint.x &lt; self.corner.x:
             right = aPoint.x
         else:
@@ -2946,11 +2946,11 @@ verticallines = property( getverticallines, setverticallines )
 
 
 </t>
-<t tx="karstenw.20230526122626.35">def merge( self, aRectangle ):
+<t tx="karstenw.20230526122626.35">def merge( self, otherRectangle ):
     """Answer a Rectangle that contains both the receiver
-       and aRectangle."""
-    return Rectangle( min(self.origin, aRectangle.origin),
-                      max(self.corner, aRectangle.corner) )
+       and otherRectangle."""
+    return Rectangle( min(self.origin, otherRectangle.origin),
+                      max(self.corner, otherRectangle.corner) )
 
 </t>
 <t tx="karstenw.20230526122626.36">def outsetBy( self, delta ):
@@ -2983,14 +2983,14 @@ verticallines = property( getverticallines, setverticallines )
 
 
 </t>
-<t tx="karstenw.20230526122626.38">def quickMerge( self, aRectangle ):
+<t tx="karstenw.20230526122626.38">def quickMerge( self, otherRectangle ):
     """Answer the receiver if it encloses the given rectangle or the
        merge of the two rectangles if it doesn't. THis method is an
        optimization to reduce extra rectangle creations."""
     
     useReceiver = True
-    rOrigin = aRectangle.topLeft
-    rCorner = aRectangle.bottomRight
+    rOrigin = otherRectangle.topLeft
+    rCorner = otherRectangle.bottomRight
 
     if rOrigin.x &lt; self.origin.x:
         useReceiver = False
@@ -3054,10 +3054,10 @@ verticallines = property( getverticallines, setverticallines )
     return side
         
 </t>
-<t tx="karstenw.20230526122626.41">def translatedToBeWithin( self, aRectangle ):
+<t tx="karstenw.20230526122626.41">def translatedToBeWithin( self, otherRectangle ):
     """Answer a copy of the receiver that does not extend
-       beyond aRectangle.  7/8/96 sw"""
-    return self.translatedBy( self.amountToTranslateWithin( aRectangle ))
+       beyond otherRectangle.  7/8/96 sw"""
+    return self.translatedBy( self.amountToTranslateWithin( otherRectangle ))
 
 
 </t>
@@ -3138,25 +3138,25 @@ withSideOrCorner: side setToPoint: newPoint minExtent: minExtent limit: limit
     return (aRect.origin &gt;= self.origin) and (aRect.corner &lt;= self.corner)
 
 </t>
-<t tx="karstenw.20230526122626.48">def fullIntersects( self, aRectangle ):
-    """Answer whether aRectangle intersects the receiver anywhere.
+<t tx="karstenw.20230526122626.48">def fullIntersects( self, otherRectangle ):
+    """Answer whether otherRectangle intersects the receiver anywhere.
        Optimized
        
        old code answered:
-        (origin max: aRectangle origin) &lt; (corner min: aRectangle corner)"""
+        (origin max: otherRectangle origin) &lt; (corner min: otherRectangle corner)"""
 
     if 0: # old code
-        return (  max( self.origin, aRectangle.origin )
-                &lt; min(self.corner, aRectangle.corner))
+        return (  max( self.origin, otherRectangle.origin )
+                &lt; min(self.corner, otherRectangle.corner))
     else:
-        if self.containsPoint( aRectangle.origin ) or self.containsPoint( aRectangle.corner ):
+        if self.containsPoint( otherRectangle.origin ) or self.containsPoint( otherRectangle.corner ):
             return True
 
-        if self.corner &lt; aRectangle.origin:
+        if self.corner &lt; otherRectangle.origin:
             return false
 
-        rOrigin = aRectangle.origin
-        rCorner = aRectangle.corner
+        rOrigin = otherRectangle.origin
+        rCorner = otherRectangle.corner
         if rCorner.x &lt;= self.origin.x:
             return False
         if rCorner.y &lt;= self.origin.y:
@@ -3201,16 +3201,16 @@ def __mul__( self, other):
     return Rectangle( self.origin * other, self.corner * other )
 
 </t>
-<t tx="karstenw.20230526122626.50">def intersects( self, aRectangle ):
-    """Answer whether aRectangle intersects the receiver anywhere.
+<t tx="karstenw.20230526122626.50">def intersects( self, otherRectangle ):
+    """Answer whether otherRectangle intersects the receiver anywhere.
     Optimized
 
     old code answered:
-        (origin max: aRectangle origin) &lt; (corner min: aRectangle corner)"""
+        (origin max: otherRectangle origin) &lt; (corner min: otherRectangle corner)"""
     
     # | rOrigin rCorner |
-    rOrigin = aRectangle.origin
-    rCorner = aRectangle.corner
+    rOrigin = otherRectangle.origin
+    rCorner = otherRectangle.corner
     if rCorner.x &lt;= self.origin.x:
         return False
     if rCorner.y &lt;= self.origin.y:
@@ -3260,9 +3260,9 @@ def __mul__( self, other):
 
 </t>
 <t tx="karstenw.20230526122626.6"></t>
-<t tx="karstenw.20230526122626.60">def centeredBeneath( self, aRectangle ):
+<t tx="karstenw.20230526122626.60">def centeredBeneath( self, otherRectangle ):
     """Move the reciever so that its top center point coincides with the bottom
-       center point of aRectangle.  5/20/96 sw:"""
+       center point of otherRectangle.  5/20/96 sw:"""
     return self.alignWith( self.topCenter, self.bottomCenter )
 
 
@@ -3292,9 +3292,9 @@ def __mul__( self, other):
     
 
 </t>
-<t tx="karstenw.20230526122626.65">def squishedWithin(self, aRectangle ):
-    """Return an adjustment of the receiver that fits within aRectangle by reducing its size, not by changing its origin."""
-    return Rectangle( self.origin.corner( min(self.corner, aRectangle.bottomRight) ))
+<t tx="karstenw.20230526122626.65">def squishedWithin(self, otherRectangle ):
+    """Return an adjustment of the receiver that fits within otherRectangle by reducing its size, not by changing its origin."""
+    return Rectangle( self.origin.corner( min(self.corner, otherRectangle.bottomRight) ))
 
 
 </t>
@@ -3303,11 +3303,11 @@ def __mul__( self, other):
     return Rectangle( self.origin + factor, self.corner + factor )
 
 </t>
-<t tx="karstenw.20230526122626.67">def translatedAndSquishedToBeWithin( self, aRectangle ):
-    """Return an adjustment of the receiver that fits within aRectangle by
-        - translating it to be within aRectangle if necessary, then
+<t tx="karstenw.20230526122626.67">def translatedAndSquishedToBeWithin( self, otherRectangle ):
+    """Return an adjustment of the receiver that fits within otherRectangle by
+        - translating it to be within otherRectangle if necessary, then
         - reducing its size, if necessary"""
-    return self.translatedToBeWithin( aRectangle ).squishedWithin( aRectangle )
+    return self.translatedToBeWithin( otherRectangle ).squishedWithin( otherRectangle )
 
 
 </t>
