@@ -827,7 +827,7 @@ class Rectangle(object):
                 and (otherRectangle.origin <= self.corner)):
             return [self]
 
-        # overlap
+        # overlap self.top above otherRectangle.top
         if otherRectangle.origin.y > self.origin.y:
             areas.append( Rectangle( self.origin,
                                      Point(self.corner.x,
@@ -836,6 +836,7 @@ class Rectangle(object):
         else:
             yOrigin = self.origin.y
 
+        # overlap self.bottom above otherRectangle.bottom
         if otherRectangle.corner.y < self.corner.y:
             yCorner = otherRectangle.corner.y
             areas.append( Rectangle( Point(self.origin.x, yCorner ),
@@ -843,10 +844,12 @@ class Rectangle(object):
         else:
             yCorner = self.corner.y
 
+        # overlap self.left < otherRectangle.left
         if otherRectangle.origin.x > self.origin.x:
             areas.append( Rectangle( Point(self.origin.x, yOrigin),
                                      Point(otherRectangle.origin.x, yCorner)) )
 
+        # overlap self.right > otherRectangle.right
         if otherRectangle.corner.x < self.corner.x:
             areas.append( Rectangle( Point(otherRectangle.corner.x, yOrigin),
                                      Point(self.corner.x, yCorner) ))
@@ -926,34 +929,27 @@ class Rectangle(object):
            with otherRectangle. Optimized for speed; old code read:
             ^Rectangle 
                 origin: (origin max: otherRectangle origin)
-                corner: (corner min: otherRectangle corner)"""
-        if 0: # old code
+                corner: (corner min: otherRectangle corner)
+        # old code
             return Rectangle( max(self.origin, otherRectangle.origin),
                               min(sel.corner, otherRectangle.corner) )
-        else:
-            left = right = top = bottom = 0
-            aPoint = otherRectangle.origin
-            if aPoint.x > origin.x:
-                left = aPoint.x
-            else:
-                left = origin.x
+        """
 
-            if aPoint.y > origin.y:
-                top = aPoint.y
-            else:
-                top = origin.y
+        left = right = top = bottom = 0
+        
+        # origin of intersection
+        # aPoint = otherRectangle.origin
+        x, y = otherRectangle.origin.asArray()
+        left = max( x, self.origin.x )
+        top = max( y, self.origin.y )
 
-            aPoint = otherRectangle.corner
-            if aPoint.x < self.corner.x:
-                right = aPoint.x
-            else:
-                right = self.corner.x
-            
-            if aPoint.y < corner.y:
-                bottom = aPoint.y
-            else:
-                bottom = corner.y
-            return Rectangle( (left,top), (right, bottom) )
+        # corner 
+        # aPoint = otherRectangle.corner
+        x, y = otherRectangle.corner.asArray()
+        right = min( x, self.corner.x )
+        bottom = min( y, self.corner.y )
+
+        return Rectangle( (left,top), (right, bottom) )
 
 
     def merge( self, otherRectangle ):

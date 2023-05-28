@@ -16,14 +16,14 @@
 <v t="karstenw.20230526123827.1"><vh>makePoint</vh></v>
 <v t="karstenw.20230528120341.1"><vh>imageRectangles</vh></v>
 </v>
-<v t="karstenw.20230526122614.1"><vh>Point</vh>
+<v t="karstenw.20230526122614.1" a="E"><vh>Point</vh>
 <v t="karstenw.20230526122614.2"><vh>__python__</vh>
 <v t="karstenw.20230526122614.3"><vh>__init__</vh></v>
 <v t="karstenw.20230526122614.4"><vh>__repr__</vh></v>
 <v t="karstenw.20230526122614.5"><vh>__lt|le|gt|ge|eq|ne|add|sub|mul__</vh></v>
 </v>
-<v t="karstenw.20230526122614.6"><vh>instance methods</vh>
-<v t="karstenw.20230526122614.7"><vh>converting</vh>
+<v t="karstenw.20230526122614.6" a="E"><vh>instance methods</vh>
+<v t="karstenw.20230526122614.7" a="E"><vh>converting</vh>
 <v t="karstenw.20230526122614.8"><vh>asFloatPoint</vh></v>
 <v t="karstenw.20230526122614.9"><vh>asIntegerPoint</vh></v>
 <v t="karstenw.20230526122614.10"><vh>corner -&gt; Rectangle</vh></v>
@@ -138,7 +138,7 @@
 <v t="karstenw.20230526122626.43"><vh>withSideOrCornerSetToPointMinExtent</vh></v>
 <v t="karstenw.20230526122626.44"><vh>withSideOrCornerSetToPointMinExtentLimit</vh></v>
 </v>
-<v t="karstenw.20230526122626.45" a="E"><vh>testing</vh>
+<v t="karstenw.20230526122626.45"><vh>testing</vh>
 <v t="karstenw.20230526122626.46"><vh>containsPoint</vh></v>
 <v t="karstenw.20230526122626.47"><vh>containsRect</vh></v>
 <v t="karstenw.20230526122626.48"><vh>fullIntersects</vh></v>
@@ -148,12 +148,12 @@
 <v t="karstenw.20230526122626.52"><vh>isWide</vh></v>
 <v t="karstenw.20230526122626.53"><vh>isZero</vh></v>
 </v>
-<v t="karstenw.20230526122626.54" a="E"><vh>truncation and round off</vh>
+<v t="karstenw.20230526122626.54"><vh>truncation and round off</vh>
 <v t="karstenw.20230526122626.55"><vh>rounded</vh></v>
 <v t="karstenw.20230526122626.56"><vh>truncateTo</vh></v>
 <v t="karstenw.20230526122626.57"><vh>truncated</vh></v>
 </v>
-<v t="karstenw.20230526122626.58" a="E"><vh>transforming</vh>
+<v t="karstenw.20230526122626.58"><vh>transforming</vh>
 <v t="karstenw.20230526122626.59"><vh>alignWith</vh></v>
 <v t="karstenw.20230526122626.60"><vh>centeredBeneath</vh></v>
 <v t="karstenw.20230526122626.61"><vh>flipByCenterAt</vh></v>
@@ -2797,7 +2797,7 @@ verticallines = property( getverticallines, setverticallines )
             and (otherRectangle.origin &lt;= self.corner)):
         return [self]
 
-    # overlap
+    # overlap self.top above otherRectangle.top
     if otherRectangle.origin.y &gt; self.origin.y:
         areas.append( Rectangle( self.origin,
                                  Point(self.corner.x,
@@ -2806,6 +2806,7 @@ verticallines = property( getverticallines, setverticallines )
     else:
         yOrigin = self.origin.y
 
+    # overlap self.bottom above otherRectangle.bottom
     if otherRectangle.corner.y &lt; self.corner.y:
         yCorner = otherRectangle.corner.y
         areas.append( Rectangle( Point(self.origin.x, yCorner ),
@@ -2813,10 +2814,12 @@ verticallines = property( getverticallines, setverticallines )
     else:
         yCorner = self.corner.y
 
+    # overlap self.left &lt; otherRectangle.left
     if otherRectangle.origin.x &gt; self.origin.x:
         areas.append( Rectangle( Point(self.origin.x, yOrigin),
                                  Point(otherRectangle.origin.x, yCorner)) )
 
+    # overlap self.right &gt; otherRectangle.right
     if otherRectangle.corner.x &lt; self.corner.x:
         areas.append( Rectangle( Point(otherRectangle.corner.x, yOrigin),
                                  Point(self.corner.x, yCorner) ))
@@ -2915,34 +2918,27 @@ verticallines = property( getverticallines, setverticallines )
        with otherRectangle. Optimized for speed; old code read:
         ^Rectangle 
             origin: (origin max: otherRectangle origin)
-            corner: (corner min: otherRectangle corner)"""
-    if 0: # old code
+            corner: (corner min: otherRectangle corner)
+    # old code
         return Rectangle( max(self.origin, otherRectangle.origin),
                           min(sel.corner, otherRectangle.corner) )
-    else:
-        left = right = top = bottom = 0
-        aPoint = otherRectangle.origin
-        if aPoint.x &gt; origin.x:
-            left = aPoint.x
-        else:
-            left = origin.x
+    """
 
-        if aPoint.y &gt; origin.y:
-            top = aPoint.y
-        else:
-            top = origin.y
+    left = right = top = bottom = 0
+    
+    # origin of intersection
+    # aPoint = otherRectangle.origin
+    x, y = otherRectangle.origin.asArray()
+    left = max( x, self.origin.x )
+    top = max( y, self.origin.y )
 
-        aPoint = otherRectangle.corner
-        if aPoint.x &lt; self.corner.x:
-            right = aPoint.x
-        else:
-            right = self.corner.x
-        
-        if aPoint.y &lt; corner.y:
-            bottom = aPoint.y
-        else:
-            bottom = corner.y
-        return Rectangle( (left,top), (right, bottom) )
+    # corner 
+    # aPoint = otherRectangle.corner
+    x, y = otherRectangle.corner.asArray()
+    right = min( x, self.corner.x )
+    bottom = min( y, self.corner.y )
+
+    return Rectangle( (left,top), (right, bottom) )
 
 
 </t>
