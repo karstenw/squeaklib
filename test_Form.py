@@ -4,7 +4,6 @@ pp = pprint.pprint
 
 from squeaklib import Point, Rectangle, Form, imageRectangles
 
-
 d = Form.dotOfSize(511)
 d.img.save("Form.dotOfSize(511).png")
 
