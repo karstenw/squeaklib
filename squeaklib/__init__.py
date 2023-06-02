@@ -1,6 +1,7 @@
 
 
-__ALL__ = ('makePoint', 'Point', 'Rectangle', 'Form')
+__ALL__ = ('makePoint', 'imageRectangles',  'Point', 'Rectangle',
+                                            'Form', 'Region')
 
 import math
 import random
@@ -86,7 +87,8 @@ class Point(object):
 
 
     def __repr__( self ):
-        return u"Point( %.2f, %.2f )" % (float(self.x), float(self.y) )
+        # return u"Point( %.2f, %.2f )" % (float(self.x), float(self.y) )
+        return u"Point( %s, %s )" % (str(self.x), str(self.y) )
 
     def __lt__(self, other):
         return (self.x < other.x) and (self.y < other.y)
@@ -107,9 +109,10 @@ class Point(object):
         return (self.x != other.x) or (self.y != other.y)
 
     def __add__( self, other):
-        if isinstance(other, Point):
-            return Point( self.x + other.x, self.y + other.y )
-        return Point( self.x + other, self.y + other )
+        if not isinstance(other, Point):
+            other = makePoint( other )
+        return Point( self.x + other.x, self.y + other.y )
+        # return Point( self.x + other, self.y + other )
 
     def __sub__( self, other):
         if isinstance(other, Point):
@@ -540,7 +543,8 @@ class Rectangle(object):
 
 
     def __eq__( self, other ):
-        return (self.origin == other.origin) and (self.corner == other.corner)
+        return ((   self.origin == other.origin )
+                and ( self.corner == other.corner))
 
     def __ne__( self, other ):
         return (self.origin != other.origin) or (self.corner != other.corner)
@@ -757,6 +761,14 @@ class Rectangle(object):
         self.topright = lines[1][0]
         self.bottomright = lines[1][1]
     verticallines = property( getverticallines, setverticallines )
+
+
+    def getTopLeftBottomRightLines( self ):
+        top, bottom = self.horizontallines
+        left, right = self.verticallines
+        return [ top,left,bottom,right ]
+
+    topLeftBottomRightLines = property( getTopLeftBottomRightLines )
 
 
     def withRight( self, x ):
@@ -1319,6 +1331,12 @@ class Rectangle(object):
         return cls( Point(left,top), Point(right,bottom) )
 
     @classmethod
+    def leftTopRightBottom(cls, left, top, right, bottom):
+        """Answer an instance of me whose left, right, top, and bottom coordinates 
+        are determined by the arguments."""
+        return cls( Point(left,top), Point(right,bottom) )
+
+    @classmethod
     def merging( cls, listOfRects ):
         """A number of callers of merge: should use this method."""
         minX = minY =  9999999
@@ -1334,6 +1352,8 @@ class Rectangle(object):
     def originExtent( cls, originPoint, extentPoint ):
         """Answer an instance of me whose top left corner is originPoint and width 
            by height is extentPoint."""
+        originPoint = makePoint( originPoint )
+        extentPoint = makePoint( extentPoint )
         return cls( originPoint, originPoint + extentPoint )
 
 class Form(object):

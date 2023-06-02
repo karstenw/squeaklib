@@ -16,8 +16,8 @@
 <v t="karstenw.20230526123827.1"><vh>makePoint</vh></v>
 <v t="karstenw.20230528120341.1"><vh>imageRectangles</vh></v>
 </v>
-<v t="karstenw.20230526122614.1" a="E"><vh>Point</vh>
-<v t="karstenw.20230526122614.2"><vh>__python__</vh>
+<v t="karstenw.20230526122614.1"><vh>Point</vh>
+<v t="karstenw.20230526122614.2" a="E"><vh>__python__</vh>
 <v t="karstenw.20230526122614.3"><vh>__init__</vh></v>
 <v t="karstenw.20230526122614.4"><vh>__repr__</vh></v>
 <v t="karstenw.20230526122614.5"><vh>__lt|le|gt|ge|eq|ne|add|sub|mul__</vh></v>
@@ -97,7 +97,7 @@
 <v t="karstenw.20230526122626.4"><vh>__repr__</vh></v>
 <v t="karstenw.20230526122626.5"><vh>__eq|ne|add|sub|mul__</vh></v>
 </v>
-<v t="karstenw.20230526122626.6"><vh>properties</vh>
+<v t="karstenw.20230526122626.6" a="E"><vh>properties</vh>
 <v t="karstenw.20230526122626.7"><vh>origin corner</vh></v>
 <v t="karstenw.20230526122626.8"><vh>height width area widthheight</vh></v>
 <v t="karstenw.20230526122626.9"><vh>top left bottom right</vh></v>
@@ -105,10 +105,10 @@
 <v t="karstenw.20230526122626.11"><vh>center</vh></v>
 <v t="karstenw.20230526122626.12"><vh>bottomcenter topcenter leftcenter rightcenter</vh></v>
 <v t="karstenw.20230526122626.13"><vh>corners extent</vh></v>
-<v t="karstenw.20230526122626.14"><vh>lines</vh></v>
+<v t="karstenw.20230526122626.14"><vh>horizontallines verticallines topLeftBottomRightLines</vh></v>
 </v>
-<v t="karstenw.20230526122626.15" a="E"><vh>instance methods</vh>
-<v t="karstenw.20230526122626.16" a="E"><vh>rectangle methods</vh>
+<v t="karstenw.20230526122626.15"><vh>instance methods</vh>
+<v t="karstenw.20230526122626.16"><vh>rectangle methods</vh>
 <v t="karstenw.20230526122626.17"><vh>withRight</vh></v>
 <v t="karstenw.20230526122626.18"><vh>withLeft</vh></v>
 <v t="karstenw.20230526122626.19"><vh>withBottom</vh></v>
@@ -173,7 +173,7 @@
 </v>
 </v>
 <v t="karstenw.20230526122626.73"><vh>class methods</vh>
-<v t="karstenw.20230526122626.74"><vh>instance creation</vh>
+<v t="karstenw.20230526122626.74" a="E"><vh>instance creation</vh>
 <v t="karstenw.20230526122626.75"><vh>centerExtent</vh></v>
 <v t="karstenw.20230526122626.76"><vh>encompassing</vh></v>
 <v t="karstenw.20230526122626.77"><vh>leftRightTopBottom</vh></v>
@@ -2054,7 +2054,8 @@ verticallines = property( getverticallines, setverticallines )
 </t>
 <t tx="karstenw.20230526122445.1">
 
-__ALL__ = ('makePoint', 'Point', 'Rectangle', 'Form')
+__ALL__ = ('makePoint', 'imageRectangles',  'Point', 'Rectangle',
+                                            'Form', 'Region')
 
 import math
 import random
@@ -2372,7 +2373,8 @@ def octantOf(self, otherPt ):
 
 </t>
 <t tx="karstenw.20230526122614.4">def __repr__( self ):
-    return u"Point( %.2f, %.2f )" % (float(self.x), float(self.y) )
+    # return u"Point( %.2f, %.2f )" % (float(self.x), float(self.y) )
+    return u"Point( %s, %s )" % (str(self.x), str(self.y) )
 
 </t>
 <t tx="karstenw.20230526122614.40"></t>
@@ -2486,9 +2488,10 @@ def __ne__(self, other):
     return (self.x != other.x) or (self.y != other.y)
 
 def __add__( self, other):
-    if isinstance(other, Point):
-        return Point( self.x + other.x, self.y + other.y )
-    return Point( self.x + other, self.y + other )
+    if not isinstance(other, Point):
+        other = makePoint( other )
+    return Point( self.x + other.x, self.y + other.y )
+    # return Point( self.x + other, self.y + other )
 
 def __sub__( self, other):
     if isinstance(other, Point):
@@ -2715,6 +2718,14 @@ def setverticallines( self, lines ):
     self.topright = lines[1][0]
     self.bottomright = lines[1][1]
 verticallines = property( getverticallines, setverticallines )
+
+
+def getTopLeftBottomRightLines( self ):
+    top, bottom = self.horizontallines
+    left, right = self.verticallines
+    return [ top,left,bottom,right ]
+
+topLeftBottomRightLines = property( getTopLeftBottomRightLines )
 
 
 </t>
@@ -3170,7 +3181,8 @@ withSideOrCorner: side setToPoint: newPoint minExtent: minExtent limit: limit
 
 </t>
 <t tx="karstenw.20230526122626.5">def __eq__( self, other ):
-    return (self.origin == other.origin) and (self.corner == other.corner)
+    return ((   self.origin == other.origin )
+            and ( self.corner == other.corner))
 
 def __ne__( self, other ):
     return (self.origin != other.origin) or (self.corner != other.corner)
@@ -3405,6 +3417,12 @@ def leftRightTopBottom(cls, left, right, top, bottom):
 
 </t>
 <t tx="karstenw.20230526122626.78">@classmethod
+def leftTopRightBottom(cls, left, top, right, bottom):
+    """Answer an instance of me whose left, right, top, and bottom coordinates 
+    are determined by the arguments."""
+    return cls( Point(left,top), Point(right,bottom) )
+
+@classmethod
 def merging( cls, listOfRects ):
     """A number of callers of merge: should use this method."""
     minX = minY =  9999999
@@ -3421,6 +3439,8 @@ def merging( cls, listOfRects ):
 def originExtent( cls, originPoint, extentPoint ):
     """Answer an instance of me whose top left corner is originPoint and width 
        by height is extentPoint."""
+    originPoint = makePoint( originPoint )
+    extentPoint = makePoint( extentPoint )
     return cls( originPoint, originPoint + extentPoint )
 
 </t>
