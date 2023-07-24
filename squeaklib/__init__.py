@@ -124,10 +124,11 @@ class Point(object):
             return Point( self.x * other.x, self.y * other.y )
         return Point( self.x * other, self.y * other )
 
-    def __div__( self, other):
+    def __truediv__( self, other):
         if isinstance(other, Point):
             return Point( self.x / other.x, self.y / other.y )
         return Point( self.x / other, self.y / other )
+
     def asFloatPoint( self ):
         return Point( float(self.x), float(self.y))
 
@@ -165,11 +166,6 @@ class Point(object):
         side = sign( side )
         sides = ('right', 'center', 'left')
         return sides[side+1]
-
-    def interpolateToAt( self, end, amountDone ):
-        """Interpolate between the instance and end after the specified amount
-           has been done (0 - 1)."""
-        return self + ((end - self) * amountDone)
 
     def bearingToPoint( self, anotherPoint ):
         """Return the bearing, in degrees, from the receiver to anotherPoint.
@@ -252,39 +248,6 @@ class Point(object):
            Note: This method computes the barycentric coordinates for the
                  receiver and tests those coordinates."""
         pass
-
-    def nearestPointAlongLineFromTo( self, p1, p2 ):
-        """Note this will give points beyond the endpoints.
-        Streamlined by Gerardo Richarte 11/3/97"""
-
-        if p1.x == p2.x:
-            return Point(p1.x, self.y)
-        if p1.y == p2.y:
-            return Point( self.x, p1.y )
-        x1 = float( p1.x )
-        y1 = float( p1.y )
-        x21 = float(p2.x) - x1
-        y21 = float(p2.y) - y1
-        t =  (((float(self.y) - y1) / x21
-             + (float(self.x) - x1) / y21)
-             / ( (x21 / y21) + (y21 / x21)))
-        return Point(x1 + (t * x21)) , (y1 + (t * y21))
-
-    def skalarPointOnLine( self, p1, p2, t ):
-        """return the point p1 + (t * (p2-p1))
-        kw 2021-02-25"""
-        if t > 1.0:
-            return p2
-        elif t < 0.0:
-            return p1
-        
-        dist = p2 - p1
-        return p1 + (t * dist)
-
-    def midPoint( self, otherPoint):
-        """Return the point halfway between self and otherPoint"""
-        pass
-
 
     def normal(self):
         """Answer a Point representing the unit vector rotated
@@ -385,6 +348,33 @@ class Point(object):
 
     def transposed( self ):
         return Point( self.y, self.x )
+
+    def interpolateToAt( self, end, amountDone ):
+        """Interpolate between the instance and end after the specified amount
+           has been done (0 - 1)."""
+        return self + ((end - self) * amountDone)
+
+    def midPoint( self, otherPoint):
+        """Return the point halfway between self and otherPoint"""
+        return self.interpolateToAt( otherPoint, 0.5 )
+
+
+    def nearestPointAlongLineFromTo( self, p1, p2 ):
+        """Note this will give points beyond the endpoints.
+        Streamlined by Gerardo Richarte 11/3/97"""
+
+        if p1.x == p2.x:
+            return Point(p1.x, self.y)
+        if p1.y == p2.y:
+            return Point( self.x, p1.y )
+        x1 = float( p1.x )
+        y1 = float( p1.y )
+        x21 = float(p2.x) - x1
+        y21 = float(p2.y) - y1
+        t =  (((float(self.y) - y1) / x21
+             + (float(self.x) - x1) / y21)
+             / ( (x21 / y21) + (y21 / x21)))
+        return Point(x1 + (t * x21)) , (y1 + (t * y21))
 
     def degrees( self ):
         if self.x == 0:

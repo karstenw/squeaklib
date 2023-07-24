@@ -17,10 +17,10 @@
 <v t="karstenw.20230528120341.1"><vh>imageRectangles</vh></v>
 </v>
 <v t="karstenw.20230526122614.1" a="E"><vh>Point</vh>
-<v t="karstenw.20230526122614.2" a="E"><vh>__python__</vh>
+<v t="karstenw.20230526122614.2"><vh>__python__</vh>
 <v t="karstenw.20230526122614.3"><vh>__init__</vh></v>
 <v t="karstenw.20230526122614.4"><vh>__repr__</vh></v>
-<v t="karstenw.20230526122614.5"><vh>__lt|le|gt|ge|eq|ne|add|sub|mul__</vh></v>
+<v t="karstenw.20230526122614.5"><vh>__lt|le|gt|ge|eq|ne|add|sub|mul|truediv__</vh></v>
 </v>
 <v t="karstenw.20230526122614.6" a="E"><vh>instance methods</vh>
 <v t="karstenw.20230526122614.7"><vh>converting</vh>
@@ -35,7 +35,6 @@
 <v t="karstenw.20230526122614.15"><vh>copying</vh></v>
 <v t="karstenw.20230526122614.16"><vh>geometry</vh></v>
 <v t="karstenw.20230526122614.17" a="E"><vh>point functions</vh>
-<v t="karstenw.20230526122614.18"><vh>interpolateToAt</vh></v>
 <v t="karstenw.20230526122614.19"><vh>bearingToPoint</vh></v>
 <v t="karstenw.20230526122614.20"><vh>crossProduct</vh></v>
 <v t="karstenw.20230526122614.21"><vh>dist</vh></v>
@@ -45,9 +44,6 @@
 <v t="karstenw.20230526122614.25"><vh>flipByCenterAt</vh></v>
 <v t="karstenw.20230526122614.26"><vh>grid</vh></v>
 <v t="karstenw.20230526122614.27"><vh>insideTriangle</vh></v>
-<v t="karstenw.20230526122614.28"><vh>nearestPointAlongLineFromTo</vh></v>
-<v t="karstenw.20230526122614.29"><vh>skalarPointOnLine</vh></v>
-<v t="karstenw.20230724112544.1"><vh>midPoint</vh></v>
 <v t="karstenw.20230526122614.30"><vh>normal</vh></v>
 <v t="karstenw.20230526122614.31"><vh>normalized</vh></v>
 <v t="karstenw.20230526122614.32"><vh>octantOf</vh></v>
@@ -58,6 +54,11 @@
 <v t="karstenw.20230526122614.37"><vh>sortsBefore</vh></v>
 <v t="karstenw.20230526122614.38"><vh>squaredDistanceTo</vh></v>
 <v t="karstenw.20230526122614.39"><vh>transposed</vh></v>
+</v>
+<v t="karstenw.20230724114428.1" a="E"><vh>linelike methods</vh>
+<v t="karstenw.20230526122614.18"><vh>interpolateToAt</vh></v>
+<v t="karstenw.20230724112544.1"><vh>midPoint</vh></v>
+<v t="karstenw.20230526122614.28"><vh>nearestPointAlongLineFromTo</vh></v>
 </v>
 <v t="karstenw.20230526122614.40"><vh>polar coordinates</vh>
 <v t="karstenw.20230526122614.41"><vh>degrees</vh></v>
@@ -92,7 +93,7 @@
 </v>
 </v>
 </v>
-<v t="karstenw.20230526122626.1" a="E"><vh>Rectangle</vh>
+<v t="karstenw.20230526122626.1"><vh>Rectangle</vh>
 <v t="karstenw.20230526122626.2"><vh>__python__</vh>
 <v t="karstenw.20230526122626.3"><vh>__init__</vh></v>
 <v t="karstenw.20230526122626.4"><vh>__repr__</vh></v>
@@ -108,7 +109,7 @@
 <v t="karstenw.20230526122626.13"><vh>corners extent</vh></v>
 <v t="karstenw.20230526122626.14"><vh>horizontallines verticallines topLeftBottomRightLines</vh></v>
 </v>
-<v t="karstenw.20230526122626.15" a="E"><vh>instance methods</vh>
+<v t="karstenw.20230526122626.15"><vh>instance methods</vh>
 <v t="karstenw.20230526122626.16"><vh>rectangle methods</vh>
 <v t="karstenw.20230526122626.17"><vh>withRight</vh></v>
 <v t="karstenw.20230526122626.18"><vh>withLeft</vh></v>
@@ -203,11 +204,11 @@
 <v t="karstenw.20230528120353.16"><vh>dotOfSize</vh></v>
 </v>
 </v>
-<v t="karstenw.20230526122635.1" a="E"><vh>Region</vh>
+<v t="karstenw.20230526122635.1"><vh>Region</vh>
 <v t="karstenw.20230526122945.1"><vh>newHeadline</vh></v>
 </v>
 </v>
-<v t="karstenw.20211017122643.1" a="E"><vh>trash</vh>
+<v t="karstenw.20211017122643.1"><vh>trash</vh>
 <v t="karstenw.20211015201020.1"><vh>subdivision</vh>
 <v t="karstenw.20211015201030.1"><vh>split</vh></v>
 <v t="karstenw.20211017114859.1"><vh>quadsplit</vh></v>
@@ -2245,18 +2246,6 @@ import photobot as pb
     return Point(x1 + (t * x21)) , (y1 + (t * y21))
 
 </t>
-<t tx="karstenw.20230526122614.29">def skalarPointOnLine( self, p1, p2, t ):
-    """return the point p1 + (t * (p2-p1))
-    kw 2021-02-25"""
-    if t &gt; 1.0:
-        return p2
-    elif t &lt; 0.0:
-        return p1
-    
-    dist = p2 - p1
-    return p1 + (t * dist)
-
-</t>
 <t tx="karstenw.20230526122614.3">def __init__(self, x, y):
     self.x = x
     self.y = y
@@ -2504,10 +2493,11 @@ def __mul__( self, other):
         return Point( self.x * other.x, self.y * other.y )
     return Point( self.x * other, self.y * other )
 
-def __div__( self, other):
+def __truediv__( self, other):
     if isinstance(other, Point):
         return Point( self.x / other.x, self.y / other.y )
     return Point( self.x / other, self.y / other )
+
 </t>
 <t tx="karstenw.20230526122614.50">def negated( self ):
     """Answer a point whose x and y coordinates are the negatives of
@@ -3683,9 +3673,10 @@ width = property(getwidth) #, setwidth)
 </t>
 <t tx="karstenw.20230724112544.1">def midPoint( self, otherPoint):
     """Return the point halfway between self and otherPoint"""
-    pass
+    return self.interpolateToAt( otherPoint, 0.5 )
 
 
 </t>
+<t tx="karstenw.20230724114428.1"></t>
 </tnodes>
 </leo_file>
