@@ -124,6 +124,10 @@ class Point(object):
             return Point( self.x * other.x, self.y * other.y )
         return Point( self.x * other, self.y * other )
 
+    def __div__( self, other):
+        if isinstance(other, Point):
+            return Point( self.x / other.x, self.y / other.y )
+        return Point( self.x / other, self.y / other )
     def asFloatPoint( self ):
         return Point( float(self.x), float(self.y))
 
@@ -276,6 +280,11 @@ class Point(object):
         
         dist = p2 - p1
         return p1 + (t * dist)
+
+    def midPoint( self, otherPoint):
+        """Return the point halfway between self and otherPoint"""
+        pass
+
 
     def normal(self):
         """Answer a Point representing the unit vector rotated
@@ -737,6 +746,7 @@ class Rectangle(object):
             (self.topleft, self.topright),
             # bottom
             (self.bottomleft, self.bottomright)]
+
     def sethorizontallines( self, lines ):
         # top
         self.topleft = lines[0][0]
@@ -746,6 +756,7 @@ class Rectangle(object):
         self.bottomright = lines[1][1]
     horizontallines = property( gethorizontallines, sethorizontallines )
 
+
     # vertical lines  
     def getverticallines(self):
         return [
@@ -753,6 +764,7 @@ class Rectangle(object):
             (self.topleft, self.bottomleft),
             # right
             (self.topright, self.bottomright)]
+
     def setverticallines( self, lines ):
         # left
         self.topleft = lines[0][0]

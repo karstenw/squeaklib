@@ -16,14 +16,14 @@
 <v t="karstenw.20230526123827.1"><vh>makePoint</vh></v>
 <v t="karstenw.20230528120341.1"><vh>imageRectangles</vh></v>
 </v>
-<v t="karstenw.20230526122614.1"><vh>Point</vh>
+<v t="karstenw.20230526122614.1" a="E"><vh>Point</vh>
 <v t="karstenw.20230526122614.2" a="E"><vh>__python__</vh>
 <v t="karstenw.20230526122614.3"><vh>__init__</vh></v>
 <v t="karstenw.20230526122614.4"><vh>__repr__</vh></v>
 <v t="karstenw.20230526122614.5"><vh>__lt|le|gt|ge|eq|ne|add|sub|mul__</vh></v>
 </v>
 <v t="karstenw.20230526122614.6" a="E"><vh>instance methods</vh>
-<v t="karstenw.20230526122614.7" a="E"><vh>converting</vh>
+<v t="karstenw.20230526122614.7"><vh>converting</vh>
 <v t="karstenw.20230526122614.8"><vh>asFloatPoint</vh></v>
 <v t="karstenw.20230526122614.9"><vh>asIntegerPoint</vh></v>
 <v t="karstenw.20230526122614.10"><vh>corner -&gt; Rectangle</vh></v>
@@ -34,7 +34,7 @@
 </v>
 <v t="karstenw.20230526122614.15"><vh>copying</vh></v>
 <v t="karstenw.20230526122614.16"><vh>geometry</vh></v>
-<v t="karstenw.20230526122614.17"><vh>point functions</vh>
+<v t="karstenw.20230526122614.17" a="E"><vh>point functions</vh>
 <v t="karstenw.20230526122614.18"><vh>interpolateToAt</vh></v>
 <v t="karstenw.20230526122614.19"><vh>bearingToPoint</vh></v>
 <v t="karstenw.20230526122614.20"><vh>crossProduct</vh></v>
@@ -47,6 +47,7 @@
 <v t="karstenw.20230526122614.27"><vh>insideTriangle</vh></v>
 <v t="karstenw.20230526122614.28"><vh>nearestPointAlongLineFromTo</vh></v>
 <v t="karstenw.20230526122614.29"><vh>skalarPointOnLine</vh></v>
+<v t="karstenw.20230724112544.1"><vh>midPoint</vh></v>
 <v t="karstenw.20230526122614.30"><vh>normal</vh></v>
 <v t="karstenw.20230526122614.31"><vh>normalized</vh></v>
 <v t="karstenw.20230526122614.32"><vh>octantOf</vh></v>
@@ -97,7 +98,7 @@
 <v t="karstenw.20230526122626.4"><vh>__repr__</vh></v>
 <v t="karstenw.20230526122626.5"><vh>__eq|ne|add|sub|mul__</vh></v>
 </v>
-<v t="karstenw.20230526122626.6" a="E"><vh>properties</vh>
+<v t="karstenw.20230526122626.6"><vh>properties</vh>
 <v t="karstenw.20230526122626.7"><vh>origin corner</vh></v>
 <v t="karstenw.20230526122626.8"><vh>height width area widthheight</vh></v>
 <v t="karstenw.20230526122626.9"><vh>top left bottom right</vh></v>
@@ -107,7 +108,7 @@
 <v t="karstenw.20230526122626.13"><vh>corners extent</vh></v>
 <v t="karstenw.20230526122626.14"><vh>horizontallines verticallines topLeftBottomRightLines</vh></v>
 </v>
-<v t="karstenw.20230526122626.15"><vh>instance methods</vh>
+<v t="karstenw.20230526122626.15" a="E"><vh>instance methods</vh>
 <v t="karstenw.20230526122626.16"><vh>rectangle methods</vh>
 <v t="karstenw.20230526122626.17"><vh>withRight</vh></v>
 <v t="karstenw.20230526122626.18"><vh>withLeft</vh></v>
@@ -2503,6 +2504,10 @@ def __mul__( self, other):
         return Point( self.x * other.x, self.y * other.y )
     return Point( self.x * other, self.y * other )
 
+def __div__( self, other):
+    if isinstance(other, Point):
+        return Point( self.x / other.x, self.y / other.y )
+    return Point( self.x / other, self.y / other )
 </t>
 <t tx="karstenw.20230526122614.50">def negated( self ):
     """Answer a point whose x and y coordinates are the negatives of
@@ -2694,6 +2699,7 @@ def gethorizontallines(self):
         (self.topleft, self.topright),
         # bottom
         (self.bottomleft, self.bottomright)]
+
 def sethorizontallines( self, lines ):
     # top
     self.topleft = lines[0][0]
@@ -2703,6 +2709,7 @@ def sethorizontallines( self, lines ):
     self.bottomright = lines[1][1]
 horizontallines = property( gethorizontallines, sethorizontallines )
 
+
 # vertical lines  
 def getverticallines(self):
     return [
@@ -2710,6 +2717,7 @@ def getverticallines(self):
         (self.topleft, self.bottomleft),
         # right
         (self.topright, self.bottomright)]
+
 def setverticallines( self, lines ):
     # left
     self.topleft = lines[0][0]
@@ -3671,6 +3679,12 @@ def getwidth( self ):
 <t tx="karstenw.20230528120353.9">def setwidth(self, newWidth):
     pass
 width = property(getwidth) #, setwidth)
+
+</t>
+<t tx="karstenw.20230724112544.1">def midPoint( self, otherPoint):
+    """Return the point halfway between self and otherPoint"""
+    pass
+
 
 </t>
 </tnodes>
