@@ -90,6 +90,11 @@ class Point(object):
         # return u"Point( %.2f, %.2f )" % (float(self.x), float(self.y) )
         return u"Point( %s, %s )" % (str(self.x), str(self.y) )
 
+    def __iter__(self):
+        yield float(self.x)
+        yield float(self.y)
+
+
     def __lt__(self, other):
         return (self.x < other.x) and (self.y < other.y)
 
@@ -536,6 +541,10 @@ class Rectangle(object):
         self.porigin = p1
         self.pcorner = p2
 
+
+    def __iter__(self):
+        yield self.porigin
+        yield self.pcorner
 
     def __repr__( self ):
         return u"Rectangle( %s, %s )" % (repr(self.origin), repr(self.corner) )

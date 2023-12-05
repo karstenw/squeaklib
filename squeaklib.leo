@@ -20,9 +20,10 @@
 <v t="karstenw.20230526122614.2"><vh>__python__</vh>
 <v t="karstenw.20230526122614.3"><vh>__init__</vh></v>
 <v t="karstenw.20230526122614.4"><vh>__repr__</vh></v>
+<v t="karstenw.20231205175628.1"><vh>__iter__</vh></v>
 <v t="karstenw.20230526122614.5"><vh>__lt|le|gt|ge|eq|ne|add|sub|mul|truediv__</vh></v>
 </v>
-<v t="karstenw.20230526122614.6" a="E"><vh>instance methods</vh>
+<v t="karstenw.20230526122614.6"><vh>instance methods</vh>
 <v t="karstenw.20230526122614.7"><vh>converting</vh>
 <v t="karstenw.20230526122614.8"><vh>asFloatPoint</vh></v>
 <v t="karstenw.20230526122614.9"><vh>asIntegerPoint</vh></v>
@@ -34,7 +35,7 @@
 </v>
 <v t="karstenw.20230526122614.15"><vh>copying</vh></v>
 <v t="karstenw.20230526122614.16"><vh>geometry</vh></v>
-<v t="karstenw.20230526122614.17" a="E"><vh>point functions</vh>
+<v t="karstenw.20230526122614.17"><vh>point functions</vh>
 <v t="karstenw.20230526122614.19"><vh>bearingToPoint</vh></v>
 <v t="karstenw.20230526122614.20"><vh>crossProduct</vh></v>
 <v t="karstenw.20230526122614.21"><vh>dist</vh></v>
@@ -55,7 +56,7 @@
 <v t="karstenw.20230526122614.38"><vh>squaredDistanceTo</vh></v>
 <v t="karstenw.20230526122614.39"><vh>transposed</vh></v>
 </v>
-<v t="karstenw.20230724114428.1" a="E"><vh>linelike methods</vh>
+<v t="karstenw.20230724114428.1"><vh>linelike methods</vh>
 <v t="karstenw.20230526122614.18"><vh>interpolateToAt</vh></v>
 <v t="karstenw.20230724112544.1"><vh>midPoint</vh></v>
 <v t="karstenw.20230526122614.28"><vh>nearestPointAlongLineFromTo</vh></v>
@@ -93,13 +94,14 @@
 </v>
 </v>
 </v>
-<v t="karstenw.20230526122626.1"><vh>Rectangle</vh>
-<v t="karstenw.20230526122626.2"><vh>__python__</vh>
+<v t="karstenw.20230526122626.1" a="E"><vh>Rectangle</vh>
+<v t="karstenw.20230526122626.2" a="E"><vh>__python__</vh>
 <v t="karstenw.20230526122626.3"><vh>__init__</vh></v>
+<v t="karstenw.20231205184847.1"><vh>__iter__</vh></v>
 <v t="karstenw.20230526122626.4"><vh>__repr__</vh></v>
 <v t="karstenw.20230526122626.5"><vh>__eq|ne|add|sub|mul__</vh></v>
 </v>
-<v t="karstenw.20230526122626.6"><vh>properties</vh>
+<v t="karstenw.20230526122626.6" a="E"><vh>properties</vh>
 <v t="karstenw.20230526122626.7"><vh>origin corner</vh></v>
 <v t="karstenw.20230526122626.8"><vh>height width area widthheight</vh></v>
 <v t="karstenw.20230526122626.9"><vh>top left bottom right</vh></v>
@@ -3678,5 +3680,16 @@ width = property(getwidth) #, setwidth)
 
 </t>
 <t tx="karstenw.20230724114428.1"></t>
+<t tx="karstenw.20231205175628.1">def __iter__(self):
+    yield float(self.x)
+    yield float(self.y)
+
+
+</t>
+<t tx="karstenw.20231205184847.1">def __iter__(self):
+    yield self.porigin
+    yield self.pcorner
+
+</t>
 </tnodes>
 </leo_file>
