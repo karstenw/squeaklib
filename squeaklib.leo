@@ -16,14 +16,15 @@
 <v t="karstenw.20230526123827.1"><vh>makePoint</vh></v>
 <v t="karstenw.20230528120341.1"><vh>imageRectangles</vh></v>
 </v>
-<v t="karstenw.20230526122614.1" a="E"><vh>Point</vh>
-<v t="karstenw.20230526122614.2"><vh>__python__</vh>
+<v t="karstenw.20230526122614.1"><vh>Point</vh>
+<v t="karstenw.20230526122614.2" a="E"><vh>__python__</vh>
 <v t="karstenw.20230526122614.3"><vh>__init__</vh></v>
 <v t="karstenw.20230526122614.4"><vh>__repr__</vh></v>
 <v t="karstenw.20231205175628.1"><vh>__iter__</vh></v>
+<v t="karstenw.20240320133834.1"><vh>__getitem/setitem__</vh></v>
 <v t="karstenw.20230526122614.5"><vh>__lt|le|gt|ge|eq|ne|add|sub|mul|truediv__</vh></v>
 </v>
-<v t="karstenw.20230526122614.6"><vh>instance methods</vh>
+<v t="karstenw.20230526122614.6" a="E"><vh>instance methods</vh>
 <v t="karstenw.20230526122614.7"><vh>converting</vh>
 <v t="karstenw.20230526122614.8"><vh>asFloatPoint</vh></v>
 <v t="karstenw.20230526122614.9"><vh>asIntegerPoint</vh></v>
@@ -61,13 +62,13 @@
 <v t="karstenw.20230724112544.1"><vh>midPoint</vh></v>
 <v t="karstenw.20230526122614.28"><vh>nearestPointAlongLineFromTo</vh></v>
 </v>
-<v t="karstenw.20230526122614.40"><vh>polar coordinates</vh>
+<v t="karstenw.20230526122614.40" a="E"><vh>polar coordinates</vh>
 <v t="karstenw.20230526122614.41"><vh>degrees</vh></v>
 <v t="karstenw.20230526122614.42"><vh>degreesWith</vh></v>
 <v t="karstenw.20230526122614.43"><vh>r</vh></v>
 <v t="karstenw.20230526122614.44"><vh>theta</vh></v>
 </v>
-<v t="karstenw.20230526122614.45"><vh>private</vh>
+<v t="karstenw.20230526122614.45" a="E"><vh>private</vh>
 <v t="karstenw.20230526122614.46"><vh>bitShiftPoint</vh></v>
 <v t="karstenw.20230526122614.47"><vh>setRDegrees</vh></v>
 </v>
@@ -88,20 +89,20 @@
 <v t="karstenw.20230526122614.59"><vh>testing</vh>
 <v t="karstenw.20230526122614.60"><vh>isZero</vh></v>
 </v>
-<v t="karstenw.20230526122614.61"><vh>class methods</vh>
-<v t="karstenw.20230526122614.62"><vh>instance creation</vh>
+<v t="karstenw.20230526122614.61" a="E"><vh>class methods</vh>
+<v t="karstenw.20230526122614.62" a="E"><vh>instance creation</vh>
 <v t="karstenw.20230526122614.63"><vh>rhoDegrees</vh></v>
 </v>
 </v>
 </v>
 <v t="karstenw.20230526122626.1" a="E"><vh>Rectangle</vh>
-<v t="karstenw.20230526122626.2" a="E"><vh>__python__</vh>
+<v t="karstenw.20230526122626.2"><vh>__python__</vh>
 <v t="karstenw.20230526122626.3"><vh>__init__</vh></v>
 <v t="karstenw.20231205184847.1"><vh>__iter__</vh></v>
 <v t="karstenw.20230526122626.4"><vh>__repr__</vh></v>
 <v t="karstenw.20230526122626.5"><vh>__eq|ne|add|sub|mul__</vh></v>
 </v>
-<v t="karstenw.20230526122626.6" a="E"><vh>properties</vh>
+<v t="karstenw.20230526122626.6"><vh>properties</vh>
 <v t="karstenw.20230526122626.7"><vh>origin corner</vh></v>
 <v t="karstenw.20230526122626.8"><vh>height width area widthheight</vh></v>
 <v t="karstenw.20230526122626.9"><vh>top left bottom right</vh></v>
@@ -176,9 +177,10 @@
 <v t="karstenw.20230526122626.72"><vh>outerSquare</vh></v>
 </v>
 </v>
-<v t="karstenw.20230526122626.73"><vh>class methods</vh>
+<v t="karstenw.20230526122626.73" a="E"><vh>class methods</vh>
 <v t="karstenw.20230526122626.74" a="E"><vh>instance creation</vh>
 <v t="karstenw.20230526122626.75"><vh>centerExtent</vh></v>
+<v t="karstenw.20250503212345.1"><vh>centerRadius</vh></v>
 <v t="karstenw.20230526122626.76"><vh>encompassing</vh></v>
 <v t="karstenw.20230526122626.77"><vh>leftRightTopBottom</vh></v>
 <v t="karstenw.20230526122626.78"><vh>merging</vh></v>
@@ -2058,8 +2060,9 @@ verticallines = property( getverticallines, setverticallines )
 </t>
 <t tx="karstenw.20230526122445.1">
 
-__ALL__ = ('makePoint', 'imageRectangles',  'Point', 'Rectangle',
-                                            'Form', 'Region')
+__ALL__ = ('makePoint', 'imageRectangles',
+           'Point', 'Rectangle',
+           'Form', 'Region')
 
 import math
 import random
@@ -3515,7 +3518,7 @@ right = property( getright, setright )
 
 </t>
 <t tx="karstenw.20230526123827.1">try:
-    unicode
+    long
 except NameError:
     long = int
 
@@ -3689,6 +3692,39 @@ width = property(getwidth) #, setwidth)
 <t tx="karstenw.20231205184847.1">def __iter__(self):
     yield self.porigin
     yield self.pcorner
+
+</t>
+<t tx="karstenw.20240320133834.1">def __getitem__(self, idx):
+    if idx == 0:
+        return self.x
+    elif idx == 1:
+        return self.y
+    else:
+        raise IndexError( "Point index out of range" )
+
+def __setitem__(self, idx, value):
+    if idx == 0:
+        self.x = value
+    elif idx == 1:
+        self.y = value
+    else:
+        raise IndexError( "Point index out of range" )
+
+</t>
+<t tx="karstenw.20250503212345.1">@classmethod
+def centerRadius(cls, centerPoint, radius):
+    """Answer an instance of me whose center is centerPoint and
+       radius is the distance to the top left point. """
+    
+    csquared = radius*radius
+    cathedes = round(math.sqrt(csquared) / 2.0)
+    rad = math.radians(225)
+    delta = Point(cathedes, cathedes)
+    topLeft = centerPoint - delta
+    bottomRight = centerPoint + delta
+
+    return cls( topLeft, bottomRight )
+
 
 </t>
 </tnodes>

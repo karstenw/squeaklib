@@ -1,7 +1,8 @@
 
 
-__ALL__ = ('makePoint', 'imageRectangles',  'Point', 'Rectangle',
-                                            'Form', 'Region')
+__ALL__ = ('makePoint', 'imageRectangles',
+           'Point', 'Rectangle',
+           'Form', 'Region')
 
 import math
 import random
@@ -28,7 +29,7 @@ def sign( number ):
 
 
 try:
-    unicode
+    long
 except NameError:
     long = int
 
@@ -94,6 +95,22 @@ class Point(object):
         yield float(self.x)
         yield float(self.y)
 
+
+    def __getitem__(self, idx):
+        if idx == 0:
+            return self.x
+        elif idx == 1:
+            return self.y
+        else:
+            raise IndexError( "Point index out of range" )
+
+    def __setitem__(self, idx, value):
+        if idx == 0:
+            self.x = value
+        elif idx == 1:
+            self.y = value
+        else:
+            raise IndexError( "Point index out of range" )
 
     def __lt__(self, other):
         return (self.x < other.x) and (self.y < other.y)
@@ -1319,6 +1336,21 @@ class Rectangle(object):
                              centerPoint.y - round( extentPoint.y / 2.0 ))
         cornerPoint = originPoint + extentPoint
         return cls( originPoint, cornerPoint )
+
+
+    @classmethod
+    def centerRadius(cls, centerPoint, radius):
+        """Answer an instance of me whose center is centerPoint and
+           radius is the distance to the top left point. """
+        
+        csquared = radius*radius
+        cathedes = round(math.sqrt(csquared) / 2.0)
+        rad = math.radians(225)
+        delta = Point(cathedes, cathedes)
+        topLeft = centerPoint - delta
+        bottomRight = centerPoint + delta
+
+        return cls( topLeft, bottomRight )
 
 
     @classmethod
