@@ -958,10 +958,12 @@ class Rectangle(object):
 
 
     def bordersOnAlong( self, her, herSide ):
+        """Check if self and her are bordering along herSide (lerft,right,top,bottom)"""
+        
         if (   (herSide == b"right" and self.left == her.right)
             or (herSide == b"left"  and self.right == her.left)):
             return max(self.top, her.top) < min(self.bottom, her.bottom)
-
+        
         if (   (herSide == b"bottom" and self.top == her.bottom)
             or (herSide == b"top"  and self.bottom == her.top)):
             return  max(self.left, her.left) < min(self.right, her.right)
@@ -1452,6 +1454,19 @@ class Rectangle(object):
         originPoint = makePoint( originPoint )
         extentPoint = makePoint( extentPoint )
         return cls( originPoint, originPoint + extentPoint )
+
+    @classmethod
+    def random( cls, originrange=(10,150), cornerrange=(50,200) ):
+        """Create a random Rectangle within originrange and cornerrange."""
+        
+        top = round( originrange[0] + random.random() * originrange[1], 3)
+        left = round( originrange[0] + random.random() * originrange[1], 3)
+        bottom = round( cornerrange[0] + random.random() * cornerrange[1], 3)
+        right = round( cornerrange[0] + random.random() * cornerrange[1], 3)
+        
+        origin = makePoint(  (left,top) )
+        corner = makePoint( (right,bottom) )
+        return cls( origin, corner )
 
 class Form(object):
     """Translated from a Squeak 3.7 image
