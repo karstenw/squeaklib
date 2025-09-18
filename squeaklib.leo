@@ -11,7 +11,7 @@
 <vnodes>
 <v t="karstenw.20211015160132.1" a="E"><vh>@clean squeaklib/__init__.py</vh>
 <v t="karstenw.20230526122445.1"><vh>Declarations</vh></v>
-<v t="karstenw.20230526122610.1"><vh>tools</vh>
+<v t="karstenw.20230526122610.1" a="E"><vh>tools</vh>
 <v t="karstenw.20230526122610.2"><vh>sign</vh></v>
 <v t="karstenw.20230526123827.1"><vh>makePoint</vh></v>
 <v t="karstenw.20230528120341.1"><vh>imageRectangles</vh></v>
@@ -96,14 +96,14 @@
 </v>
 </v>
 <v t="karstenw.20230526122626.1" a="E"><vh>Rectangle</vh>
-<v t="karstenw.20230526122626.2"><vh>__python__</vh>
+<v t="karstenw.20230526122626.2" a="E"><vh>__python__</vh>
 <v t="karstenw.20230526122626.3"><vh>__init__</vh></v>
 <v t="karstenw.20231205184847.1"><vh>__iter__</vh></v>
 <v t="karstenw.20230526122626.4"><vh>__repr__</vh></v>
 <v t="karstenw.20230526122626.5"><vh>__eq|ne|add|sub|mul__</vh></v>
 </v>
 <v t="karstenw.20230526122626.6" a="E"><vh>properties</vh>
-<v t="karstenw.20230526122626.7"><vh>origin corner</vh></v>
+<v t="karstenw.20230526122626.7"><vh>origin corner setOriginCorner</vh></v>
 <v t="karstenw.20230526122626.8"><vh>height width area widthheight</vh></v>
 <v t="karstenw.20230526122626.9"><vh>top left bottom right</vh></v>
 <v t="karstenw.20230526122626.10"><vh>topleft topright bottomleft bottomright</vh></v>
@@ -112,7 +112,7 @@
 <v t="karstenw.20230526122626.13"><vh>corners extent</vh></v>
 <v t="karstenw.20230526122626.14"><vh>horizontallines verticallines topLeftBottomRightLines</vh></v>
 </v>
-<v t="karstenw.20230526122626.15"><vh>instance methods</vh>
+<v t="karstenw.20230526122626.15" a="E"><vh>instance methods</vh>
 <v t="karstenw.20230526122626.16"><vh>rectangle methods</vh>
 <v t="karstenw.20230526122626.17"><vh>withRight</vh></v>
 <v t="karstenw.20230526122626.18"><vh>withLeft</vh></v>
@@ -2074,6 +2074,7 @@ import PIL.Image
 import PIL.ImageDraw as ImageDraw
 
 import pdb
+kwdbg = True
 
 import photobot as pb
 
@@ -2713,7 +2714,9 @@ rightcenter = property( rightcenter )
         self.bottomright,
         self.topright
     ]
+# TODO
 def setcorners( self, topLeft, bottomleft, bottomright, topright ):
+    # This is wrong should default args to None and set each separately
     self.origin( topLeft )
     self.corner( bottomRight )
 corners = property( getcorners )
@@ -2736,6 +2739,8 @@ def gethorizontallines(self):
 
 def sethorizontallines( self, lines ):
     # top
+    #top = makePoint(lines[0])
+    #bottom = makePoint(lines[1])
     self.topleft = lines[0][0]
     self.topright = lines[0][1]
     # bottom
@@ -3428,6 +3433,8 @@ def setOriginCorner( self, origin, corner ):
 def centerExtent(cls, centerPoint, extentPoint):
     """Answer an instance of me whose center is centerPoint and width 
        by height is extentPoint."""
+    centerPoint = makePoint( centerPoint )
+    extentPoint = makePoint( extentPoint )
     dx = round( extentPoint.x / 2.0 )
     dy = round( extentPoint.y / 2.0 )
     originPoint = Point( centerPoint.x - round( extentPoint.x / 2.0 ),
@@ -3565,6 +3572,8 @@ except NameError:
 def makePoint( *args  ):
     "Tries to create a Point from args."
     n = len(args)
+    if kwdbg:
+        print("makePoint( %s )" % (str(args),) )
     if n == 1:
         typ = type( args[0] )
         if typ in (Point,):
@@ -3730,8 +3739,13 @@ width = property(getwidth) #, setwidth)
 
 </t>
 <t tx="karstenw.20231205184847.1">def __iter__(self):
-    yield self.porigin
-    yield self.pcorner
+    """Iterate all 4 corners"""
+    for item in self.corners:
+        yield item
+    #yield self.topleft
+    #yield self.topright
+    #yield self.bottomright
+    #yield bottomleft
 
 </t>
 <t tx="karstenw.20240320133834.1">def __getitem__(self, idx):

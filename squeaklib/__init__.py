@@ -14,6 +14,7 @@ import PIL.Image
 import PIL.ImageDraw as ImageDraw
 
 import pdb
+kwdbg = True
 
 import photobot as pb
 
@@ -36,6 +37,8 @@ except NameError:
 def makePoint( *args  ):
     "Tries to create a Point from args."
     n = len(args)
+    if kwdbg:
+        print("makePoint( %s )" % (str(args),) )
     if n == 1:
         typ = type( args[0] )
         if typ in (Point,):
@@ -599,8 +602,13 @@ class Rectangle(object):
 
 
     def __iter__(self):
-        yield self.porigin
-        yield self.pcorner
+        """Iterate all 4 corners"""
+        for item in self.corners:
+            yield item
+        #yield self.topleft
+        #yield self.topright
+        #yield self.bottomright
+        #yield bottomleft
 
     def __repr__( self ):
         return u"Rectangle( %s, %s )" % (repr(self.origin), repr(self.corner) )
@@ -783,7 +791,9 @@ class Rectangle(object):
             self.bottomright,
             self.topright
         ]
+    # TODO
     def setcorners( self, topLeft, bottomleft, bottomright, topright ):
+        # This is wrong should default args to None and set each separately
         self.origin( topLeft )
         self.corner( bottomRight )
     corners = property( getcorners )
@@ -805,6 +815,8 @@ class Rectangle(object):
 
     def sethorizontallines( self, lines ):
         # top
+        #top = makePoint(lines[0])
+        #bottom = makePoint(lines[1])
         self.topleft = lines[0][0]
         self.topright = lines[0][1]
         # bottom
@@ -1370,6 +1382,8 @@ class Rectangle(object):
     def centerExtent(cls, centerPoint, extentPoint):
         """Answer an instance of me whose center is centerPoint and width 
            by height is extentPoint."""
+        centerPoint = makePoint( centerPoint )
+        extentPoint = makePoint( extentPoint )
         dx = round( extentPoint.x / 2.0 )
         dy = round( extentPoint.y / 2.0 )
         originPoint = Point( centerPoint.x - round( extentPoint.x / 2.0 ),
