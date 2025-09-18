@@ -102,7 +102,7 @@
 <v t="karstenw.20230526122626.4"><vh>__repr__</vh></v>
 <v t="karstenw.20230526122626.5"><vh>__eq|ne|add|sub|mul__</vh></v>
 </v>
-<v t="karstenw.20230526122626.6"><vh>properties</vh>
+<v t="karstenw.20230526122626.6" a="E"><vh>properties</vh>
 <v t="karstenw.20230526122626.7"><vh>origin corner</vh></v>
 <v t="karstenw.20230526122626.8"><vh>height width area widthheight</vh></v>
 <v t="karstenw.20230526122626.9"><vh>top left bottom right</vh></v>
@@ -2594,6 +2594,45 @@ def rhoDegrees( cls, rho, degrees ):
 <t tx="karstenw.20230526122614.9">def asIntegerPoint( self ):
     return Point( int( round(self.x) ), int( round(self.y) ))
 
+def scale(self, factor):
+    """
+    FuncGeometry vector scale
+    """
+    return Point(self.x * factor, self.y * factor)
+
+def scale_at(self, other, factor):
+    return self + ((other - self) * factor)
+    # d = self - other
+    # d *= factor
+    # return self + d #*factor
+
+def as_tuple(self):
+    return (self.x, self.y)
+
+def as_distance(self):
+    return math.sqrt(self.x ** 2 + self.y ** 2)
+
+
+def rotate(self, deg):
+    # Use NodeBox cGeo
+    # np = Point(0,0)
+    d = math.radians(deg)
+    cd = math.cos(d)
+    sd = math.sin(d)
+    return Point(
+        self.x * cd + self.y * sd,
+        self.y * cd - self.x * sd)
+
+def as_angle(self, other, deg):
+    # Use NodeBox cGeo
+    return Point(
+        self.x + (other.x * math.cos( math.radians(deg) )),
+        self.y + (other.y * math.sin( math.radians(deg) )))
+    """
+    p = other - self
+    return self + p.rotate(deg)
+    """
+
 </t>
 <t tx="karstenw.20230526122626.1">class Rectangle(object):
     "Translated from a Squeak 3.7 image"
@@ -3367,8 +3406,9 @@ def setcorner(self, val):
 corner = property(getcorner, setcorner)
 
 def setOriginCorner( self, origin, corner ):
-    self.origin = makePoint( origin )
-    self.corner = makePoint( corner )
+    self.origin = origin
+    self.corner = corner
+
 
 </t>
 <t tx="karstenw.20230526122626.70"></t>

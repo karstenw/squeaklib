@@ -157,6 +157,45 @@ class Point(object):
     def asIntegerPoint( self ):
         return Point( int( round(self.x) ), int( round(self.y) ))
 
+    def scale(self, factor):
+        """
+        FuncGeometry vector scale
+        """
+        return Point(self.x * factor, self.y * factor)
+
+    def scale_at(self, other, factor):
+        return self + ((other - self) * factor)
+        # d = self - other
+        # d *= factor
+        # return self + d #*factor
+
+    def as_tuple(self):
+        return (self.x, self.y)
+
+    def as_distance(self):
+        return math.sqrt(self.x ** 2 + self.y ** 2)
+
+
+    def rotate(self, deg):
+        # Use NodeBox cGeo
+        # np = Point(0,0)
+        d = math.radians(deg)
+        cd = math.cos(d)
+        sd = math.sin(d)
+        return Point(
+            self.x * cd + self.y * sd,
+            self.y * cd - self.x * sd)
+
+    def as_angle(self, other, deg):
+        # Use NodeBox cGeo
+        return Point(
+            self.x + (other.x * math.cos( math.radians(deg) )),
+            self.y + (other.y * math.sin( math.radians(deg) )))
+        """
+        p = other - self
+        return self + p.rotate(deg)
+        """
+
     def corner( self, aPoint ):
         """Return a Rectangle( self, aPoint )"""
         return Rectangle( self, aPoint )
@@ -610,8 +649,9 @@ class Rectangle(object):
     corner = property(getcorner, setcorner)
 
     def setOriginCorner( self, origin, corner ):
-        self.origin = makePoint( origin )
-        self.corner = makePoint( corner )
+        self.origin = origin
+        self.corner = corner
+
 
     # height
     def getheight(self):
