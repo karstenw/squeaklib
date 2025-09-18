@@ -96,13 +96,13 @@
 </v>
 </v>
 <v t="karstenw.20230526122626.1" a="E"><vh>Rectangle</vh>
-<v t="karstenw.20230526122626.2" a="E"><vh>__python__</vh>
+<v t="karstenw.20230526122626.2"><vh>__python__</vh>
 <v t="karstenw.20230526122626.3"><vh>__init__</vh></v>
 <v t="karstenw.20231205184847.1"><vh>__iter__</vh></v>
 <v t="karstenw.20230526122626.4"><vh>__repr__</vh></v>
 <v t="karstenw.20230526122626.5"><vh>__eq|ne|add|sub|mul__</vh></v>
 </v>
-<v t="karstenw.20230526122626.6" a="E"><vh>properties</vh>
+<v t="karstenw.20230526122626.6"><vh>properties</vh>
 <v t="karstenw.20230526122626.7"><vh>origin corner setOriginCorner</vh></v>
 <v t="karstenw.20230526122626.8"><vh>height width area widthheight</vh></v>
 <v t="karstenw.20230526122626.9"><vh>top left bottom right</vh></v>
@@ -113,7 +113,7 @@
 <v t="karstenw.20230526122626.14"><vh>horizontallines verticallines topLeftBottomRightLines</vh></v>
 </v>
 <v t="karstenw.20230526122626.15" a="E"><vh>instance methods</vh>
-<v t="karstenw.20230526122626.16"><vh>rectangle methods</vh>
+<v t="karstenw.20230526122626.16" a="E"><vh>rectangle methods</vh>
 <v t="karstenw.20230526122626.17"><vh>withRight</vh></v>
 <v t="karstenw.20230526122626.18"><vh>withLeft</vh></v>
 <v t="karstenw.20230526122626.19"><vh>withBottom</vh></v>
@@ -185,6 +185,7 @@
 <v t="karstenw.20230526122626.77"><vh>leftRightTopBottom</vh></v>
 <v t="karstenw.20230526122626.78"><vh>merging</vh></v>
 <v t="karstenw.20230526122626.79"><vh>originExtent</vh></v>
+<v t="karstenw.20250918115652.1"><vh>random</vh></v>
 </v>
 </v>
 </v>
@@ -2904,10 +2905,12 @@ topLeftBottomRightLines = property( getTopLeftBottomRightLines )
 
 </t>
 <t tx="karstenw.20230526122626.28">def bordersOnAlong( self, her, herSide ):
+    """Check if self and her are bordering along herSide (lerft,right,top,bottom)"""
+    
     if (   (herSide == b"right" and self.left == her.right)
         or (herSide == b"left"  and self.right == her.left)):
         return max(self.top, her.top) &lt; min(self.bottom, her.bottom)
-
+    
     if (   (herSide == b"bottom" and self.top == her.bottom)
         or (herSide == b"top"  and self.bottom == her.top)):
         return  max(self.left, her.left) &lt; min(self.right, her.right)
@@ -3779,6 +3782,20 @@ def centerRadius(cls, centerPoint, radius):
 
     return cls( topLeft, bottomRight )
 
+
+</t>
+<t tx="karstenw.20250918115652.1">@classmethod
+def random( cls, originrange=(10,150), cornerrange=(50,200) ):
+    """Create a random Rectangle within originrange and cornerrange."""
+    
+    top = round( originrange[0] + random.random() * originrange[1], 3)
+    left = round( originrange[0] + random.random() * originrange[1], 3)
+    bottom = round( cornerrange[0] + random.random() * cornerrange[1], 3)
+    right = round( cornerrange[0] + random.random() * cornerrange[1], 3)
+    
+    origin = makePoint(  (left,top) )
+    corner = makePoint( (right,bottom) )
+    return cls( origin, corner )
 
 </t>
 </tnodes>
