@@ -19,6 +19,13 @@ kwdbg = True
 import photobot as pb
 
 
+# last py2 remnants...
+try:
+    long
+except NameError:
+    long = int
+
+
 def sign( number ):
     """I can't believe that Python does not have a sign() function."""
 
@@ -29,16 +36,13 @@ def sign( number ):
     return 0
 
 
-try:
-    long
-except NameError:
-    long = int
-
 def makePoint( *args  ):
     "Tries to create a Point from args."
     n = len(args)
-    if kwdbg:
+    
+    if kwdbg and 0:
         print("makePoint( %s )" % (str(args),) )
+    
     if n == 1:
         typ = type( args[0] )
         if typ in (Point,):
@@ -51,7 +55,7 @@ def makePoint( *args  ):
         return Point( args[0], args[1] )
     return None
 
-def imageRectangles( reclist, exportname="RectangleList()_", frame=(10,10) ):
+def imageRectangles( reclist, exportname="imageRectangles()_", frame=(10,10) ):
     # pdb.set_trace()
     frame = makePoint( frame )
     rectangles = []
@@ -605,10 +609,6 @@ class Rectangle(object):
         """Iterate all 4 corners"""
         for item in self.corners:
             yield item
-        #yield self.topleft
-        #yield self.topright
-        #yield self.bottomright
-        #yield bottomleft
 
     def __repr__( self ):
         return u"Rectangle( %s, %s )" % (repr(self.origin), repr(self.corner) )
