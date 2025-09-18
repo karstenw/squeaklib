@@ -2079,6 +2079,13 @@ kwdbg = True
 import photobot as pb
 
 
+# last py2 remnants...
+try:
+    long
+except NameError:
+    long = int
+
+
 </t>
 <t tx="karstenw.20230526122610.1"></t>
 <t tx="karstenw.20230526122610.2">def sign( number ):
@@ -3564,16 +3571,13 @@ right = property( getright, setright )
 
 
 </t>
-<t tx="karstenw.20230526123827.1">try:
-    long
-except NameError:
-    long = int
-
-def makePoint( *args  ):
+<t tx="karstenw.20230526123827.1">def makePoint( *args  ):
     "Tries to create a Point from args."
     n = len(args)
-    if kwdbg:
+    
+    if kwdbg and 0:
         print("makePoint( %s )" % (str(args),) )
+    
     if n == 1:
         typ = type( args[0] )
         if typ in (Point,):
@@ -3587,7 +3591,7 @@ def makePoint( *args  ):
     return None
 
 </t>
-<t tx="karstenw.20230528120341.1">def imageRectangles( reclist, exportname="RectangleList()_", frame=(10,10) ):
+<t tx="karstenw.20230528120341.1">def imageRectangles( reclist, exportname="imageRectangles()_", frame=(10,10) ):
     # pdb.set_trace()
     frame = makePoint( frame )
     rectangles = []
@@ -3742,10 +3746,6 @@ width = property(getwidth) #, setwidth)
     """Iterate all 4 corners"""
     for item in self.corners:
         yield item
-    #yield self.topleft
-    #yield self.topright
-    #yield self.bottomright
-    #yield bottomleft
 
 </t>
 <t tx="karstenw.20240320133834.1">def __getitem__(self, idx):
