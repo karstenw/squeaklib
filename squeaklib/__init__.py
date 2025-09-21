@@ -37,11 +37,9 @@ def sign( number ):
 
 
 def makePoint( *args  ):
-    "Tries to create a Point from args."
-    n = len(args)
+    """Tries to create a Point from args."""
     
-    if kwdbg and 0:
-        print("makePoint( %s )" % (str(args),) )
+    n = len(args)
     
     if n == 1:
         typ = type( args[0] )
@@ -86,6 +84,14 @@ def imageRectangles( reclist, exportname="imageRectangles()_", frame=(10,10) ):
         draw.rectangle( (x1,y1, w,h), fill=(c1, c2, 127,15),
                          outline=(0,0,0,127), width=1)
     f.canvas.export(exportname + pb.datestring(), unique=True  )
+
+def inrange( val, start, stop, epsilon=0.0001 ):
+    """Check if a value is between start and stop:"""
+    
+    if start-epsilon <= val < stop+epsilon:
+        return True
+    return False
+
 
 class Point(object):
     "Translated from a Squeak 3.7 image"
@@ -182,7 +188,6 @@ class Point(object):
     def as_distance(self):
         return math.sqrt(self.x ** 2 + self.y ** 2)
 
-
     def rotate(self, deg):
         # Use NodeBox cGeo
         # np = Point(0,0)
@@ -193,6 +198,7 @@ class Point(object):
             self.x * cd + self.y * sd,
             self.y * cd - self.x * sd)
 
+
     def as_angle(self, other, deg):
         # Use NodeBox cGeo
         return Point(
@@ -202,7 +208,6 @@ class Point(object):
         p = other - self
         return self + p.rotate(deg)
         """
-
     def corner( self, aPoint ):
         """Return a Rectangle( self, aPoint )"""
         return Rectangle( self, aPoint )
@@ -275,6 +280,11 @@ class Point(object):
         return (self.x * aPoint.x) + (self.y * aPoint.y)
 
     def eightNeighbors( self ):
+        """Return a list with all 8 neighbours. Self is at the centre.
+        
+        Order is: right, bottomRight, bottom, bottomLeft, left, topLeft, top, topRight
+        """
+        
         return [
             self + Point( 1, 0),
             self + Point( 1, 1),
@@ -286,6 +296,11 @@ class Point(object):
             self + Point( 1,-1)]
 
     def fourNeighbors( self ):
+        """Return a list with the 4 main neighbours. Self is at the centre.
+        
+        Order is: right, bottom, left, top
+        """
+
         return [
             self + Point( 1, 0),
             self + Point( 0, 1),
@@ -294,7 +309,10 @@ class Point(object):
 
     def flipByCenterAt( self, direction, center ):
         """Answer a Point which is flipped according to the direction about
-           the point c.  Direction must be #vertical or #horizontal."""
+           the point c. 
+
+        Direction must be #vertical or #horizontal."""
+        
         if direction == "vertical":
             return Point( self.x, center.y * 2 - self.y)
         elif direction == "horizontal":
@@ -304,9 +322,10 @@ class Point(object):
     def grid( self, aPoint ):
         """Answer a Point to the nearest rounded grid modules specified
         by aPoint."""
+        
         gridPoint = makePoint( aPoint )
-        newX = round(self.x / float( gridPoint.x )) * gridPoint.x
-        newY = round(self.y / float( gridPoint.y )) * gridPoint.y
+        newX = round(self.x / gridPoint.x ) * gridPoint.x
+        newY = round(self.y / gridPoint.y ) * gridPoint.y
         return Point(newX,newY)
 
     def insideTriangle( self, p1, p2, p3 ):
@@ -320,10 +339,12 @@ class Point(object):
     def normal(self):
         """Answer a Point representing the unit vector rotated
            90 deg clockwise."""
+        
         p = Point(-self.y, self.x)
         return p / math.sqrt((p.x * p.x + p.y * p.y))
 
     def normalized( self ):
+        
         r = math.sqrt((self.x ** 2) + (self.y ** 2))
         return Point( self.x / r, self.y / r)
 
@@ -594,7 +615,20 @@ class Point(object):
         return p.setRDegrees( rho, degrees )
 
 class Rectangle(object):
-    "Translated from a Squeak 3.7 image"
+    """Translated from a Squeak 3.7 image
+    
+    Properties:
+        origin corner
+        height width area widthheight
+        top left bottom right
+        topleft topright bottomleft bottomright
+        center
+        bottomcenter topcenter leftcenter rightcenter
+        corners extent
+        horizontallines verticallines topLeftBottomRightLines
+        
+        
+    """
 
     def __init__(self, origin, corner):
         p1 = makePoint( origin )
@@ -755,7 +789,7 @@ class Rectangle(object):
     # center
     def getcenter( self ):
         return Point( self.left + self.width / 2.0,
-                            self.top + self.height / 2.0 )
+                      self.top + self.height / 2.0 )
     def setcenter( self, *args):
         center = makePoint( args )
         ext = self.extent
@@ -851,6 +885,7 @@ class Rectangle(object):
     topLeftBottomRightLines = property( getTopLeftBottomRightLines )
 
 
+    # All these functions return a Rectangle or a Point.
     def withRight( self, x ):
         """Return a copy of me with a different right x"""
         return Rectangle( self.origin, Point( x, self.corner.y))
@@ -946,28 +981,6 @@ class Rectangle(object):
             areas.append( Rectangle( Point(otherRectangle.corner.x, yOrigin),
                                      Point(self.corner.x, yCorner) ))
         return areas
-
-    def asArray( self ):
-        return [self.origin.x,
-                self.origin.y,
-                self.corner.x,
-                self.corner.y]
-
-    def asPointList( self ):
-        return [self.origin, self.corner]
-
-
-    def bordersOnAlong( self, her, herSide ):
-        """Check if self and her are bordering along herSide (lerft,right,top,bottom)"""
-        
-        if (   (herSide == b"right" and self.left == her.right)
-            or (herSide == b"left"  and self.right == her.left)):
-            return max(self.top, her.top) < min(self.bottom, her.bottom)
-        
-        if (   (herSide == b"bottom" and self.top == her.bottom)
-            or (herSide == b"top"  and self.bottom == her.top)):
-            return  max(self.left, her.left) < min(self.right, her.right)
-        return False
 
     def encompass( self, aPointOrRect ):
         """Answer a Rectangle that contains both the receiver and aPoint.
@@ -1119,35 +1132,17 @@ class Rectangle(object):
             return Rectangle( Point(minX, minY), Point(maxX, maxY) )
 
     def rectanglesAtHeight( self, y, ht ):
+        """rectanglesAt: y height: ht
+        
+        r = Rectangle( Point( 10, 20 ), Point( 200, 300 ) )
+        rr= r.rectanglesAtHeight(100,100)
+        --> [Rectangle( Point( 10, 100 ), Point( 200, 200 ) )]
+        """
+        
         if (y + ht) > self.bottom:
             return []
         return [ Rectangle( Point(self.origin.x, y),
                             Point(self.corner.x, (y+ht)) ) ]
-
-    def sideNearestTo( self, aPoint ):
-        aPoint = makePoint( aPoint )
-        distToLeft = aPoint.x - self.left
-        distToRight = self.right - aPoint.x
-        distToTop = aPoint.y - self.top
-        distToBottom = self.bottom - aPoint.y
-        closest = distToLeft
-        side = "left"
-        if distToRight < closest:
-            closest = distToRight
-            side = "right"
-        if distToTop < closest:
-            closest = distToTop
-            side = "top"
-        if distToBottom < closest:
-            closest = distToBottom
-            side = "bottom"
-        return side
-            
-    def translatedToBeWithin( self, otherRectangle ):
-        """Answer a copy of the receiver that does not extend
-           beyond otherRectangle.  7/8/96 sw"""
-        return self.translatedBy( self.amountToTranslateWithin( otherRectangle ))
-
 
     def withSideOrCornerSetToPoint( self, side, newPoint ):
         """Return a copy with side set to newPoint"""
@@ -1212,13 +1207,62 @@ class Rectangle(object):
         side = #topRight ifTrue: [^ self bottomLeft rect: ((newPoint x max: origin x + minExtent x) @ (newPoint y min: corner y - minExtent y))].! !
     """
 
+    def asArray( self ):
+        return [self.origin.x,
+                self.origin.y,
+                self.corner.x,
+                self.corner.y]
+
+    def asPointList( self ):
+        return [self.origin, self.corner]
+
+
+    def bordersOnAlong( self, her, herSide ):
+        """Check if self and her are bordering along herSide (lerft,right,top,bottom)"""
+        
+        if (   (herSide == b"right" and self.left == her.right)
+            or (herSide == b"left"  and self.right == her.left)):
+            return max(self.top, her.top) < min(self.bottom, her.bottom)
+        
+        if (   (herSide == b"bottom" and self.top == her.bottom)
+            or (herSide == b"top"  and self.bottom == her.top)):
+            return  max(self.left, her.left) < min(self.right, her.right)
+        return False
+
+    def sideNearestTo( self, aPoint ):
+        aPoint = makePoint( aPoint )
+        distToLeft = aPoint.x - self.left
+        distToRight = self.right - aPoint.x
+        distToTop = aPoint.y - self.top
+        distToBottom = self.bottom - aPoint.y
+        closest = distToLeft
+        side = "left"
+        if distToRight < closest:
+            closest = distToRight
+            side = "right"
+        if distToTop < closest:
+            closest = distToTop
+            side = "top"
+        if distToBottom < closest:
+            closest = distToBottom
+            side = "bottom"
+        return side
+            
+    def translatedToBeWithin( self, otherRectangle ):
+        """Answer a copy of the receiver that does not extend
+           beyond otherRectangle.  7/8/96 sw"""
+        return self.translatedBy( self.amountToTranslateWithin( otherRectangle ))
+
+
     def containsPoint( self, aPoint ):
         "Answer whether aPoint is within the receiver."
-        return (self.origin <= aPoint) and (aPoint < self.corner)
+        return (    (self.origin <= aPoint)
+                and (aPoint < self.corner))
 
     def containsRect( self, aRect ):
         """Answer whether aRect is within the receiver (OK to coincide)."""
-        return (aRect.origin >= self.origin) and (aRect.corner <= self.corner)
+        return (    (aRect.origin >= self.origin)
+                and (aRect.corner <= self.corner))
 
     def fullIntersects( self, otherRectangle ):
         """Answer whether otherRectangle intersects the receiver anywhere.
@@ -1250,7 +1294,8 @@ class Rectangle(object):
             return True
 
     def hasPositiveExtent( self ):
-        """Answer whether aPoint is within the receiver."""
+        """Determine if origin is smaller (i.e. canonical) than corner."""
+        
         return (self.corner.x > self.origin.x) and (self.corner.y > self.origin.y)
 
     def intersects( self, otherRectangle ):
@@ -1299,10 +1344,12 @@ class Rectangle(object):
         return Rectangle( self.origin.truncated(), self.corner.truncated() )
 
     def alignWith( self, aPoint1, aPoint2 ):
+        """Answer a Rectangle that is a translated by aPoint2 - aPoint1."""
+        
         return self.translateBy( aPoint2 - aPoint1 )
 
     def centeredBeneath( self, otherRectangle ):
-        """Move the reciever so that its top center point coincides with the bottom
+        """Move the receiver so that its top center point coincides with the bottom
            center point of otherRectangle.  5/20/96 sw:"""
         return self.alignWith( self.topCenter, self.bottomCenter )
 
