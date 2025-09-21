@@ -15,6 +15,7 @@
 <v t="karstenw.20230526122610.2"><vh>sign</vh></v>
 <v t="karstenw.20230526123827.1"><vh>makePoint</vh></v>
 <v t="karstenw.20230528120341.1"><vh>imageRectangles</vh></v>
+<v t="karstenw.20250918163521.1"><vh>inrange</vh></v>
 </v>
 <v t="karstenw.20230526122614.1"><vh>Point</vh>
 <v t="karstenw.20230526122614.2" a="E"><vh>__python__</vh>
@@ -25,9 +26,15 @@
 <v t="karstenw.20230526122614.5"><vh>__lt|le|gt|ge|eq|ne|add|sub|mul|truediv__</vh></v>
 </v>
 <v t="karstenw.20230526122614.6" a="E"><vh>instance methods</vh>
-<v t="karstenw.20230526122614.7"><vh>converting</vh>
+<v t="karstenw.20230526122614.7" a="E"><vh>converting</vh>
 <v t="karstenw.20230526122614.8"><vh>asFloatPoint</vh></v>
 <v t="karstenw.20230526122614.9"><vh>asIntegerPoint</vh></v>
+<v t="karstenw.20250918152910.1"><vh>scale</vh></v>
+<v t="karstenw.20250918152916.1"><vh>scale_at</vh></v>
+<v t="karstenw.20250918152924.1"><vh>as_tuple</vh></v>
+<v t="karstenw.20250918152932.1"><vh>as_distance</vh></v>
+<v t="karstenw.20250918152940.1"><vh>rotate</vh></v>
+<v t="karstenw.20250918152954.1"><vh>as_angle</vh></v>
 <v t="karstenw.20230526122614.10"><vh>corner -&gt; Rectangle</vh></v>
 <v t="karstenw.20230526122614.11"><vh>extent -&gt; Rectangle</vh></v>
 <v t="karstenw.20230526122614.12"><vh>isPoint</vh></v>
@@ -36,7 +43,7 @@
 </v>
 <v t="karstenw.20230526122614.15"><vh>copying</vh></v>
 <v t="karstenw.20230526122614.16"><vh>geometry</vh></v>
-<v t="karstenw.20230526122614.17"><vh>point functions</vh>
+<v t="karstenw.20230526122614.17" a="E"><vh>point functions</vh>
 <v t="karstenw.20230526122614.19"><vh>bearingToPoint</vh></v>
 <v t="karstenw.20230526122614.20"><vh>crossProduct</vh></v>
 <v t="karstenw.20230526122614.21"><vh>dist</vh></v>
@@ -45,7 +52,7 @@
 <v t="karstenw.20230526122614.24"><vh>fourNeighbors</vh></v>
 <v t="karstenw.20230526122614.25"><vh>flipByCenterAt</vh></v>
 <v t="karstenw.20230526122614.26"><vh>grid</vh></v>
-<v t="karstenw.20230526122614.27"><vh>insideTriangle</vh></v>
+<v t="karstenw.20230526122614.27"><vh>insideTriangle TODO</vh></v>
 <v t="karstenw.20230526122614.30"><vh>normal</vh></v>
 <v t="karstenw.20230526122614.31"><vh>normalized</vh></v>
 <v t="karstenw.20230526122614.32"><vh>octantOf</vh></v>
@@ -96,13 +103,13 @@
 </v>
 </v>
 <v t="karstenw.20230526122626.1" a="E"><vh>Rectangle</vh>
-<v t="karstenw.20230526122626.2"><vh>__python__</vh>
+<v t="karstenw.20230526122626.2" a="E"><vh>__python__</vh>
 <v t="karstenw.20230526122626.3"><vh>__init__</vh></v>
 <v t="karstenw.20231205184847.1"><vh>__iter__</vh></v>
 <v t="karstenw.20230526122626.4"><vh>__repr__</vh></v>
 <v t="karstenw.20230526122626.5"><vh>__eq|ne|add|sub|mul__</vh></v>
 </v>
-<v t="karstenw.20230526122626.6"><vh>properties</vh>
+<v t="karstenw.20230526122626.6" a="E"><vh>properties</vh>
 <v t="karstenw.20230526122626.7"><vh>origin corner setOriginCorner</vh></v>
 <v t="karstenw.20230526122626.8"><vh>height width area widthheight</vh></v>
 <v t="karstenw.20230526122626.9"><vh>top left bottom right</vh></v>
@@ -123,9 +130,6 @@
 <v t="karstenw.20230526122626.23"><vh>withWidth</vh></v>
 <v t="karstenw.20230526122626.24"><vh>amountToTranslateWithin</vh></v>
 <v t="karstenw.20230526122626.25"><vh>areasOutside</vh></v>
-<v t="karstenw.20230526122626.26"><vh>asArray</vh></v>
-<v t="karstenw.20230526122626.27"><vh>asPointList</vh></v>
-<v t="karstenw.20230526122626.28"><vh>bordersOnAlong</vh></v>
 <v t="karstenw.20230526122626.29"><vh>encompass</vh></v>
 <v t="karstenw.20230526122626.30"><vh>expandBy</vh></v>
 <v t="karstenw.20230526122626.31"><vh>extendBy</vh></v>
@@ -137,11 +141,16 @@
 <v t="karstenw.20230526122626.37"><vh>pointNearestTo</vh></v>
 <v t="karstenw.20230526122626.38"><vh>quickMerge</vh></v>
 <v t="karstenw.20230526122626.39"><vh>rectanglesAtHeight</vh></v>
-<v t="karstenw.20230526122626.40"><vh>sideNearestTo</vh></v>
-<v t="karstenw.20230526122626.41"><vh>translatedToBeWithin</vh></v>
 <v t="karstenw.20230526122626.42"><vh>withSideOrCornerSetToPoint</vh></v>
 <v t="karstenw.20230526122626.43"><vh>withSideOrCornerSetToPointMinExtent</vh></v>
 <v t="karstenw.20230526122626.44"><vh>withSideOrCornerSetToPointMinExtentLimit</vh></v>
+</v>
+<v t="karstenw.20250921154355.1"><vh>special getters</vh>
+<v t="karstenw.20230526122626.26"><vh>asArray</vh></v>
+<v t="karstenw.20230526122626.27"><vh>asPointList</vh></v>
+<v t="karstenw.20230526122626.28"><vh>bordersOnAlong</vh></v>
+<v t="karstenw.20230526122626.40"><vh>sideNearestTo</vh></v>
+<v t="karstenw.20230526122626.41"><vh>translatedToBeWithin</vh></v>
 </v>
 <v t="karstenw.20230526122626.45"><vh>testing</vh>
 <v t="karstenw.20230526122626.46"><vh>containsPoint</vh></v>
@@ -153,12 +162,12 @@
 <v t="karstenw.20230526122626.52"><vh>isWide</vh></v>
 <v t="karstenw.20230526122626.53"><vh>isZero</vh></v>
 </v>
-<v t="karstenw.20230526122626.54"><vh>truncation and round off</vh>
+<v t="karstenw.20230526122626.54" a="E"><vh>truncation and round off</vh>
 <v t="karstenw.20230526122626.55"><vh>rounded</vh></v>
 <v t="karstenw.20230526122626.56"><vh>truncateTo</vh></v>
 <v t="karstenw.20230526122626.57"><vh>truncated</vh></v>
 </v>
-<v t="karstenw.20230526122626.58"><vh>transforming</vh>
+<v t="karstenw.20230526122626.58" a="E"><vh>transforming</vh>
 <v t="karstenw.20230526122626.59"><vh>alignWith</vh></v>
 <v t="karstenw.20230526122626.60"><vh>centeredBeneath</vh></v>
 <v t="karstenw.20230526122626.61"><vh>flipByCenterAt</vh></v>
@@ -169,20 +178,21 @@
 <v t="karstenw.20230526122626.66"><vh>translateBy</vh></v>
 <v t="karstenw.20230526122626.67"><vh>translatedAndSquishedToBeWithin</vh></v>
 </v>
-<v t="karstenw.20230526122626.68"><vh>subdivision</vh>
+<v t="karstenw.20230526122626.68" a="E"><vh>subdivision</vh>
 <v t="karstenw.20230526122626.69"><vh>split</vh></v>
 </v>
-<v t="karstenw.20230526122626.70"><vh>inRect</vh>
+<v t="karstenw.20230526122626.70" a="E"><vh>inRect</vh>
 <v t="karstenw.20230526122626.71"><vh>innerSquare</vh></v>
 <v t="karstenw.20230526122626.72"><vh>outerSquare</vh></v>
 </v>
 </v>
 <v t="karstenw.20230526122626.73" a="E"><vh>class methods</vh>
-<v t="karstenw.20230526122626.74" a="E"><vh>instance creation</vh>
+<v t="karstenw.20230526122626.74"><vh>instance creation</vh>
 <v t="karstenw.20230526122626.75"><vh>centerExtent</vh></v>
 <v t="karstenw.20250503212345.1"><vh>centerRadius</vh></v>
 <v t="karstenw.20230526122626.76"><vh>encompassing</vh></v>
 <v t="karstenw.20230526122626.77"><vh>leftRightTopBottom</vh></v>
+<v t="karstenw.20250918145643.1"><vh>leftTopRightBottom</vh></v>
 <v t="karstenw.20230526122626.78"><vh>merging</vh></v>
 <v t="karstenw.20230526122626.79"><vh>originExtent</vh></v>
 <v t="karstenw.20250918115652.1"><vh>random</vh></v>
@@ -213,25 +223,25 @@
 <v t="karstenw.20230526122945.1"><vh>newHeadline</vh></v>
 </v>
 </v>
-<v t="karstenw.20211017122643.1"><vh>trash</vh>
+<v t="karstenw.20211017122643.1" a="E"><vh>trash</vh>
 <v t="karstenw.20211015201020.1"><vh>subdivision</vh>
 <v t="karstenw.20211015201030.1"><vh>split</vh></v>
 <v t="karstenw.20211017114859.1"><vh>quadsplit</vh></v>
 <v t="karstenw.20211017115305.1"><vh>outerrects</vh></v>
 </v>
-<v t="karstenw.20211015160313.1"><vh>clean squeaklib/point.py</vh>
+<v t="karstenw.20211015160313.1" a="E"><vh>clean squeaklib/point.py</vh>
 <v t="karstenw.20211015171659.1"><vh>declarations</vh></v>
-<v t="karstenw.20211015172141.1"><vh>tools</vh>
+<v t="karstenw.20211015172141.1" a="E"><vh>tools</vh>
 <v t="karstenw.20210401150717.1"><vh>sign</vh></v>
 </v>
-<v t="karstenw.20211015171541.1"><vh>Point</vh>
-<v t="karstenw.20211015171541.2"><vh>__python__</vh>
+<v t="karstenw.20211015171541.1" a="E"><vh>Point</vh>
+<v t="karstenw.20211015171541.2" a="E"><vh>__python__</vh>
 <v t="karstenw.20211015171541.3"><vh>__init__</vh></v>
 <v t="karstenw.20211015171541.4"><vh>__repr__</vh></v>
 <v t="karstenw.20211015171541.5"><vh>__lt|le|gt|ge|eq|ne|add|sub|mul__</vh></v>
 </v>
-<v t="karstenw.20211015171541.6"><vh>instance methods</vh>
-<v t="karstenw.20211015171541.7"><vh>converting</vh>
+<v t="karstenw.20211015171541.6" a="E"><vh>instance methods</vh>
+<v t="karstenw.20211015171541.7" a="E"><vh>converting</vh>
 <v t="karstenw.20211015171541.8"><vh>asFloatPoint</vh></v>
 <v t="karstenw.20211015171541.9"><vh>asIntegerPoint</vh></v>
 <v t="karstenw.20211015171541.10"><vh>corner -&gt; Rectangle</vh></v>
@@ -2195,6 +2205,11 @@ except NameError:
 
 </t>
 <t tx="karstenw.20230526122614.23">def eightNeighbors( self ):
+    """Return a list with all 8 neighbours. Self is at the centre.
+    
+    Order is: right, bottomRight, bottom, bottomLeft, left, topLeft, top, topRight
+    """
+    
     return [
         self + Point( 1, 0),
         self + Point( 1, 1),
@@ -2207,6 +2222,11 @@ except NameError:
 
 </t>
 <t tx="karstenw.20230526122614.24">def fourNeighbors( self ):
+    """Return a list with the 4 main neighbours. Self is at the centre.
+    
+    Order is: right, bottom, left, top
+    """
+
     return [
         self + Point( 1, 0),
         self + Point( 0, 1),
@@ -2216,7 +2236,10 @@ except NameError:
 </t>
 <t tx="karstenw.20230526122614.25">def flipByCenterAt( self, direction, center ):
     """Answer a Point which is flipped according to the direction about
-       the point c.  Direction must be #vertical or #horizontal."""
+       the point c. 
+
+    Direction must be #vertical or #horizontal."""
+    
     if direction == "vertical":
         return Point( self.x, center.y * 2 - self.y)
     elif direction == "horizontal":
@@ -2227,9 +2250,10 @@ except NameError:
 <t tx="karstenw.20230526122614.26">def grid( self, aPoint ):
     """Answer a Point to the nearest rounded grid modules specified
     by aPoint."""
+    
     gridPoint = makePoint( aPoint )
-    newX = round(self.x / float( gridPoint.x )) * gridPoint.x
-    newY = round(self.y / float( gridPoint.y )) * gridPoint.y
+    newX = round(self.x / gridPoint.x ) * gridPoint.x
+    newY = round(self.y / gridPoint.y ) * gridPoint.y
     return Point(newX,newY)
 
 </t>
@@ -2269,11 +2293,13 @@ except NameError:
 <t tx="karstenw.20230526122614.30">def normal(self):
     """Answer a Point representing the unit vector rotated
        90 deg clockwise."""
+    
     p = Point(-self.y, self.x)
     return p / math.sqrt((p.x * p.x + p.y * p.y))
 
 </t>
 <t tx="karstenw.20230526122614.31">def normalized( self ):
+    
     r = math.sqrt((self.x ** 2) + (self.y ** 2))
     return Point( self.x / r, self.y / r)
 
@@ -2603,48 +2629,22 @@ def rhoDegrees( cls, rho, degrees ):
 <t tx="karstenw.20230526122614.9">def asIntegerPoint( self ):
     return Point( int( round(self.x) ), int( round(self.y) ))
 
-def scale(self, factor):
-    """
-    FuncGeometry vector scale
-    """
-    return Point(self.x * factor, self.y * factor)
-
-def scale_at(self, other, factor):
-    return self + ((other - self) * factor)
-    # d = self - other
-    # d *= factor
-    # return self + d #*factor
-
-def as_tuple(self):
-    return (self.x, self.y)
-
-def as_distance(self):
-    return math.sqrt(self.x ** 2 + self.y ** 2)
-
-
-def rotate(self, deg):
-    # Use NodeBox cGeo
-    # np = Point(0,0)
-    d = math.radians(deg)
-    cd = math.cos(d)
-    sd = math.sin(d)
-    return Point(
-        self.x * cd + self.y * sd,
-        self.y * cd - self.x * sd)
-
-def as_angle(self, other, deg):
-    # Use NodeBox cGeo
-    return Point(
-        self.x + (other.x * math.cos( math.radians(deg) )),
-        self.y + (other.y * math.sin( math.radians(deg) )))
-    """
-    p = other - self
-    return self + p.rotate(deg)
-    """
-
 </t>
 <t tx="karstenw.20230526122626.1">class Rectangle(object):
-    "Translated from a Squeak 3.7 image"
+    """Translated from a Squeak 3.7 image
+    
+    Properties:
+        origin corner
+        height width area widthheight
+        top left bottom right
+        topleft topright bottomleft bottomright
+        center
+        bottomcenter topcenter leftcenter rightcenter
+        corners extent
+        horizontallines verticallines topLeftBottomRightLines
+        
+        
+    """
 
     @others
 </t>
@@ -2684,7 +2684,7 @@ bottomright = property( getbottomright, setbottomright )
 <t tx="karstenw.20230526122626.11"># center
 def getcenter( self ):
     return Point( self.left + self.width / 2.0,
-                        self.top + self.height / 2.0 )
+                  self.top + self.height / 2.0 )
 def setcenter( self, *args):
     center = makePoint( args )
     ext = self.extent
@@ -2785,7 +2785,9 @@ topLeftBottomRightLines = property( getTopLeftBottomRightLines )
 
 </t>
 <t tx="karstenw.20230526122626.15"></t>
-<t tx="karstenw.20230526122626.16"></t>
+<t tx="karstenw.20230526122626.16">@
+All these functions return a Rectangle or a Point.
+</t>
 <t tx="karstenw.20230526122626.17">def withRight( self, x ):
     """Return a copy of me with a different right x"""
     return Rectangle( self.origin, Point( x, self.corner.y))
@@ -3087,6 +3089,13 @@ topLeftBottomRightLines = property( getTopLeftBottomRightLines )
 
 </t>
 <t tx="karstenw.20230526122626.39">def rectanglesAtHeight( self, y, ht ):
+    """rectanglesAt: y height: ht
+    
+    r = Rectangle( Point( 10, 20 ), Point( 200, 300 ) )
+    rr= r.rectanglesAtHeight(100,100)
+    --&gt; [Rectangle( Point( 10, 100 ), Point( 200, 200 ) )]
+    """
+    
     if (y + ht) &gt; self.bottom:
         return []
     return [ Rectangle( Point(self.origin.x, y),
@@ -3194,12 +3203,14 @@ withSideOrCorner: side setToPoint: newPoint minExtent: minExtent limit: limit
 <t tx="karstenw.20230526122626.45"></t>
 <t tx="karstenw.20230526122626.46">def containsPoint( self, aPoint ):
     "Answer whether aPoint is within the receiver."
-    return (self.origin &lt;= aPoint) and (aPoint &lt; self.corner)
+    return (    (self.origin &lt;= aPoint)
+            and (aPoint &lt; self.corner))
 
 </t>
 <t tx="karstenw.20230526122626.47">def containsRect( self, aRect ):
     """Answer whether aRect is within the receiver (OK to coincide)."""
-    return (aRect.origin &gt;= self.origin) and (aRect.corner &lt;= self.corner)
+    return (    (aRect.origin &gt;= self.origin)
+            and (aRect.corner &lt;= self.corner))
 
 </t>
 <t tx="karstenw.20230526122626.48">def fullIntersects( self, otherRectangle ):
@@ -3233,7 +3244,8 @@ withSideOrCorner: side setToPoint: newPoint minExtent: minExtent limit: limit
 
 </t>
 <t tx="karstenw.20230526122626.49">def hasPositiveExtent( self ):
-    """Answer whether aPoint is within the receiver."""
+    """Determine if origin is smaller (i.e. canonical) than corner."""
+    
     return (self.corner.x &gt; self.origin.x) and (self.corner.y &gt; self.origin.y)
 
 </t>
@@ -3321,12 +3333,14 @@ def __mul__( self, other):
 </t>
 <t tx="karstenw.20230526122626.58"></t>
 <t tx="karstenw.20230526122626.59">def alignWith( self, aPoint1, aPoint2 ):
+    """Answer a Rectangle that is a translated by aPoint2 - aPoint1."""
+    
     return self.translateBy( aPoint2 - aPoint1 )
 
 </t>
 <t tx="karstenw.20230526122626.6"></t>
 <t tx="karstenw.20230526122626.60">def centeredBeneath( self, otherRectangle ):
-    """Move the reciever so that its top center point coincides with the bottom
+    """Move the receiver so that its top center point coincides with the bottom
        center point of otherRectangle.  5/20/96 sw:"""
     return self.alignWith( self.topCenter, self.bottomCenter )
 
@@ -3477,12 +3491,6 @@ def leftRightTopBottom(cls, left, right, top, bottom):
 
 </t>
 <t tx="karstenw.20230526122626.78">@classmethod
-def leftTopRightBottom(cls, left, top, right, bottom):
-    """Answer an instance of me whose left, right, top, and bottom coordinates 
-    are determined by the arguments."""
-    return cls( Point(left,top), Point(right,bottom) )
-
-@classmethod
 def merging( cls, listOfRects ):
     """A number of callers of merge: should use this method."""
     minX = minY =  9999999
@@ -3575,11 +3583,9 @@ right = property( getright, setright )
 
 </t>
 <t tx="karstenw.20230526123827.1">def makePoint( *args  ):
-    "Tries to create a Point from args."
-    n = len(args)
+    """Tries to create a Point from args."""
     
-    if kwdbg and 0:
-        print("makePoint( %s )" % (str(args),) )
+    n = len(args)
     
     if n == 1:
         typ = type( args[0] )
@@ -3798,5 +3804,66 @@ def random( cls, originrange=(10,150), cornerrange=(50,200) ):
     return cls( origin, corner )
 
 </t>
+<t tx="karstenw.20250918145643.1">@classmethod
+def leftTopRightBottom(cls, left, top, right, bottom):
+    """Answer an instance of me whose left, right, top, and bottom coordinates 
+    are determined by the arguments."""
+    return cls( Point(left,top), Point(right,bottom) )
+
+</t>
+<t tx="karstenw.20250918152910.1">def scale(self, factor):
+    """
+    FuncGeometry vector scale
+    """
+    return Point(self.x * factor, self.y * factor)
+
+</t>
+<t tx="karstenw.20250918152916.1">def scale_at(self, other, factor):
+    return self + ((other - self) * factor)
+    # d = self - other
+    # d *= factor
+    # return self + d #*factor
+
+</t>
+<t tx="karstenw.20250918152924.1">def as_tuple(self):
+    return (self.x, self.y)
+
+</t>
+<t tx="karstenw.20250918152932.1">def as_distance(self):
+    return math.sqrt(self.x ** 2 + self.y ** 2)
+
+</t>
+<t tx="karstenw.20250918152940.1">def rotate(self, deg):
+    # Use NodeBox cGeo
+    # np = Point(0,0)
+    d = math.radians(deg)
+    cd = math.cos(d)
+    sd = math.sin(d)
+    return Point(
+        self.x * cd + self.y * sd,
+        self.y * cd - self.x * sd)
+
+
+</t>
+<t tx="karstenw.20250918152954.1">def as_angle(self, other, deg):
+    # Use NodeBox cGeo
+    return Point(
+        self.x + (other.x * math.cos( math.radians(deg) )),
+        self.y + (other.y * math.sin( math.radians(deg) )))
+    """
+    p = other - self
+    return self + p.rotate(deg)
+    """
+</t>
+<t tx="karstenw.20250918163521.1">def inrange( val, start, stop, epsilon=0.0001 ):
+    """Check if a value is between start and stop:"""
+    
+    if start-epsilon &lt;= val &lt; stop+epsilon:
+        return True
+    return False
+
+
+</t>
+<t tx="karstenw.20250921154355.1"></t>
 </tnodes>
 </leo_file>
